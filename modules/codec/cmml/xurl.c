@@ -3,9 +3,9 @@
  *****************************************************************************
  * Copyright (C) 2003-2004 Commonwealth Scientific and Industrial Research
  *                         Organisation (CSIRO) Australia
- * Copyright (C) 2004 VideoLAN
+ * Copyright (C) 2004 the VideoLAN team
  *
- * $Id: xurl.c 7397 2004-04-20 17:27:30Z sam $
+ * $Id: 254fab9a219997b57fe89e4a637f60d4494f58aa $
  *
  * Authors: Andre Pang <Andre.Pang@csiro.au>
  *
@@ -21,7 +21,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111, USA.
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.
  *****************************************************************************/
 
 #include <stdio.h>
@@ -434,11 +434,7 @@ char *XURL_GetHead( const char *psz_path )
     }
 
     /* append a trailing / */
-#ifdef XURL_WIN32_PATHING
-    streallocat( psz_path_head, "\\" );
-#else
     streallocat( psz_path_head, "/" );
-#endif
 
     return psz_path_head;
 }

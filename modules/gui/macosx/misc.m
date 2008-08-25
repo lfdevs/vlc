@@ -1,10 +1,11 @@
 /*****************************************************************************
  * misc.m: code not specific to vlc
  *****************************************************************************
- * Copyright (C) 2003 VideoLAN
- * $Id: misc.m 7723 2004-05-19 23:58:06Z hartman $
+ * Copyright (C) 2003-2008 the VideoLAN team
+ * $Id: 68d5c2e4bb6e3b6aed4dadf8dd76c76dcfee4794 $
  *
  * Authors: Jon Lech Johansen <jon-vl@nanocrew.net>
+ *          Felix Paul Kühne <fkuehne at videolan dot org>
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -18,14 +19,145 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111, USA.
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.
  *****************************************************************************/
 
-#include <Cocoa/Cocoa.h>
+#import <Cocoa/Cocoa.h>
+#import <QuickTime/QuickTime.h>
 
-#include "intf.h"                                          /* VLCApplication */
-#include "misc.h"
-#include "playlist.h"
+#import "intf.h"                                          /* VLCApplication */
+#import "misc.h"
+#import "playlist.h"
+#import "controls.h"
+
+/*****************************************************************************
+ * NSScreen (VLCAdditions)
+ *
+ *  Missing extension to NSScreen
+ *****************************************************************************/
+
+@implementation NSScreen (VLCAdditions)
+
+static NSMutableArray *blackoutWindows = NULL;
+
++ (void)load
+{
+    /* init our fake object attribute */
+    blackoutWindows = [[NSMutableArray alloc] initWithCapacity:1];
+}
+
++ (NSScreen *)screenWithDisplayID: (CGDirectDisplayID)displayID
+{
+    unsigned int i;
+ 
+    for( i = 0; i < [[NSScreen screens] count]; i++ )
+    {
+        NSScreen *screen = [[NSScreen screens] objectAtIndex: i];
+        if([screen displayID] == displayID)
+            return screen;
+    }
+    return nil;
+}
+
+- (BOOL)isMainScreen
+{
+    return ([self displayID] == [[[NSScreen screens] objectAtIndex:0] displayID]);
+}
+
+- (BOOL)isScreen: (NSScreen*)screen
+{
+    return ([self displayID] == [screen displayID]);
+}
+
+- (CGDirectDisplayID)displayID
+{
+    return (CGDirectDisplayID)_screenNumber;
+}
+
+- (void)blackoutOtherScreens
+{
+    unsigned int i;
+
+    /* Free our previous blackout window (follow blackoutWindow alloc strategy) */
+    [blackoutWindows makeObjectsPerformSelector:@selector(orderOut:)];
+    [blackoutWindows removeAllObjects];
+
+    for(i = 0; i < [[NSScreen screens] count]; i++)
+    {
+        NSScreen *screen = [[NSScreen screens] objectAtIndex: i];
+        VLCWindow *blackoutWindow;
+        NSRect screen_rect;
+ 
+        if([self isScreen: screen])
+            continue;
+
+        screen_rect = [screen frame];
+        screen_rect.origin.x = screen_rect.origin.y = 0;
+
+        /* blackoutWindow alloc strategy
+            - The NSMutableArray blackoutWindows has the blackoutWindow references
+            - blackoutOtherDisplays is responsible for alloc/releasing its Windows
+        */
+        blackoutWindow = [[VLCWindow alloc] initWithContentRect: screen_rect styleMask: NSBorderlessWindowMask
+                backing: NSBackingStoreBuffered defer: NO screen: screen];
+        [blackoutWindow setBackgroundColor:[NSColor blackColor]];
+        [blackoutWindow setLevel: NSFloatingWindowLevel]; /* Disappear when Expose is triggered */
+ 
+        [blackoutWindow displayIfNeeded];
+        [blackoutWindow orderFront: self];
+
+        [blackoutWindows addObject: blackoutWindow];
+        [blackoutWindow release];
+        
+        if( [screen isMainScreen ] )
+           SetSystemUIMode( kUIModeAllHidden, kUIOptionAutoShowMenuBar);
+    }
+}
+
++ (void)unblackoutScreens
+{
+    unsigned int i;
+
+    for(i = 0; i < [blackoutWindows count]; i++)
+    {
+        VLCWindow *blackoutWindow = [blackoutWindows objectAtIndex: i];
+        [blackoutWindow orderOut: self];
+    }
+    
+   SetSystemUIMode( kUIModeNormal, 0);
+}
+
+@end
+
+/*****************************************************************************
+ * VLCWindow
+ *
+ *  Missing extension to NSWindow
+ *****************************************************************************/
+
+@implementation VLCWindow
+- (id)initWithContentRect:(NSRect)contentRect styleMask:(unsigned int)styleMask
+    backing:(NSBackingStoreType)backingType defer:(BOOL)flag
+{
+    self = [super initWithContentRect:contentRect styleMask:styleMask backing:backingType defer:flag];
+    if( self )
+        b_isset_canBecomeKeyWindow = NO;
+    return self;
+}
+- (void)setCanBecomeKeyWindow: (BOOL)canBecomeKey
+{
+    b_isset_canBecomeKeyWindow = YES;
+    b_canBecomeKeyWindow = canBecomeKey;
+}
+
+- (BOOL)canBecomeKeyWindow
+{
+    if(b_isset_canBecomeKeyWindow)
+        return b_canBecomeKeyWindow;
+
+    return [super canBecomeKeyWindow];
+}
+@end
 
 /*****************************************************************************
  * VLCControllerWindow
@@ -39,13 +171,20 @@
     self = [super initWithContentRect:contentRect styleMask:styleMask //& ~NSTitledWindowMask
     backing:backingType defer:flag];
 
+    [[VLCMain sharedInstance] updateTogglePlaylistState];
+
     return( self );
 }
 
 - (BOOL)performKeyEquivalent:(NSEvent *)o_event
 {
-    return [( (VLCApplication *) [VLCApplication sharedApplication] )
-            hasDefinedShortcutKey:o_event];
+    /* We indeed want to prioritize Cocoa key equivalent against libvlc,
+       so we perform the menu equivalent now. */
+    if([[NSApp mainMenu] performKeyEquivalent:o_event])
+        return TRUE;
+
+    return [[VLCMain sharedInstance] hasDefinedShortcutKey:o_event] ||
+           [(VLCControls *)[[VLCMain sharedInstance] getControls] keyEvent:o_event];
 }
 
 @end
@@ -110,7 +249,7 @@
                 o_dic = [NSDictionary dictionaryWithObject:[o_values objectAtIndex:i] forKey:@"ITEM_URL"];
                 o_array = [o_array arrayByAddingObject: o_dic];
             }
-            [(VLCPlaylist *)[[NSApp delegate] getPlaylist] appendArray: o_array atPos: -1 enqueue:NO];
+            [(VLCPlaylist *)[[VLCMain sharedInstance] getPlaylist] appendArray: o_array atPos: -1 enqueue:NO];
             return YES;
         }
     }
@@ -188,7 +327,7 @@
                 o_dic = [NSDictionary dictionaryWithObject:[o_values objectAtIndex:i] forKey:@"ITEM_URL"];
                 o_array = [o_array arrayByAddingObject: o_dic];
             }
-            [(VLCPlaylist *)[[NSApp delegate] getPlaylist] appendArray: o_array atPos: -1 enqueue:NO];
+            [[[VLCMain sharedInstance] getPlaylist] appendArray: o_array atPos: -1 enqueue:NO];
             return YES;
         }
     }
@@ -267,3 +406,96 @@ void _drawFrameInRect(NSRect frameRect)
 }
 
 @end
+
+
+/*****************************************************************************
+ * ITSlider
+ *****************************************************************************/
+
+@implementation ITSlider
+
+- (void)awakeFromNib
+{
+    if ([[self cell] class] != [ITSliderCell class]) {
+        // replace cell
+        NSSliderCell *oldCell = [self cell];
+        NSSliderCell *newCell = [[[ITSliderCell alloc] init] autorelease];
+        [newCell setTag:[oldCell tag]];
+        [newCell setTarget:[oldCell target]];
+        [newCell setAction:[oldCell action]];
+        [newCell setControlSize:[oldCell controlSize]];
+        [newCell setType:[oldCell type]];
+        [newCell setState:[oldCell state]]; 
+        [newCell setAllowsTickMarkValuesOnly:[oldCell allowsTickMarkValuesOnly]];
+        [newCell setAltIncrementValue:[oldCell altIncrementValue]];
+        [newCell setControlTint:[oldCell controlTint]];
+        [newCell setKnobThickness:[oldCell knobThickness]];
+        [newCell setMaxValue:[oldCell maxValue]];
+        [newCell setMinValue:[oldCell minValue]];
+        [newCell setDoubleValue:[oldCell doubleValue]];
+        [newCell setNumberOfTickMarks:[oldCell numberOfTickMarks]];
+        [newCell setEditable:[oldCell isEditable]];
+        [newCell setEnabled:[oldCell isEnabled]];
+        [newCell setEntryType:[oldCell entryType]];
+        [newCell setHighlighted:[oldCell isHighlighted]];
+        [newCell setTickMarkPosition:[oldCell tickMarkPosition]];
+        [self setCell:newCell];
+    }
+}
+
+@end
+
+/*****************************************************************************
+ * ITSliderCell
+ *****************************************************************************/
+@implementation ITSliderCell
+
+- (id)init
+{
+    self = [super init];
+    _knobOff = [[NSImage imageNamed:@"volumeslider_normal"] retain];
+    _knobOn = [[NSImage imageNamed:@"volumeslider_blue"] retain];
+    b_mouse_down = FALSE;
+    return self;
+}
+
+- (void)dealloc
+{
+    [_knobOff release];
+    [_knobOn release];
+    [super dealloc];
+}
+
+- (void)drawKnob:(NSRect)knob_rect
+{
+    NSImage *knob;
+
+    if( b_mouse_down )
+        knob = _knobOn;
+    else
+        knob = _knobOff;
+
+    [[self controlView] lockFocus];
+    [knob compositeToPoint:NSMakePoint( knob_rect.origin.x + 1,
+        knob_rect.origin.y + knob_rect.size.height -2 )  
+        operation:NSCompositeSourceOver];
+    [[self controlView] unlockFocus];
+}
+
+- (void)stopTracking:(NSPoint)lastPoint at:(NSPoint)stopPoint inView: 
+        (NSView *)controlView mouseIsUp:(BOOL)flag
+{
+    b_mouse_down = NO;
+    [self drawKnob];
+    [super stopTracking:lastPoint at:stopPoint inView:controlView mouseIsUp:flag];
+}
+
+- (BOOL)startTrackingAt:(NSPoint)startPoint inView:(NSView *)controlView
+{
+    b_mouse_down = YES;
+    [self drawKnob];
+    return [super startTrackingAt:startPoint inView:controlView];
+}
+
+@end
+

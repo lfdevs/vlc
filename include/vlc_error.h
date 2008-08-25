@@ -1,8 +1,8 @@
 /*****************************************************************************
  * vlc_error.h: error handling routine
  *****************************************************************************
- * Copyright (C) 2002 VideoLAN
- * $Id: vlc_error.h 6961 2004-03-05 17:34:23Z sam $
+ * Copyright (C) 2002 the VideoLAN team
+ * $Id: 4e855738cd23546664818fed3b48a1f3259aadff $
  *
  * Authors: Samuel Hocevar <sam@zoy.org>
  *
@@ -18,7 +18,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111, USA.
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.
  *****************************************************************************/
 
 /*****************************************************************************

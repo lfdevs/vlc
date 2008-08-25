@@ -1,8 +1,8 @@
 /*****************************************************************************
  * bandlimited.h : bandlimited interpolation resampler
  *****************************************************************************
- * Copyright (C) 2002 VideoLAN
- * $Id: bandlimited.h 6961 2004-03-05 17:34:23Z sam $
+ * Copyright (C) 2002 the VideoLAN team
+ * $Id: 90f32db31c609394a0115522164bc825f6cef941 $
  *
  * Authors: Gildas Bazin <gbazin@netcourrier.com>
  *
@@ -18,7 +18,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111, USA.
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.
  *****************************************************************************/
 
 /* Conversion constants */

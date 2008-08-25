@@ -1,8 +1,8 @@
 /*****************************************************************************
  * beos_init.cpp: Initialization for BeOS specific features
  *****************************************************************************
- * Copyright (C) 1999-2004 VideoLAN
- * $Id: beos_specific.cpp 6961 2004-03-05 17:34:23Z sam $
+ * Copyright (C) 1999-2004 the VideoLAN team
+ * $Id: 7e0e74c29d598aeb4f3f78dd29cc6f04b94cd2e2 $
  *
  * Authors: Jean-Marc Dressler <polux@via.ecp.fr>
  *
@@ -18,7 +18,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111, USA.
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.
  *****************************************************************************/
 #include <Application.h>
 #include <Roster.h>

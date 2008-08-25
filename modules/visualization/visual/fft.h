@@ -1,7 +1,7 @@
 /*****************************************************************************
  * fft.h: Headers for iterative implementation of a FFT
  *****************************************************************************
- * $Id: fft.h 6961 2004-03-05 17:34:23Z sam $
+ * $Id: 779f3070d34527623259115b7f749b1b6d15b0b3 $
  *
  * Mainly taken from XMMS's code
  * 
@@ -19,7 +19,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111, USA.
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.
  *****************************************************************************/
 
 #ifndef _FFT_H_

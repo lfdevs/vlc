@@ -1,8 +1,8 @@
 /*****************************************************************************
  * dummy.h : dummy plugin for vlc
  *****************************************************************************
- * Copyright (C) 2000, 2001, 2002 VideoLAN
- * $Id: dummy.h 6961 2004-03-05 17:34:23Z sam $
+ * Copyright (C) 2000, 2001, 2002 the VideoLAN team
+ * $Id: 744500e4049d101da1667ce4071ae5a01707b3b7 $
  *
  * Authors: Samuel Hocevar <sam@zoy.org>
  *
@@ -18,7 +18,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111, USA.
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.
  *****************************************************************************/
 
 /*****************************************************************************

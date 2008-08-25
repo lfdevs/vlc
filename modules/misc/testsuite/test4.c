@@ -1,8 +1,8 @@
 /*****************************************************************************
  * test4.c : Miscellaneous stress tests module for vlc
  *****************************************************************************
- * Copyright (C) 2002 VideoLAN
- * $Id: test4.c 6961 2004-03-05 17:34:23Z sam $
+ * Copyright (C) 2002 the VideoLAN team
+ * $Id: 1e8de5ac490d7c161e11532f4e5e6db572a01a30 $
  *
  * Authors: Samuel Hocevar <sam@zoy.org>
  *
@@ -18,7 +18,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111, USA.
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.
  *****************************************************************************/
 
 /*****************************************************************************

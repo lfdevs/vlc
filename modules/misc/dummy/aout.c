@@ -1,8 +1,8 @@
 /*****************************************************************************
  * aout_dummy.c : dummy audio output plugin
  *****************************************************************************
- * Copyright (C) 2002 VideoLAN
- * $Id: aout.c 6961 2004-03-05 17:34:23Z sam $
+ * Copyright (C) 2002 the VideoLAN team
+ * $Id: ed0d25c5c37fef42757e57b1dacfd6fc28a02af6 $
  *
  * Authors: Christophe Massiot <massiot@via.ecp.fr>
  *
@@ -18,7 +18,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111, USA.
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.
  *****************************************************************************/
 
 /*****************************************************************************

@@ -1,8 +1,8 @@
 /*****************************************************************************
  * AudioOutput.cpp: BeOS audio output
  *****************************************************************************
- * Copyright (C) 1999, 2000, 2001 VideoLAN
- * $Id: AudioOutput.cpp 6961 2004-03-05 17:34:23Z sam $
+ * Copyright (C) 1999, 2000, 2001 the VideoLAN team
+ * $Id: 9088a0afbcb45d1a9a44f8a78b81cd14f49778b6 $
  *
  * Authors: Jean-Marc Dressler <polux@via.ecp.fr>
  *          Samuel Hocevar <sam@zoy.org>
@@ -20,7 +20,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111, USA.
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.
  *****************************************************************************/
 
 /*****************************************************************************

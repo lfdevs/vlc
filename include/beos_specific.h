@@ -1,8 +1,8 @@
 /*****************************************************************************
  * beos_specific.h: BeOS specific features
  *****************************************************************************
- * Copyright (C) 1999, 2000 VideoLAN
- * $Id: beos_specific.h 6961 2004-03-05 17:34:23Z sam $
+ * Copyright (C) 1999, 2000 the VideoLAN team
+ * $Id: f9c0d6d9eb59aaaea902655677e18979bd3ca1dd $
  *
  * Authors: Jean-Marc Dressler <polux@via.ecp.fr>
  *
@@ -18,7 +18,7 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111, USA.
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston MA 02110-1301, USA.
  *****************************************************************************/
 
 /*****************************************************************************
