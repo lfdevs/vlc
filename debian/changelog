@@ -1,3 +1,12 @@
+vlc (3.0.8-3) unstable; urgency=medium
+
+  * debian/control:
+    - Replace libfreetype6-dev with libfreetype-dev
+    - Bump Standards-Version
+  * debian/: Build srt access plugin
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Mon, 18 Nov 2019 22:38:08 +0100
+
 vlc (3.0.8-2) unstable; urgency=medium
 
   * debian/: Revert "Switch back to libmodplug-dev since vlc now requires
@@ -8,6 +17,7 @@ vlc (3.0.8-2) unstable; urgency=medium
 vlc (3.0.8-1) unstable; urgency=medium
 
   * New upstream release.
+    - Fix a buffer overflow in the MKV demuxer (CVE-2019-14970)
     - Fix a read buffer overflow in the avcodec decoder (CVE-2019-13962)
     - Fix a read buffer overflow in the OGG demuxer (CVE-2019-14437,
       CVE-2019-14438)
