@@ -1,7 +1,18 @@
+vlc (3.0.9.2-1) unstable; urgency=medium
+
+  * New upstream release
+  * debian/patches: Remove patches integrated upstream
+  * debian/copyright:
+    - Bump copyright years
+    - Update files
+  * debian/upstream/signing-key.asc: Re-export upstream's signing key
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Thu, 09 Apr 2020 21:29:44 +0200
+
 vlc (3.0.8-4) unstable; urgency=medium
 
   * debian/control: Bump Standards-Version
-  * debian/upstream: Apply upstream patches for chromechast support in avahi
+  * debian/upstream: Apply upstream patches for chromecast support in avahi
   * debian/: Disable microdns plugin
 
  -- Sebastian Ramacher <sramacher@debian.org>  Thu, 27 Feb 2020 21:44:49 +0100
