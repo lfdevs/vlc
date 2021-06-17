@@ -1,9 +1,9 @@
 # Russian translation
-# Copyright (C) 2020 VideoLAN
+# Copyright (C) 2021 VideoLAN
 # This file is distributed under the same license as the VLC package.
 #
 # Translators:
-# Alexander Lakhin <exclusion@gmail.com>, 2014-2020
+# Alexander Lakhin <exclusion@gmail.com>, 2014-2021
 # Andrey Brilevskiy <andrey-brilevskiy@yandex.ru>, 2005
 # Andrey Wolk (Lorni) <andywolk@gmail.com>, 2009
 # Konstantin Pavlov <thresh@videolan.org>, 2011
@@ -12,11 +12,11 @@
 # Viktor <kichnap@gmail.com>, 2020
 msgid ""
 msgstr ""
-"Project-Id-Version: vlc 3.0.9\n"
+"Project-Id-Version: vlc 3.0.13\n"
 "Report-Msgid-Bugs-To: vlc-devel@videolan.org\n"
-"POT-Creation-Date: 2021-01-17 23:10+0100\n"
-"PO-Revision-Date: 2020-03-28 18:29+0100\n"
-"Last-Translator: Alexander Lakhin <exclusion@gmail.com>, 2020\n"
+"POT-Creation-Date: 2021-06-09 17:29+0200\n"
+"PO-Revision-Date: 2021-03-28 22:27+0200\n"
+"Last-Translator: crocla, 2021\n"
 "Language-Team: Russian (https://www.transifex.com/yaron/teams/16553/ru/)\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -94,6 +94,7 @@ msgstr "Настройка горячих клавиш"
 #: modules/gui/qt/qt.cpp:213 modules/services_discovery/mediadirs.c:77
 #: modules/stream_out/es.c:94 modules/stream_out/transcode/transcode.c:182
 #: share/lua/http/dialogs/create_stream.html:150
+#: modules/gui/qt/ui/profiles.h:719 modules/gui/qt/ui/profiles.h:750
 msgid "Audio"
 msgstr "Аудио"
 
@@ -106,6 +107,7 @@ msgid "General audio settings"
 msgstr "Основные настройки аудио"
 
 #: include/vlc_config_cat.h:58 include/vlc_config_cat.h:81
+#: modules/gui/qt/ui/profiles.h:748 modules/gui/qt/ui/profiles.h:758
 msgid "Filters"
 msgstr "Фильтры"
 
@@ -157,6 +159,8 @@ msgstr "Прочие настройки и модули аудио."
 #: modules/gui/qt/qt.cpp:213 modules/services_discovery/mediadirs.c:70
 #: modules/stream_out/es.c:102 modules/stream_out/transcode/transcode.c:153
 #: share/lua/http/dialogs/create_stream.html:147
+#: modules/gui/qt/ui/profiles.h:720 modules/gui/qt/ui/profiles.h:724
+#: modules/gui/qt/ui/sprefs_video.h:323
 msgid "Video"
 msgstr "Видео"
 
@@ -364,8 +368,8 @@ msgstr "Реализация «видео по запросу» проигрыв
 #: include/vlc_config_cat.h:173 src/libvlc-module.c:2070
 #: src/playlist/engine.c:243 modules/demux/playlist/playlist.c:64
 #: modules/demux/playlist/playlist.c:65 modules/demux/playlist/wpl.c:99
-#: modules/gui/macosx/VLCMainWindow.m:321
-#: modules/gui/macosx/VLCMainWindow.m:902
+#: modules/gui/macosx/VLCMainWindow.m:794
+#: modules/gui/macosx/VLCSidebarDataSource.m:68
 #: modules/gui/qt/components/controller.hpp:109
 #: modules/gui/qt/components/playlist/playlist.cpp:165
 #: modules/gui/qt/components/playlist/selector.cpp:227
@@ -397,6 +401,7 @@ msgstr "Модули обнаружения служб автоматическ�
 
 #: include/vlc_config_cat.h:184 src/libvlc-module.c:1862
 #: modules/gui/qt/dialogs/extended.cpp:93
+#: modules/gui/qt/ui/video_effects.h:1305
 msgid "Advanced"
 msgstr "Дополнительно"
 
@@ -469,13 +474,13 @@ msgstr "О программе"
 #: include/vlc_intf_strings.h:65 modules/control/oldrc.c:70
 #: modules/gui/macosx/VLCControlsBarCommon.m:81
 #: modules/gui/macosx/VLCControlsBarCommon.m:432
-#: modules/gui/macosx/VLCFSPanelController.m:233
+#: modules/gui/macosx/VLCFSPanelController.m:245
 #: modules/gui/macosx/VLCMainMenu.m:385 modules/gui/macosx/VLCMainMenu.m:497
 #: modules/gui/macosx/VLCMainMenu.m:504 modules/gui/macosx/VLCMainMenu.m:1339
 #: modules/gui/macosx/VLCMainMenu.m:1340 modules/gui/macosx/VLCMainMenu.m:1341
 #: modules/gui/macosx/VLCPlaylist.m:223
 #: modules/gui/qt/components/controller.hpp:107
-#: modules/gui/qt/dialogs/vlm.cpp:538
+#: modules/gui/qt/dialogs/vlm.cpp:538 modules/gui/qt/ui/open.h:258
 msgid "Play"
 msgstr "Воспроизвести"
 
@@ -560,13 +565,14 @@ msgstr "Добавить пап&ку..."
 msgid "Save Playlist to &File..."
 msgstr "&Сохранить плейлист как..."
 
-#: include/vlc_intf_strings.h:91 modules/gui/macosx/VLCMainWindow.m:191
+#: include/vlc_intf_strings.h:91 modules/gui/macosx/VLCMainWindow.m:194
 #: modules/gui/qt/components/preferences_widgets.cpp:1138
 msgid "Search"
 msgstr "Искать"
 
 #: include/vlc_intf_strings.h:99
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:282
+#: modules/gui/qt/ui/video_effects.h:1289
 msgid "Waves"
 msgstr "Волны"
 
@@ -638,7 +644,8 @@ msgstr "Достигнуто максимальное количество фи�
 
 #: src/audio_output/output.c:263 src/config/core.c:380 src/input/es_out.c:948
 #: src/libvlc-module.c:540 modules/demux/adaptive/adaptive.cpp:124
-#: modules/gui/macosx/VLCMainMenu.m:243 modules/gui/macosx/VLCMainWindow.m:999
+#: modules/gui/macosx/VLCMainMenu.m:243
+#: modules/gui/macosx/VLCSidebarDataSource.m:211
 #: modules/video_filter/postproc.c:235
 msgid "Disable"
 msgstr "отключить"
@@ -703,6 +710,9 @@ msgstr "стерео"
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:313
 #: modules/spu/audiobargraph_v.c:65 modules/spu/logo.c:80
 #: modules/spu/marq.c:129 modules/spu/mosaic.c:170 modules/spu/rss.c:171
+#: modules/gui/qt/ui/video_effects.h:1228
+#: modules/gui/qt/ui/video_effects.h:1270
+#: modules/gui/qt/ui/video_effects.h:1280
 msgid "Left"
 msgstr "слева"
 
@@ -717,6 +727,7 @@ msgstr "слева"
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:315
 #: modules/spu/audiobargraph_v.c:65 modules/spu/logo.c:80
 #: modules/spu/marq.c:129 modules/spu/mosaic.c:170 modules/spu/rss.c:171
+#: modules/gui/qt/ui/video_effects.h:1229
 msgid "Right"
 msgstr "справа"
 
@@ -998,13 +1009,15 @@ msgstr "Идентификатор оригинала"
 #: src/input/es_out.c:3104 src/input/es_out.c:3107 modules/access/imem.c:67
 #: modules/gui/macosx/VLCConvertAndSaveWindowController.m:162
 #: modules/gui/macosx/VLCConvertAndSaveWindowController.m:173
+#: modules/gui/qt/ui/profiles.h:726 modules/gui/qt/ui/profiles.h:752
+#: modules/gui/qt/ui/profiles.h:761
 msgid "Codec"
 msgstr "Кодек"
 
 #: src/input/es_out.c:3111 src/input/meta.c:66 modules/access/imem.c:71
 #: modules/gui/macosx/VLCPlaylist.m:98
 #: modules/gui/macosx/VLCSimplePrefsController.m:317
-#: modules/stream_out/setid.c:49
+#: modules/stream_out/setid.c:49 modules/gui/qt/ui/sprefs_interface.h:527
 msgid "Language"
 msgstr "Язык"
 
@@ -1024,7 +1037,7 @@ msgstr "Тип"
 
 #: src/input/es_out.c:3123
 #: modules/gui/macosx/VLCConvertAndSaveWindowController.m:175
-#: modules/gui/macosx/VLCOutput.m:98
+#: modules/gui/macosx/VLCOutput.m:98 modules/gui/qt/ui/profiles.h:754
 msgid "Channels"
 msgstr "Каналы"
 
@@ -1046,6 +1059,7 @@ msgstr "Бит"
 #: modules/demux/playlist/shoutcast.c:327
 #: modules/gui/macosx/VLCConvertAndSaveWindowController.m:163
 #: modules/gui/macosx/VLCConvertAndSaveWindowController.m:174
+#: modules/gui/qt/ui/profiles.h:727 modules/gui/qt/ui/profiles.h:753
 msgid "Bitrate"
 msgstr "Битрейт"
 
@@ -1264,16 +1278,16 @@ msgstr "Точка белого"
 msgid "Subtitle"
 msgstr "Субтитры"
 
-#: src/input/input.c:1821 modules/control/hotkeys.c:1512
+#: src/input/input.c:1841 modules/control/hotkeys.c:1512
 #, c-format
 msgid "Volume %ld%%"
 msgstr "Громкость %ld%%"
 
-#: src/input/input.c:2725
+#: src/input/input.c:2745
 msgid "Your input can't be opened"
 msgstr "Этот источник не открывается"
 
-#: src/input/input.c:2726
+#: src/input/input.c:2746
 #, c-format
 msgid "VLC is unable to open the MRL '%s'. Check the log for details."
 msgstr ""
@@ -1287,6 +1301,7 @@ msgstr ""
 #: modules/gui/qt/components/open_panels.cpp:507
 #: modules/gui/qt/components/open_panels.cpp:521
 #: modules/gui/qt/dialogs/epg.cpp:70 modules/mux/asf.c:56
+#: modules/gui/qt/ui/open_disk.h:306
 msgid "Title"
 msgstr "Название"
 
@@ -1326,6 +1341,7 @@ msgid "Setting"
 msgstr "Настройки"
 
 #: src/input/meta.c:65 modules/gui/macosx/VLCOpenWindowController.m:188
+#: modules/gui/qt/ui/podcast_configuration.h:100
 msgid "URL"
 msgstr "URL"
 
@@ -1393,6 +1409,7 @@ msgstr "Программы"
 #: modules/gui/macosx/VLCMainMenu.m:412
 #: modules/gui/macosx/VLCOpenWindowController.m:179
 #: modules/gui/macosx/VLCOpenWindowController.m:181
+#: modules/gui/qt/ui/open_disk.h:307
 msgid "Chapter"
 msgstr "Глава"
 
@@ -1634,7 +1651,7 @@ msgid "Media (player) role for operating system policy."
 msgstr "Медийная роль (роль проигрывателя) для политики операционной системы."
 
 #: src/libvlc-module.c:132 modules/gui/macosx/VLCSimplePrefsController.m:273
-#: modules/stream_out/display.c:40
+#: modules/stream_out/display.c:40 modules/gui/qt/ui/sprefs_audio.h:407
 msgid "Enable audio"
 msgstr "Включить аудио"
 
@@ -1768,7 +1785,8 @@ msgstr ""
 #: modules/services_discovery/upnp.cpp:78
 #: modules/text_renderer/freetype/freetype.c:124
 #: modules/text_renderer/freetype/freetype.c:151 modules/video_output/kva.c:62
-#: modules/video_output/xcb/xvideo.c:821
+#: modules/video_output/xcb/xvideo.c:821 modules/gui/qt/ui/profiles.h:742
+#: modules/gui/qt/ui/profiles.h:745
 msgid "Auto"
 msgstr "автоматически"
 
@@ -1790,7 +1808,7 @@ msgstr "Режим объёмного вывода звука"
 
 #: src/libvlc-module.c:195 src/misc/actions.c:112
 #: modules/gui/qt/components/preferences_widgets.cpp:1429
-#: modules/gui/qt/util/customwidgets.cpp:314
+#: modules/gui/qt/util/customwidgets.cpp:330
 msgid "Unset"
 msgstr "Нет"
 
@@ -1893,7 +1911,7 @@ msgstr ""
 "наилучший доступный метод."
 
 #: src/libvlc-module.c:258 modules/gui/macosx/VLCSimplePrefsController.m:359
-#: modules/stream_out/display.c:42
+#: modules/stream_out/display.c:42 modules/gui/qt/ui/sprefs_video.h:311
 msgid "Enable video"
 msgstr "Включить видео"
 
@@ -1991,6 +2009,9 @@ msgstr ""
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:317
 #: modules/spu/audiobargraph_v.c:65 modules/spu/logo.c:80
 #: modules/spu/marq.c:129 modules/spu/mosaic.c:170 modules/spu/rss.c:171
+#: modules/gui/qt/ui/video_effects.h:1226
+#: modules/gui/qt/ui/video_effects.h:1268
+#: modules/gui/qt/ui/video_effects.h:1279
 msgid "Top"
 msgstr "сверху"
 
@@ -2001,6 +2022,7 @@ msgstr "сверху"
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:319
 #: modules/spu/audiobargraph_v.c:65 modules/spu/logo.c:80
 #: modules/spu/marq.c:129 modules/spu/mosaic.c:170 modules/spu/rss.c:171
+#: modules/gui/qt/ui/video_effects.h:1230
 msgid "Bottom"
 msgstr "снизу"
 
@@ -2188,6 +2210,7 @@ msgid "Disable the screensaver during video playback."
 msgstr "Отключать заставку на время воспроизведения видео."
 
 #: src/libvlc-module.c:374 modules/gui/macosx/VLCSimplePrefsController.m:364
+#: modules/gui/qt/ui/sprefs_video.h:314
 msgid "Window decorations"
 msgstr "Оформление окна"
 
@@ -2550,8 +2573,9 @@ msgstr "по умолчанию"
 
 #: src/libvlc-module.c:540
 #: modules/gui/macosx/VLCAudioEffectsWindowController.m:215
-#: modules/gui/macosx/VLCMainWindow.m:997
+#: modules/gui/macosx/VLCSidebarDataSource.m:209
 #: modules/gui/qt/components/extended_panels.cpp:949
+#: modules/gui/qt/ui/equalizer.h:130 modules/gui/qt/ui/vlm.h:286
 msgid "Enable"
 msgstr "включить"
 
@@ -2622,7 +2646,7 @@ msgstr ""
 "Используйте только в том случае, если хотите просмотреть поток с несколькими "
 "программами (например, поток DVB)."
 
-#: src/libvlc-module.c:578
+#: src/libvlc-module.c:578 modules/gui/qt/ui/open_disk.h:309
 msgid "Audio track"
 msgstr "Аудиодорожка"
 
@@ -2630,7 +2654,7 @@ msgstr "Аудиодорожка"
 msgid "Stream number of the audio track to use (from 0 to n)."
 msgstr "Номер аудиодорожки, которую вы хотите использовать (от 0 до n)."
 
-#: src/libvlc-module.c:583
+#: src/libvlc-module.c:583 modules/gui/qt/ui/open_disk.h:310
 msgid "Subtitle track"
 msgstr "Дорожка субтитров"
 
@@ -2768,7 +2792,7 @@ msgstr "Продолжительность работы"
 msgid "The stream will run this duration (in seconds)."
 msgstr "Поток будет проигрываться в течение этого времени (в секундах)."
 
-#: src/libvlc-module.c:646
+#: src/libvlc-module.c:646 modules/gui/qt/ui/sprefs_input.h:360
 msgid "Fast seek"
 msgstr "Быстрый поиск"
 
@@ -2896,7 +2920,7 @@ msgstr ""
 "настройте их и дополнительные параметры слоёв в разделе «Модуль источников "
 "слоёв»."
 
-#: src/libvlc-module.c:705
+#: src/libvlc-module.c:705 modules/gui/qt/ui/sprefs_subtitles.h:302
 msgid "Force subtitle position"
 msgstr "Задать позицию субтитров"
 
@@ -2924,8 +2948,9 @@ msgstr "Включить модуль «Слои»"
 msgid "You can completely disable the sub-picture processing."
 msgstr "Можно полностью отключить обработку слоёв."
 
-#: src/libvlc-module.c:717 src/libvlc-module.c:1674 src/text/iso-639_def.h:145
+#: src/libvlc-module.c:717 src/libvlc-module.c:1674 src/text/iso-639_def.h:146
 #: modules/gui/macosx/VLCSimplePrefsController.m:351
+#: modules/gui/qt/ui/sprefs_subtitles.h:287
 msgid "On Screen Display"
 msgstr "Экранная индикация"
 
@@ -3671,7 +3696,7 @@ msgstr "VLC запущен по ассоциации файла"
 msgid "Tell VLC that it is being launched due to a file association in the OS"
 msgstr "Указывает, что VLC запущен по ассоциации файла в ОС."
 
-#: src/libvlc-module.c:1087
+#: src/libvlc-module.c:1087 modules/gui/qt/ui/sprefs_interface.h:547
 msgid "Use only one instance when started from file manager"
 msgstr "Ограничиться одной копией при запуске из менеджера файлов"
 
@@ -3694,7 +3719,7 @@ msgstr ""
 "загружать процессор полностью, в результате чего компьютер может перестать "
 "реагировать на ваши действия и вам останется только перегрузить его."
 
-#: src/libvlc-module.c:1099
+#: src/libvlc-module.c:1099 modules/gui/qt/ui/sprefs_interface.h:550
 msgid "Enqueue items into playlist in one instance mode"
 msgstr "Добавлять позиции в очередь в режиме одной копии"
 
@@ -3747,6 +3772,7 @@ msgstr ""
 
 #: src/libvlc-module.c:1126 modules/gui/macosx/VLCSimplePrefsController.m:334
 #: modules/gui/qt/dialogs/firstrun.cpp:95
+#: modules/gui/qt/ui/sprefs_interface.h:562
 msgid "Allow metadata network access"
 msgstr "Разрешить доступ к метаданным по сети"
 
@@ -3904,7 +3930,7 @@ msgstr ""
 "Медиатека автоматически сохраняется и перезагружается каждый раз при запуске "
 "VLC."
 
-#: src/libvlc-module.c:1198
+#: src/libvlc-module.c:1198 modules/gui/qt/ui/sprefs_interface.h:548
 msgid "Display playlist tree"
 msgstr "Отображать список в виде дерева"
 
@@ -3964,6 +3990,7 @@ msgstr ""
 #: modules/gui/macosx/VLCControlsBarCommon.m:98
 #: modules/gui/macosx/VLCMainMenu.m:432 modules/gui/macosx/VLCMainMenu.m:511
 #: modules/gui/qt/components/controller.hpp:108
+#: modules/gui/qt/ui/sprefs_video.h:315
 msgid "Fullscreen"
 msgstr "Полноэкранный режим"
 
@@ -3979,7 +4006,7 @@ msgstr "Выход из полноэкранного режима"
 msgid "Select the hotkey to use to exit fullscreen state."
 msgstr "Назначьте клавишу для выхода из полноэкранного режима."
 
-#: src/libvlc-module.c:1230 modules/gui/macosx/VLCFSPanelController.m:110
+#: src/libvlc-module.c:1230 modules/gui/macosx/VLCFSPanelController.m:122
 msgid "Play/Pause"
 msgstr "Воспроизведение/пауза"
 
@@ -4042,11 +4069,13 @@ msgstr "Немного медленнее"
 
 #: src/libvlc-module.c:1246 modules/control/hotkeys.c:410
 #: modules/gui/macosx/VLCControlsBarCommon.m:196
-#: modules/gui/macosx/VLCFSPanelController.m:113
+#: modules/gui/macosx/VLCFSPanelController.m:125
+#: modules/gui/macosx/VLCHelpWindowController.m:48
 #: modules/gui/macosx/VLCMainMenu.m:396 modules/gui/macosx/VLCMainMenu.m:499
 #: modules/gui/macosx/VLCMainMenu.m:507
 #: modules/gui/qt/components/controller.hpp:112
 #: modules/gui/qt/dialogs/sout.cpp:93 modules/notify/notify.c:335
+#: modules/gui/qt/ui/streampanel.h:179
 msgid "Next"
 msgstr "Следующий"
 
@@ -4056,7 +4085,8 @@ msgstr "Назначьте клавишу для перехода к следу�
 
 #: src/libvlc-module.c:1248 modules/control/hotkeys.c:414
 #: modules/gui/macosx/VLCControlsBarCommon.m:193
-#: modules/gui/macosx/VLCFSPanelController.m:116
+#: modules/gui/macosx/VLCFSPanelController.m:128
+#: modules/gui/macosx/VLCHelpWindowController.m:49
 #: modules/gui/macosx/VLCMainMenu.m:395 modules/gui/macosx/VLCMainMenu.m:500
 #: modules/gui/macosx/VLCMainMenu.m:506
 #: modules/gui/qt/components/controller.hpp:112 modules/notify/notify.c:333
@@ -4071,19 +4101,21 @@ msgstr "Назначьте клавишу для переключения к п�
 #: modules/gui/macosx/VLCMainMenu.m:498 modules/gui/macosx/VLCMainMenu.m:505
 #: modules/gui/macosx/VLCMainWindowControlsBar.m:65
 #: modules/gui/qt/components/controller.hpp:107
-#: modules/gui/qt/dialogs/vlm.cpp:544
+#: modules/gui/qt/dialogs/vlm.cpp:544 modules/gui/qt/ui/streampanel.h:178
 msgid "Stop"
-msgstr "Останов"
+msgstr "Стоп"
 
 #: src/libvlc-module.c:1251
 msgid "Select the hotkey to stop playback."
 msgstr "Назначьте клавишу для остановки."
 
 #: src/libvlc-module.c:1252 modules/gui/macosx/VLCControlsBarCommon.m:92
-#: modules/gui/macosx/VLCFSPanelController.m:131
+#: modules/gui/macosx/VLCFSPanelController.m:143
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:287
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:309
 #: modules/spu/marq.c:151 modules/spu/rss.c:198
+#: modules/gui/qt/ui/sprefs_subtitles.h:290
+#: modules/gui/qt/ui/video_effects.h:1276
 msgid "Position"
 msgstr "Расположение"
 
@@ -4809,6 +4841,8 @@ msgstr "Слои"
 #: modules/gui/macosx/VLCConvertAndSaveWindowController.m:178
 #: modules/gui/macosx/VLCMainMenu.m:450
 #: share/lua/http/dialogs/create_stream.html:153
+#: modules/gui/qt/ui/profiles.h:716 modules/gui/qt/ui/profiles.h:760
+#: modules/gui/qt/ui/profiles.h:763
 msgid "Subtitles"
 msgstr "Субтитры"
 
@@ -4984,6 +5018,8 @@ msgstr "Браузер: Остановка"
 
 #: src/misc/actions.c:62 modules/gui/macosx/VLCMainMenu.m:370
 #: modules/gui/macosx/VLCPlaylist.m:224 modules/gui/qt/dialogs/bookmarks.cpp:50
+#: modules/gui/qt/ui/podcast_configuration.h:102
+#: modules/gui/qt/ui/streampanel.h:170
 msgid "Delete"
 msgstr "Delete"
 
@@ -5161,7 +5197,7 @@ msgstr "Page Up"
 
 #: src/misc/actions.c:107 modules/control/oldrc.c:71
 #: modules/gui/macosx/VLCControlsBarCommon.m:423
-#: modules/gui/macosx/VLCFSPanelController.m:239
+#: modules/gui/macosx/VLCFSPanelController.m:251
 #: modules/gui/macosx/VLCMainMenu.m:1346 modules/gui/macosx/VLCMainMenu.m:1347
 #: modules/gui/macosx/VLCMainMenu.m:1348
 #: modules/gui/qt/components/playlist/standardpanel.cpp:196
@@ -5256,7 +5292,7 @@ msgid "Failed to open \"%s\" for writing"
 msgstr "Не удалось открыть «%s» для записи"
 
 #: src/misc/update.c:596 src/misc/update.c:726 modules/access/dvb/scan.c:826
-#: modules/demux/avi/avi.c:2773
+#: modules/demux/avi/avi.c:2775
 #: modules/gui/macosx/VLCAudioEffectsWindowController.m:513
 #: modules/gui/macosx/VLCAudioEffectsWindowController.m:571
 #: modules/gui/macosx/VLCAudioEffectsWindowController.m:854
@@ -5269,8 +5305,8 @@ msgstr "Не удалось открыть «%s» для записи"
 #: modules/gui/macosx/VLCCoreDialogProvider.m:193
 #: modules/gui/macosx/VLCCoreDialogProvider.m:197
 #: modules/gui/macosx/VLCCoreDialogProvider.m:293
-#: modules/gui/macosx/VLCMainWindow.m:224
-#: modules/gui/macosx/VLCMainWindow.m:230
+#: modules/gui/macosx/VLCMainWindow.m:227
+#: modules/gui/macosx/VLCMainWindow.m:233
 #: modules/gui/macosx/VLCOpenWindowController.m:134
 #: modules/gui/macosx/VLCOpenWindowController.m:192
 #: modules/gui/macosx/VLCSimplePrefsController.m:286
@@ -5360,8 +5396,8 @@ msgid "Update VLC media player"
 msgstr "Обновление медиапроигрывателя VLC"
 
 #: src/playlist/engine.c:247 src/playlist/loadsave.c:159 lib/media_list.c:237
-#: modules/gui/macosx/VLCMainWindow.m:323
-#: modules/gui/macosx/VLCMainWindow.m:904
+#: modules/gui/macosx/VLCMainWindow.m:796
+#: modules/gui/macosx/VLCSidebarDataSource.m:70
 #: modules/gui/qt/components/playlist/selector.cpp:236
 msgid "Media Library"
 msgstr "Медиатека"
@@ -5566,7 +5602,7 @@ msgstr "Гуарани"
 msgid "Gujarati"
 msgstr "Гуджарати"
 
-#: src/text/iso-639_def.h:90
+#: src/text/iso-639_def.h:90 src/text/iso-639_def.h:102
 msgid "Hebrew"
 msgstr "Иврит"
 
@@ -5614,415 +5650,415 @@ msgstr "Инулиак"
 msgid "Italian"
 msgstr "Итальянский"
 
-#: src/text/iso-639_def.h:102
+#: src/text/iso-639_def.h:103
 msgid "Javanese"
 msgstr "Яванский"
 
-#: src/text/iso-639_def.h:103
+#: src/text/iso-639_def.h:104
 msgid "Japanese"
 msgstr "Японский"
 
-#: src/text/iso-639_def.h:104
+#: src/text/iso-639_def.h:105
 msgid "Greenlandic, Kalaallisut"
 msgstr "Гренландский эскимосский"
 
-#: src/text/iso-639_def.h:105
+#: src/text/iso-639_def.h:106
 msgid "Kannada"
 msgstr "Канада"
 
-#: src/text/iso-639_def.h:106
+#: src/text/iso-639_def.h:107
 msgid "Kashmiri"
 msgstr "Кашмир"
 
-#: src/text/iso-639_def.h:107
+#: src/text/iso-639_def.h:108
 msgid "Kazakh"
 msgstr "Казахский"
 
-#: src/text/iso-639_def.h:108
+#: src/text/iso-639_def.h:109
 msgid "Khmer"
 msgstr "Кхмерский"
 
-#: src/text/iso-639_def.h:109
+#: src/text/iso-639_def.h:110
 msgid "Kikuyu"
 msgstr "Кикуйу"
 
-#: src/text/iso-639_def.h:110
+#: src/text/iso-639_def.h:111
 msgid "Kinyarwanda"
 msgstr "Киньяруанда"
 
-#: src/text/iso-639_def.h:111
+#: src/text/iso-639_def.h:112
 msgid "Kirghiz"
 msgstr "Киргизский"
 
-#: src/text/iso-639_def.h:112
+#: src/text/iso-639_def.h:113
 msgid "Komi"
 msgstr "Коми"
 
-#: src/text/iso-639_def.h:113
+#: src/text/iso-639_def.h:114
 msgid "Korean"
 msgstr "Корейский"
 
-#: src/text/iso-639_def.h:114
+#: src/text/iso-639_def.h:115
 msgid "Kuanyama"
 msgstr "Киньяма"
 
-#: src/text/iso-639_def.h:115
+#: src/text/iso-639_def.h:116
 msgid "Kurdish"
 msgstr "Курдский"
 
-#: src/text/iso-639_def.h:116
+#: src/text/iso-639_def.h:117
 msgid "Lao"
 msgstr "Лаосский"
 
-#: src/text/iso-639_def.h:117 modules/meta_engine/ID3Genres.h:119
+#: src/text/iso-639_def.h:118 modules/meta_engine/ID3Genres.h:119
 msgid "Latin"
 msgstr "Латинский"
 
-#: src/text/iso-639_def.h:118
+#: src/text/iso-639_def.h:119
 msgid "Latvian"
 msgstr "Латышский"
 
-#: src/text/iso-639_def.h:119
+#: src/text/iso-639_def.h:120
 msgid "Lingala"
 msgstr "Лингала"
 
-#: src/text/iso-639_def.h:120
+#: src/text/iso-639_def.h:121
 msgid "Lithuanian"
 msgstr "Литовский"
 
-#: src/text/iso-639_def.h:121
+#: src/text/iso-639_def.h:122
 msgid "Letzeburgesch"
 msgstr "Люксембургский"
 
-#: src/text/iso-639_def.h:122
+#: src/text/iso-639_def.h:123
 msgid "Macedonian"
 msgstr "Македонский"
 
-#: src/text/iso-639_def.h:123
+#: src/text/iso-639_def.h:124
 msgid "Marshall"
 msgstr "Маршальский"
 
-#: src/text/iso-639_def.h:124
+#: src/text/iso-639_def.h:125
 msgid "Malayalam"
 msgstr "Малаялам"
 
-#: src/text/iso-639_def.h:125
+#: src/text/iso-639_def.h:126
 msgid "Maori"
 msgstr "Маори"
 
-#: src/text/iso-639_def.h:126
+#: src/text/iso-639_def.h:127
 msgid "Marathi"
 msgstr "Маратхи"
 
-#: src/text/iso-639_def.h:127
+#: src/text/iso-639_def.h:128
 msgid "Malay"
 msgstr "Малайский"
 
-#: src/text/iso-639_def.h:128
+#: src/text/iso-639_def.h:129
 msgid "Malagasy"
 msgstr "Малагасийский"
 
-#: src/text/iso-639_def.h:129
+#: src/text/iso-639_def.h:130
 msgid "Maltese"
 msgstr "Мальтийский"
 
-#: src/text/iso-639_def.h:130
+#: src/text/iso-639_def.h:131
 msgid "Moldavian"
 msgstr "Молдавский"
 
-#: src/text/iso-639_def.h:131
+#: src/text/iso-639_def.h:132
 msgid "Mongolian"
 msgstr "Монгольский"
 
-#: src/text/iso-639_def.h:132
+#: src/text/iso-639_def.h:133
 msgid "Nauru"
 msgstr "Науру"
 
-#: src/text/iso-639_def.h:133
+#: src/text/iso-639_def.h:134
 msgid "Navajo"
 msgstr "Навахо"
 
-#: src/text/iso-639_def.h:134
+#: src/text/iso-639_def.h:135
 msgid "Ndebele, South"
 msgstr "Ндебеле южный"
 
-#: src/text/iso-639_def.h:135
+#: src/text/iso-639_def.h:136
 msgid "Ndebele, North"
 msgstr "Ндебеле северный"
 
-#: src/text/iso-639_def.h:136
+#: src/text/iso-639_def.h:137
 msgid "Ndonga"
 msgstr "Ндунга"
 
-#: src/text/iso-639_def.h:137
+#: src/text/iso-639_def.h:138
 msgid "Nepali"
 msgstr "Непальский"
 
-#: src/text/iso-639_def.h:138
+#: src/text/iso-639_def.h:139
 msgid "Norwegian"
 msgstr "Норвежский"
 
-#: src/text/iso-639_def.h:139
+#: src/text/iso-639_def.h:140
 msgid "Norwegian Nynorsk"
 msgstr "Нюнорнск (Новонорвежский)"
 
-#: src/text/iso-639_def.h:140
+#: src/text/iso-639_def.h:141
 msgid "Norwegian Bokmaal"
 msgstr "Норвежский (Букмаал)"
 
-#: src/text/iso-639_def.h:141
+#: src/text/iso-639_def.h:142
 msgid "Chichewa; Nyanja"
 msgstr "Ньянджа"
 
-#: src/text/iso-639_def.h:142
+#: src/text/iso-639_def.h:143
 msgid "Occitan; Provençal"
 msgstr "Окситанский; Прованский"
 
-#: src/text/iso-639_def.h:143
+#: src/text/iso-639_def.h:144
 msgid "Oriya"
 msgstr "Ория"
 
-#: src/text/iso-639_def.h:144
+#: src/text/iso-639_def.h:145
 msgid "Oromo"
 msgstr "Оромо"
 
-#: src/text/iso-639_def.h:146
+#: src/text/iso-639_def.h:147
 msgid "Ossetian; Ossetic"
 msgstr "Осетинский"
 
-#: src/text/iso-639_def.h:147
+#: src/text/iso-639_def.h:148
 msgid "Panjabi"
 msgstr "Панджаби"
 
-#: src/text/iso-639_def.h:148
+#: src/text/iso-639_def.h:149
 msgid "Persian"
 msgstr "Фарси"
 
-#: src/text/iso-639_def.h:149
+#: src/text/iso-639_def.h:150
 msgid "Pali"
 msgstr "Пали"
 
-#: src/text/iso-639_def.h:150
+#: src/text/iso-639_def.h:151
 msgid "Polish"
 msgstr "Польский"
 
-#: src/text/iso-639_def.h:151
+#: src/text/iso-639_def.h:152
 msgid "Portuguese"
 msgstr "Португальский"
 
-#: src/text/iso-639_def.h:152
+#: src/text/iso-639_def.h:153
 msgid "Pushto"
 msgstr "Пушту"
 
-#: src/text/iso-639_def.h:153
+#: src/text/iso-639_def.h:154
 msgid "Quechua"
 msgstr "Кечуа"
 
-#: src/text/iso-639_def.h:154
+#: src/text/iso-639_def.h:155
 msgid "Original audio"
 msgstr "Оригинальный звук"
 
-#: src/text/iso-639_def.h:155
+#: src/text/iso-639_def.h:156
 msgid "Raeto-Romance"
 msgstr "Ретороманский"
 
-#: src/text/iso-639_def.h:156
+#: src/text/iso-639_def.h:157
 msgid "Romanian"
 msgstr "Румынский"
 
-#: src/text/iso-639_def.h:157
+#: src/text/iso-639_def.h:158
 msgid "Rundi"
 msgstr "Рунди"
 
-#: src/text/iso-639_def.h:158
+#: src/text/iso-639_def.h:159
 msgid "Russian"
 msgstr "Русский"
 
-#: src/text/iso-639_def.h:159
+#: src/text/iso-639_def.h:160
 msgid "Sango"
 msgstr "Санго"
 
-#: src/text/iso-639_def.h:160
+#: src/text/iso-639_def.h:161
 msgid "Sanskrit"
 msgstr "Санскрит"
 
-#: src/text/iso-639_def.h:161
+#: src/text/iso-639_def.h:162
 msgid "Serbian"
 msgstr "Сербский"
 
-#: src/text/iso-639_def.h:162
+#: src/text/iso-639_def.h:163
 msgid "Croatian"
 msgstr "Хорватский"
 
-#: src/text/iso-639_def.h:163
+#: src/text/iso-639_def.h:164
 msgid "Sinhalese"
 msgstr "Сингальский"
 
-#: src/text/iso-639_def.h:164
+#: src/text/iso-639_def.h:165
 msgid "Slovak"
 msgstr "Словацкий"
 
-#: src/text/iso-639_def.h:165
+#: src/text/iso-639_def.h:166
 msgid "Slovenian"
 msgstr "Словенский"
 
-#: src/text/iso-639_def.h:166
+#: src/text/iso-639_def.h:167
 msgid "Northern Sami"
 msgstr "Северный саамский"
 
-#: src/text/iso-639_def.h:167
+#: src/text/iso-639_def.h:168
 msgid "Samoan"
 msgstr "Самоанский"
 
-#: src/text/iso-639_def.h:168
+#: src/text/iso-639_def.h:169
 msgid "Shona"
 msgstr "Шона"
 
-#: src/text/iso-639_def.h:169
+#: src/text/iso-639_def.h:170
 msgid "Sindhi"
 msgstr "Синдхи"
 
-#: src/text/iso-639_def.h:170
+#: src/text/iso-639_def.h:171
 msgid "Somali"
 msgstr "Сомалийский"
 
-#: src/text/iso-639_def.h:171
+#: src/text/iso-639_def.h:172
 msgid "Sotho, Southern"
 msgstr "Южный сото"
 
-#: src/text/iso-639_def.h:172
+#: src/text/iso-639_def.h:173
 msgid "Spanish"
 msgstr "Испанский"
 
-#: src/text/iso-639_def.h:173
+#: src/text/iso-639_def.h:174
 msgid "Sardinian"
 msgstr "Сардинский"
 
-#: src/text/iso-639_def.h:174
+#: src/text/iso-639_def.h:175
 msgid "Swati"
 msgstr "Свати"
 
-#: src/text/iso-639_def.h:175
+#: src/text/iso-639_def.h:176
 msgid "Sundanese"
 msgstr "Сунданский"
 
-#: src/text/iso-639_def.h:176
+#: src/text/iso-639_def.h:177
 msgid "Swahili"
 msgstr "Суахили"
 
-#: src/text/iso-639_def.h:177
+#: src/text/iso-639_def.h:178
 msgid "Swedish"
 msgstr "Шведский"
 
-#: src/text/iso-639_def.h:178
+#: src/text/iso-639_def.h:179
 msgid "Tahitian"
 msgstr "Таитянский"
 
-#: src/text/iso-639_def.h:179
+#: src/text/iso-639_def.h:180
 msgid "Tamil"
 msgstr "Тамильский"
 
-#: src/text/iso-639_def.h:180
+#: src/text/iso-639_def.h:181
 msgid "Tatar"
 msgstr "Татарский"
 
-#: src/text/iso-639_def.h:181
+#: src/text/iso-639_def.h:182
 msgid "Telugu"
 msgstr "Телугу"
 
-#: src/text/iso-639_def.h:182
+#: src/text/iso-639_def.h:183
 msgid "Tajik"
 msgstr "Таджикский"
 
-#: src/text/iso-639_def.h:183
+#: src/text/iso-639_def.h:184
 msgid "Tagalog"
 msgstr "Тагалог"
 
-#: src/text/iso-639_def.h:184
+#: src/text/iso-639_def.h:185
 msgid "Thai"
 msgstr "Таи"
 
-#: src/text/iso-639_def.h:185
+#: src/text/iso-639_def.h:186
 msgid "Tibetan"
 msgstr "Тибетский"
 
-#: src/text/iso-639_def.h:186
+#: src/text/iso-639_def.h:187
 msgid "Tigrinya"
 msgstr "Тигринья"
 
-#: src/text/iso-639_def.h:187
+#: src/text/iso-639_def.h:188
 msgid "Tonga (Tonga Islands)"
 msgstr "Тонга (острова Тонга)"
 
-#: src/text/iso-639_def.h:188
+#: src/text/iso-639_def.h:189
 msgid "Tswana"
 msgstr "Тсвана"
 
-#: src/text/iso-639_def.h:189
+#: src/text/iso-639_def.h:190
 msgid "Tsonga"
 msgstr "Тсонга"
 
-#: src/text/iso-639_def.h:190
+#: src/text/iso-639_def.h:191
 msgid "Turkish"
 msgstr "Турецкий"
 
-#: src/text/iso-639_def.h:191
+#: src/text/iso-639_def.h:192
 msgid "Turkmen"
 msgstr "Туркменский"
 
-#: src/text/iso-639_def.h:192
+#: src/text/iso-639_def.h:193
 msgid "Twi"
 msgstr "Тви"
 
-#: src/text/iso-639_def.h:193
+#: src/text/iso-639_def.h:194
 msgid "Uighur"
 msgstr "Уйгурский"
 
-#: src/text/iso-639_def.h:194
+#: src/text/iso-639_def.h:195
 msgid "Ukrainian"
 msgstr "Украинский"
 
-#: src/text/iso-639_def.h:195
+#: src/text/iso-639_def.h:196
 msgid "Urdu"
 msgstr "Урду"
 
-#: src/text/iso-639_def.h:196
+#: src/text/iso-639_def.h:197
 msgid "Uzbek"
 msgstr "Узбекский"
 
-#: src/text/iso-639_def.h:197
+#: src/text/iso-639_def.h:198
 msgid "Vietnamese"
 msgstr "Вьетнамский"
 
-#: src/text/iso-639_def.h:198
+#: src/text/iso-639_def.h:199
 msgid "Volapuk"
 msgstr "Волапюк"
 
-#: src/text/iso-639_def.h:199
+#: src/text/iso-639_def.h:200
 msgid "Welsh"
 msgstr "Уэльский (Валлийский)"
 
-#: src/text/iso-639_def.h:200
+#: src/text/iso-639_def.h:201
 msgid "Wolof"
 msgstr "Волоф"
 
-#: src/text/iso-639_def.h:201
+#: src/text/iso-639_def.h:202
 msgid "Xhosa"
 msgstr "Коса"
 
-#: src/text/iso-639_def.h:202
+#: src/text/iso-639_def.h:203
 msgid "Yiddish"
 msgstr "Идиш"
 
-#: src/text/iso-639_def.h:203
+#: src/text/iso-639_def.h:204
 msgid "Yoruba"
 msgstr "Йоруба"
 
-#: src/text/iso-639_def.h:204
+#: src/text/iso-639_def.h:205
 msgid "Zhuang"
 msgstr "Чжуань"
 
-#: src/text/iso-639_def.h:205
+#: src/text/iso-639_def.h:206
 msgid "Zulu"
 msgstr "Зулусский"
 
@@ -6033,7 +6069,7 @@ msgstr "Автомасштабирование видео"
 #: src/video_output/vout_intf.c:203 modules/gui/macosx/VLCMainMenu.m:439
 #: modules/gui/macosx/VLCMainMenu.m:440
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:193
-#: modules/video_filter/croppadd.c:87
+#: modules/video_filter/croppadd.c:87 modules/gui/qt/ui/video_effects.h:1236
 msgid "Crop"
 msgstr "Кадрирование"
 
@@ -6224,6 +6260,7 @@ msgstr ""
 "определённым кодом региона."
 
 #: modules/access/bluray.c:103 modules/services_discovery/udev.c:603
+#: modules/gui/qt/ui/open_disk.h:296
 msgid "Blu-ray"
 msgstr "Blu-ray"
 
@@ -6323,6 +6360,7 @@ msgid "Audio CD - Track %02i"
 msgstr "Audio CD - Дорожка %02i"
 
 #: modules/access/cdda.c:727 modules/gui/macosx/VLCOpenWindowController.m:169
+#: modules/gui/qt/ui/open_disk.h:297
 msgid "Audio CD"
 msgstr "Audio CD"
 
@@ -7376,9 +7414,9 @@ msgstr "Ввод DVDnav"
 msgid "DVDnav demuxer"
 msgstr "Демультиплексор DVD-навигации"
 
-#: modules/access/dvdnav.c:284 modules/access/dvdread.c:227
-#: modules/access/dvdread.c:243 modules/access/dvdread.c:502
-#: modules/access/dvdread.c:567
+#: modules/access/dvdnav.c:284 modules/access/dvdread.c:236
+#: modules/access/dvdread.c:252 modules/access/dvdread.c:511
+#: modules/access/dvdread.c:576
 msgid "Playback failure"
 msgstr "Воспроизведение не удалось"
 
@@ -7396,21 +7434,21 @@ msgstr "DVD без меню"
 msgid "DVDRead Input (no menu support)"
 msgstr "Ввод DVDRead (без поддержки меню)"
 
-#: modules/access/dvdread.c:228
+#: modules/access/dvdread.c:237
 #, c-format
 msgid "DVDRead could not open the disc \"%s\"."
 msgstr "DVDRead не может открыть диск «%s»."
 
-#: modules/access/dvdread.c:244
+#: modules/access/dvdread.c:253
 msgid "Cannot play a non-UDF mastered DVD."
 msgstr "Проиграть DVD, созданный не в UDF, нельзя."
 
-#: modules/access/dvdread.c:503
+#: modules/access/dvdread.c:512
 #, c-format
 msgid "DVDRead could not read block %d."
 msgstr "DVDRead не может прочитать блок %d."
 
-#: modules/access/dvdread.c:568
+#: modules/access/dvdread.c:577
 #, c-format
 msgid "DVDRead could not read %d/%d blocks at 0x%02x."
 msgstr "DVDRead не может прочитать %d/%d блоков на 0x%02x."
@@ -7432,6 +7470,7 @@ msgid "File"
 msgstr "Файлы"
 
 #: modules/access/fs.c:44 modules/demux/directory.c:93
+#: modules/gui/qt/ui/sprefs_video.h:328
 msgid "Directory"
 msgstr "Каталог"
 
@@ -7669,6 +7708,7 @@ msgstr "Количество каналов элементарных аудио�
 #: modules/gui/macosx/VLCConvertAndSaveWindowController.m:167
 #: modules/gui/qt/components/extended_panels.cpp:1318 modules/spu/mosaic.c:94
 #: modules/video_output/vmem.c:42 share/lua/http/dialogs/mosaic_window.html:108
+#: modules/gui/qt/ui/profiles.h:741
 msgid "Width"
 msgstr "Ширина"
 
@@ -7681,6 +7721,7 @@ msgstr "Ширина элементарных потоков видео или �
 #: modules/gui/macosx/VLCConvertAndSaveWindowController.m:168
 #: modules/spu/mosaic.c:92 modules/video_output/vmem.c:45
 #: share/lua/http/dialogs/mosaic_window.html:126
+#: modules/gui/qt/ui/profiles.h:744
 msgid "Height"
 msgstr "Высота"
 
@@ -8089,6 +8130,81 @@ msgstr "RDP"
 #: modules/access/rdp.c:89
 msgid "RDP Remote Desktop"
 msgstr "Протокол RDP"
+
+#: modules/access/rist.c:65
+#, fuzzy
+msgid "Range"
+msgstr "%s диапазон"
+
+#: modules/access/rist.c:65
+#, fuzzy
+msgid "Bitmask"
+msgstr "Битрейт аудио"
+
+#: modules/access/rist.c:1127 modules/access_output/rist.c:849
+msgid "RIST"
+msgstr ""
+
+#: modules/access/rist.c:1128
+#, fuzzy
+msgid "RIST input"
+msgstr "Ввод с SRT"
+
+#: modules/access/rist.c:1133
+#, fuzzy
+msgid "RIST maximum packet size (bytes)"
+msgstr "Размер сегмента SRT (в байтах)"
+
+#: modules/access/rist.c:1135
+msgid "RIST demux/decode maximum jitter (default is 5ms)"
+msgstr ""
+
+#: modules/access/rist.c:1136
+msgid ""
+"This controls the maximum jitter that will be passed to the demux/decode "
+"chain. The lower the value, the more CPU cycles the algorithm will consume"
+msgstr ""
+
+#: modules/access/rist.c:1138
+#, fuzzy
+msgid "RIST latency (ms)"
+msgstr "Задержка SRT (мс)"
+
+#: modules/access/rist.c:1139
+#, fuzzy
+msgid "RIST nack retry interval (ms)"
+msgstr "Интервал PCR (мс)"
+
+#: modules/access/rist.c:1141
+#, fuzzy
+msgid "RIST reorder buffer (ms)"
+msgstr "Продолжительность фильтра (мс)"
+
+#: modules/access/rist.c:1143
+msgid "RIST maximum retry count"
+msgstr ""
+
+#: modules/access/rist.c:1145
+msgid "RIST nack type, 0 = range, 1 = bitmask. Default is range"
+msgstr ""
+
+#: modules/access/rist.c:1147
+msgid "Disable NACK output packets"
+msgstr ""
+
+#: modules/access/rist.c:1148
+msgid "Use this to disable packet recovery"
+msgstr ""
+
+#: modules/access/rist.c:1149
+msgid "Do not check for a valid rtcp message from the encoder"
+msgstr ""
+
+#: modules/access/rist.c:1150
+msgid ""
+"Send nack messages even when we have not confirmed that the encoder is on "
+"our local network."
+msgstr ""
 
 #: modules/access/rtp/rtp.c:44
 msgid "RTCP (local) port"
@@ -8647,6 +8763,7 @@ msgstr "Установка исходных значений параметро�
 
 #: modules/access/v4l2/v4l2.c:84
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:206
+#: modules/gui/qt/ui/video_effects.h:1214
 msgid "Brightness"
 msgstr "Яркость"
 
@@ -8664,6 +8781,7 @@ msgstr "Автоматическая настройка яркости изоб�
 
 #: modules/access/v4l2/v4l2.c:89
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:205
+#: modules/gui/qt/ui/video_effects.h:1216
 msgid "Contrast"
 msgstr "Контрастность"
 
@@ -8674,6 +8792,8 @@ msgstr "Изменение контрастности или интенсивн�
 #: modules/access/v4l2/v4l2.c:91
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:208
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:254
+#: modules/gui/qt/ui/video_effects.h:1217
+#: modules/gui/qt/ui/video_effects.h:1249
 msgid "Saturation"
 msgstr "Насыщенность"
 
@@ -8683,6 +8803,7 @@ msgstr "Изменение насыщенности или цветности и
 
 #: modules/access/v4l2/v4l2.c:93
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:204
+#: modules/gui/qt/ui/video_effects.h:1213
 msgid "Hue"
 msgstr "Тон"
 
@@ -8736,6 +8857,7 @@ msgstr "Баланс синего цвета."
 
 #: modules/access/v4l2/v4l2.c:111
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:209
+#: modules/gui/qt/ui/video_effects.h:1218
 msgid "Gamma"
 msgstr "Гамма-коррекция"
 
@@ -8864,7 +8986,7 @@ msgstr "Черно-белый"
 
 #: modules/access/v4l2/v4l2.c:164
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:256
-#: modules/video_filter/sepia.c:66
+#: modules/video_filter/sepia.c:66 modules/gui/qt/ui/video_effects.h:1251
 msgid "Sepia"
 msgstr "Сепия"
 
@@ -9376,11 +9498,60 @@ msgstr "Вывод потока HTTP Live"
 msgid "LiveHTTP"
 msgstr "LiveHTTP"
 
-#: modules/access_output/shout.c:64
+#: modules/access_output/rist.c:824
+#, fuzzy
+msgid "RIST data output caching size (ms)"
+msgstr "Кеширование мультиплексора (мс)"
+
+#: modules/access_output/rist.c:826
+msgid ""
+"Having this cache will guarantee that the packets going out are delivered at "
+"a spacing determined by the chain timestamps thus ensuring a near jitter "
+"free output. Be aware that this setting will also add to the overall latency "
+"of the stream."
+msgstr ""
+
+#: modules/access_output/rist.c:831
+msgid "RIST retry-buffer queue size (ms)"
+msgstr ""
+
+#: modules/access_output/rist.c:833
+msgid ""
+"This must match the buffer size (latency) configured on the server side. If "
+"you are not sure, leave the default of 0 which will set it the maximum value "
+"and will use about 100MB of RAM"
+msgstr ""
+
+#: modules/access_output/rist.c:837
+msgid "SSRC used in RTP output (default is random, i.e. 0)"
+msgstr ""
+
+#: modules/access_output/rist.c:839
+msgid ""
+"Use this setting to specify a known SSRC for the RTP header. This is only "
+"useful if your receiver acts on it. When using VLC as receiver, it is not."
+msgstr ""
+
+#: modules/access_output/rist.c:842 modules/access_output/shout.c:64
 #: modules/gui/qt/components/sout/sout_widgets.cpp:385
 #: share/lua/http/dialogs/create_stream.html:139
 msgid "Stream name"
 msgstr "Имя потока"
+
+#: modules/access_output/rist.c:844
+msgid ""
+"This Stream name will be sent to the receiver using the rist RTCP channel"
+msgstr ""
+
+#: modules/access_output/rist.c:850
+#, fuzzy
+msgid "RIST stream output"
+msgstr "Вывод потока через SRT"
+
+#: modules/access_output/rist.c:855
+#, fuzzy
+msgid "RIST target packet size (bytes)"
+msgstr "Размер сегмента SRT (в байтах)"
 
 #: modules/access_output/shout.c:65
 msgid "Name to give to this stream/channel on the shoutcast/icecast server."
@@ -10632,7 +10803,7 @@ msgstr ""
 msgid "K Audio Interface audio output"
 msgstr "Вывод звука через К Audio Interface"
 
-#: modules/audio_output/mmdevice.c:1452
+#: modules/audio_output/mmdevice.c:1452 modules/gui/qt/ui/sprefs_audio.h:416
 msgid "HDMI/SPDIF audio passthrough"
 msgstr "Сквозной вывод звука HDMI/SPDIF"
 
@@ -11347,7 +11518,7 @@ msgstr "Декодер изображений BPG"
 
 #: modules/codec/cc.c:51 modules/codec/zvbi.c:65
 #: modules/gui/macosx/VLCSimplePrefsController.m:353 modules/spu/marq.c:108
-#: modules/spu/rss.c:144
+#: modules/spu/rss.c:144 modules/gui/qt/ui/video_effects.h:1273
 msgid "Opacity"
 msgstr "Непрозрачность"
 
@@ -11420,6 +11591,31 @@ msgstr "Формат цветности"
 msgid ""
 "Picking chroma format will force a conversion of the video into that format"
 msgstr "При кодировании видео будет приведено к этому формату цветности"
+
+#: modules/codec/dav1d.c:52
+#, fuzzy
+msgid "Frames Threads"
+msgstr "Потоки"
+
+#: modules/codec/dav1d.c:53
+#, fuzzy
+msgid "Max number of threads used for frame decoding, default 0=auto"
+msgstr "Количество потоков, используемых для декодирования (0 - авто)."
+
+#: modules/codec/dav1d.c:54
+#, fuzzy
+msgid "Tiles Threads"
+msgstr "Потоки"
+
+#: modules/codec/dav1d.c:55
+#, fuzzy
+msgid "Max number of threads used for tile decoding, default 0=auto"
+msgstr "Количество потоков, используемых для декодирования (0 - авто)."
+
+#: modules/codec/dav1d.c:60
+#, fuzzy
+msgid "Dav1d video decoder"
+msgstr "Видеодекодер Daala"
 
 #: modules/codec/dca.c:61
 msgid "DTS dynamic range compression"
@@ -11654,11 +11850,11 @@ msgstr "MIDI-синтезатор FluidSynth"
 msgid "FluidSynth"
 msgstr "FluidSynth"
 
-#: modules/codec/fluidsynth.c:150
+#: modules/codec/fluidsynth.c:153
 msgid "MIDI synthesis not set up"
 msgstr "MIDI-синтезатор не настроен"
 
-#: modules/codec/fluidsynth.c:151
+#: modules/codec/fluidsynth.c:154
 msgid ""
 "A sound font file (.SF2) is required for MIDI synthesis.\n"
 "Please install a sound font and configure it from the VLC preferences "
@@ -11965,20 +12161,24 @@ msgstr "Настройки по умолчанию для рендеринга �
 msgid "Kate text subtitles packetizer"
 msgstr "Упаковщик текстовых субтитров Kate"
 
-#: modules/codec/libass.c:60
+#: modules/codec/libass.c:59
+msgid "Additional fonts directory"
+msgstr "Каталог со шрифтами"
+
+#: modules/codec/libass.c:62
 msgid "Subtitles (advanced)"
 msgstr "Субтитры (расширенные)"
 
-#: modules/codec/libass.c:61
+#: modules/codec/libass.c:63
 msgid "Subtitle renderers using libass"
 msgstr "Визуализаторы субтитров, использующие libass"
 
-#: modules/codec/libass.c:249
+#: modules/codec/libass.c:275
 #: modules/text_renderer/freetype/fonts/fontconfig.c:78
 msgid "Building font cache"
 msgstr "Создание кеша шрифтов"
 
-#: modules/codec/libass.c:250
+#: modules/codec/libass.c:276
 msgid ""
 "Please wait while your font cache is rebuilt.\n"
 "This should take less than a minute."
@@ -12736,6 +12936,7 @@ msgstr "Сквозной декодер S/PDIF"
 #: modules/codec/speex.c:59 modules/codec/speex.c:907
 #: modules/gui/macosx/VLCOpenWindowController.m:195
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:259
+#: modules/gui/qt/ui/sprefs_video.h:325 modules/gui/qt/ui/video_effects.h:1243
 msgid "Mode"
 msgstr "Режим"
 
@@ -14151,6 +14352,7 @@ msgid "Quiet mode"
 msgstr "Тихий режим"
 
 #: modules/codec/x264.c:397 modules/gui/macosx/VLCPlaylistInfo.m:65
+#: modules/gui/qt/ui/streampanel.h:168
 msgid "Statistics"
 msgstr "Статистика"
 
@@ -14342,7 +14544,7 @@ msgstr "Выводить субтитры телетекста как текст
 msgid "Presentation Level"
 msgstr "Уровень представления"
 
-#: modules/codec/zvbi.c:88
+#: modules/codec/zvbi.c:88 modules/gui/qt/ui/streampanel.h:167
 msgid "1"
 msgstr "1"
 
@@ -14374,10 +14576,10 @@ msgstr "D-Bus"
 msgid "D-Bus control interface"
 msgstr "Интерфейс управления D-Bus"
 
-#: modules/control/dbus/dbus_root.c:81 modules/gui/macosx/VLCMainWindow.m:187
-#: modules/gui/macosx/VLCMainWindow.m:689
-#: modules/gui/macosx/VLCMainWindow.m:695
-#: modules/gui/macosx/VLCMainWindow.m:1326
+#: modules/control/dbus/dbus_root.c:81 modules/gui/macosx/VLCMainWindow.m:190
+#: modules/gui/macosx/VLCMainWindow.m:581
+#: modules/gui/macosx/VLCMainWindow.m:587
+#: modules/gui/macosx/VLCMainWindow.m:1030
 #: modules/gui/macosx/VLCStatusBarIcon.m:378 modules/gui/ncurses.c:1026
 #: modules/gui/qt/dialogs/help.cpp:91 modules/gui/qt/main_interface.cpp:1258
 #: modules/gui/qt/main_interface.cpp:1262
@@ -15145,17 +15347,16 @@ msgid "Preferred bandwidth for non adaptive streams"
 msgstr "Предпочитаемая ширина канала для неадаптивных каналов"
 
 #: modules/demux/adaptive/adaptive.cpp:75
-#, fuzzy
 msgid "Live Playback delay (ms)"
-msgstr "Задержка DTS (мс)"
+msgstr "Задержка живого воспроизведения (мс)"
 
 #: modules/demux/adaptive/adaptive.cpp:76
 msgid "Tradeoff between stability and real time"
-msgstr ""
+msgstr "Компромисс между стабильностью и скоростью"
 
 #: modules/demux/adaptive/adaptive.cpp:78
 msgid "Max buffering (ms)"
-msgstr ""
+msgstr "Максимальная буферизация (мс)"
 
 #: modules/demux/adaptive/adaptive.cpp:80
 msgid "Adaptive Logic"
@@ -15176,9 +15377,8 @@ msgid "Low latency"
 msgstr "малая задержка"
 
 #: modules/demux/adaptive/adaptive.cpp:86
-#, fuzzy
 msgid "Overrides low latency parameters"
-msgstr "Переопределить параметры"
+msgstr "Переопределяет параметры низкой задержки"
 
 #: modules/demux/adaptive/adaptive.cpp:107
 msgid "Predictive"
@@ -15205,9 +15405,8 @@ msgid "Highest Bandwidth/Quality"
 msgstr "Наибольшая ширина канала/качество"
 
 #: modules/demux/adaptive/adaptive.cpp:123
-#, fuzzy
 msgid "Force"
-msgstr "Полужирный"
+msgstr "Принудительно"
 
 #: modules/demux/adaptive/adaptive.cpp:127
 msgid "Adaptive"
@@ -15309,7 +15508,7 @@ msgstr "исправлять при необходимости"
 msgid "AVI demuxer"
 msgstr "Демультиплексор AVI"
 
-#: modules/demux/avi/avi.c:876 modules/demux/mp4/mp4.c:4255
+#: modules/demux/avi/avi.c:878 modules/demux/mp4/mp4.c:4256
 msgid ""
 "Because this file index is broken or missing, seeking will not work "
 "correctly.\n"
@@ -15325,27 +15524,27 @@ msgstr ""
 "Для большого файла это может занять много времени.\n"
 "Что вы хотите сделать?"
 
-#: modules/demux/avi/avi.c:884
+#: modules/demux/avi/avi.c:886
 msgid "Do not play"
 msgstr "Не проигрывать"
 
-#: modules/demux/avi/avi.c:885
+#: modules/demux/avi/avi.c:887
 msgid "Build index then play"
 msgstr "Построить индекс, затем проиграть"
 
-#: modules/demux/avi/avi.c:886
+#: modules/demux/avi/avi.c:888
 msgid "Play as is"
 msgstr "Проиграть как есть"
 
-#: modules/demux/avi/avi.c:887 modules/demux/mp4/mp4.c:4266
+#: modules/demux/avi/avi.c:889 modules/demux/mp4/mp4.c:4267
 msgid "Broken or missing Index"
 msgstr "Индекс отсутствует или испорчен"
 
-#: modules/demux/avi/avi.c:2774
+#: modules/demux/avi/avi.c:2776
 msgid "Broken or missing AVI Index"
 msgstr "Индекс AVI отсутствует или испорчен"
 
-#: modules/demux/avi/avi.c:2775
+#: modules/demux/avi/avi.c:2777
 msgid "Fixing AVI Index..."
 msgstr "Исправление индекса AVI..."
 
@@ -15480,31 +15679,31 @@ msgstr ""
 msgid "M-JPEG camera demuxer"
 msgstr "Демультиплексор M-JPEG"
 
-#: modules/demux/mkv/mkv.cpp:53
+#: modules/demux/mkv/mkv.cpp:54
 msgid "Matroska stream demuxer"
 msgstr "Демультиплексор Matroska"
 
-#: modules/demux/mkv/mkv.cpp:60
+#: modules/demux/mkv/mkv.cpp:61
 msgid "Respect ordered chapters"
 msgstr "Сохранять порядок глав"
 
-#: modules/demux/mkv/mkv.cpp:61
+#: modules/demux/mkv/mkv.cpp:62
 msgid "Play chapters in the order specified in the segment."
 msgstr "Воспроизводить главы по порядку, указанному в сегменте."
 
-#: modules/demux/mkv/mkv.cpp:64
+#: modules/demux/mkv/mkv.cpp:65
 msgid "Chapter codecs"
 msgstr "Кодеки главы"
 
-#: modules/demux/mkv/mkv.cpp:65
+#: modules/demux/mkv/mkv.cpp:66
 msgid "Use chapter codecs found in the segment."
 msgstr "Использовать кодеки главы, найденные в сегменте."
 
-#: modules/demux/mkv/mkv.cpp:68
+#: modules/demux/mkv/mkv.cpp:69 modules/gui/qt/ui/sprefs_input.h:367
 msgid "Preload MKV files in the same directory"
 msgstr "Предварительно загрузить файлы MKV в один каталог"
 
-#: modules/demux/mkv/mkv.cpp:69
+#: modules/demux/mkv/mkv.cpp:70
 msgid ""
 "Preload matroska files in the same directory to find linked segments (not "
 "good for broken files)."
@@ -15512,29 +15711,29 @@ msgstr ""
 "Предварительно загрузить файлы matroska того же семейства из того же "
 "каталога (что плохо, если файлы испорчены)."
 
-#: modules/demux/mkv/mkv.cpp:72 modules/demux/mpeg/ts.c:109
+#: modules/demux/mkv/mkv.cpp:73 modules/demux/mpeg/ts.c:109
 msgid "Seek based on percent not time"
 msgstr "Перемотка, основанная на процентах"
 
-#: modules/demux/mkv/mkv.cpp:73
+#: modules/demux/mkv/mkv.cpp:74
 msgid "Seek based on percent not time."
 msgstr "Перемотка, основанная на процентах, а не времени."
 
-#: modules/demux/mkv/mkv.cpp:76
+#: modules/demux/mkv/mkv.cpp:77
 msgid "Dummy Elements"
 msgstr "Фиктивные элементы"
 
-#: modules/demux/mkv/mkv.cpp:77
+#: modules/demux/mkv/mkv.cpp:78
 msgid "Read and discard unknown EBML elements (not good for broken files)."
 msgstr ""
 "Прочитать и пропустить неизвестные элементы EBML (что плохо, если файлы "
 "испорчены)."
 
-#: modules/demux/mkv/mkv.cpp:80
+#: modules/demux/mkv/mkv.cpp:81
 msgid "Preload clusters"
 msgstr "Предзагрузить кластеры"
 
-#: modules/demux/mkv/mkv.cpp:81
+#: modules/demux/mkv/mkv.cpp:82
 msgid ""
 "Find all cluster positions by jumping cluster-to-cluster before playback"
 msgstr ""
@@ -15783,11 +15982,11 @@ msgstr "Демультиплексор потока MP4"
 msgid "MP4"
 msgstr "MP4"
 
-#: modules/demux/mp4/mp4.c:4263
+#: modules/demux/mp4/mp4.c:4264
 msgid "Do not seek"
 msgstr "Не перематывать"
 
-#: modules/demux/mp4/mp4.c:4264
+#: modules/demux/mp4/mp4.c:4265
 msgid "Build index"
 msgstr "Построить индекс"
 
@@ -16288,9 +16487,10 @@ msgstr ""
 "субтитрам MicroDVD и SubRIP (SRT)."
 
 #: modules/demux/subtitle.c:58
+#, fuzzy
 msgid ""
-"Force the subtiles format. Selecting \"auto\" means autodetection and should "
-"always work."
+"Force the subtitles format. Selecting \"auto\" means autodetection and "
+"should always work."
 msgstr ""
 "Переопределяет формат субтитров. Значение «auto» включает автоопределение, "
 "что должно работать."
@@ -16540,11 +16740,13 @@ msgid "Apply profile at next launch"
 msgstr "Применить профиль при следующем запуске"
 
 #: modules/gui/macosx/VLCAudioEffectsWindowController.m:216
+#: modules/gui/qt/ui/equalizer.h:131
 msgid "2 Pass"
 msgstr "2 прохода"
 
 #: modules/gui/macosx/VLCAudioEffectsWindowController.m:219
 #: modules/gui/qt/components/extended_panels.cpp:1132
+#: modules/gui/qt/ui/equalizer.h:133
 msgid "Preamp"
 msgstr "Предусилитель"
 
@@ -16633,6 +16835,7 @@ msgstr "Введите имя нового профиля:"
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:792
 #: modules/gui/macosx/prefs.m:188
 #: modules/gui/qt/components/sout/profile_selector.cpp:449
+#: modules/gui/qt/ui/vlm.h:298
 msgid "Save"
 msgstr "Сохранить"
 
@@ -16663,6 +16866,7 @@ msgstr "Выберите предустановку, которую вы хот�
 #: modules/gui/macosx/VLCBookmarksWindowController.m:78
 #: modules/gui/macosx/VLCConvertAndSaveWindowController.m:338
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:859
+#: modules/gui/qt/ui/open_file.h:153
 msgid "Remove"
 msgstr "Удалить"
 
@@ -16687,12 +16891,14 @@ msgid "Bookmarks"
 msgstr "Закладки"
 
 #: modules/gui/macosx/VLCBookmarksWindowController.m:75
+#: modules/gui/qt/ui/podcast_configuration.h:101 modules/gui/qt/ui/sout.h:206
+#: modules/gui/qt/ui/vlm.h:296
 msgid "Add"
 msgstr "Добавить"
 
 #: modules/gui/macosx/VLCBookmarksWindowController.m:76
 #: modules/gui/macosx/VLCSimplePrefsController.m:288
-#: modules/gui/qt/dialogs/bookmarks.cpp:53
+#: modules/gui/qt/dialogs/bookmarks.cpp:53 modules/gui/qt/ui/vlm.h:297
 msgid "Clear"
 msgstr "Очистить"
 
@@ -16756,25 +16962,25 @@ msgstr ""
 
 #: modules/gui/macosx/VLCControlsBarCommon.m:84
 #: modules/gui/macosx/VLCControlsBarCommon.m:182
-#: modules/gui/macosx/VLCFSPanelController.m:122
+#: modules/gui/macosx/VLCFSPanelController.m:134
 msgid "Backward"
 msgstr "Назад"
 
 #: modules/gui/macosx/VLCControlsBarCommon.m:85
 #: modules/gui/macosx/VLCControlsBarCommon.m:183
-#: modules/gui/macosx/VLCFSPanelController.m:123
+#: modules/gui/macosx/VLCFSPanelController.m:135
 msgid "Seek backward"
 msgstr "Перемотка назад"
 
 #: modules/gui/macosx/VLCControlsBarCommon.m:88
 #: modules/gui/macosx/VLCControlsBarCommon.m:185
-#: modules/gui/macosx/VLCFSPanelController.m:119
+#: modules/gui/macosx/VLCFSPanelController.m:131
 msgid "Forward"
 msgstr "Вперёд"
 
 #: modules/gui/macosx/VLCControlsBarCommon.m:89
 #: modules/gui/macosx/VLCControlsBarCommon.m:186
-#: modules/gui/macosx/VLCFSPanelController.m:120
+#: modules/gui/macosx/VLCFSPanelController.m:132
 msgid "Seek forward"
 msgstr "Перемотка вперёд"
 
@@ -16792,7 +16998,7 @@ msgid "Go to previous item"
 msgstr "Перейти к предыдущему"
 
 #: modules/gui/macosx/VLCControlsBarCommon.m:197
-#: modules/gui/macosx/VLCFSPanelController.m:114
+#: modules/gui/macosx/VLCFSPanelController.m:126
 #: modules/gui/macosx/VLCStatusBarIcon.m:106
 msgid "Go to next item"
 msgstr "Перейти к следующему"
@@ -16806,12 +17012,12 @@ msgid "Go!"
 msgstr "Старт!"
 
 #: modules/gui/macosx/VLCConvertAndSaveWindowController.m:138
-#: modules/gui/macosx/VLCMainWindow.m:196
+#: modules/gui/macosx/VLCMainWindow.m:199
 msgid "Drop media here"
 msgstr "Перетащите файл сюда"
 
 #: modules/gui/macosx/VLCConvertAndSaveWindowController.m:139
-#: modules/gui/macosx/VLCMainWindow.m:212
+#: modules/gui/macosx/VLCMainWindow.m:215
 msgid "Open media..."
 msgstr "Открыть источник..."
 
@@ -16842,6 +17048,9 @@ msgstr "Определите адрес назначения"
 #: modules/gui/qt/components/preferences_widgets.cpp:264
 #: modules/gui/qt/components/simple_preferences.cpp:463
 #: modules/gui/qt/components/sout/sout_widgets.cpp:135
+#: modules/gui/qt/ui/open.h:279 modules/gui/qt/ui/open_disk.h:304
+#: modules/gui/qt/ui/open_file.h:146 modules/gui/qt/ui/sprefs_audio.h:414
+#: modules/gui/qt/ui/sprefs_input.h:365 modules/gui/qt/ui/sprefs_video.h:329
 msgid "Browse..."
 msgstr "Обзор..."
 
@@ -16875,28 +17084,34 @@ msgid "Save as new Profile..."
 msgstr "Сохранить как новый профиль..."
 
 #: modules/gui/macosx/VLCConvertAndSaveWindowController.m:155
+#: modules/gui/qt/ui/profiles.h:723
 msgid "Encapsulation"
 msgstr "Инкапсуляция"
 
 #: modules/gui/macosx/VLCConvertAndSaveWindowController.m:156
 #: share/lua/http/dialogs/create_stream.html:160
+#: modules/gui/qt/ui/profiles.h:749
 msgid "Video codec"
 msgstr "Видеокодек"
 
 #: modules/gui/macosx/VLCConvertAndSaveWindowController.m:157
 #: share/lua/http/dialogs/create_stream.html:178
+#: modules/gui/qt/ui/profiles.h:759
 msgid "Audio codec"
 msgstr "Аудиокодек"
 
 #: modules/gui/macosx/VLCConvertAndSaveWindowController.m:161
+#: modules/gui/qt/ui/profiles.h:725
 msgid "Keep original video track"
 msgstr "Сохранять исходную видеодорожку"
 
 #: modules/gui/macosx/VLCConvertAndSaveWindowController.m:165
+#: modules/gui/qt/ui/profiles.h:747
 msgid "Resolution"
 msgstr "Разрешение"
 
 #: modules/gui/macosx/VLCConvertAndSaveWindowController.m:166
+#: modules/gui/qt/ui/profiles.h:738
 msgid ""
 "You just need to fill one of the three following parameters, VLC will "
 "autodetect the other using the original aspect ratio"
@@ -16905,15 +17120,17 @@ msgstr ""
 "определит другие, исходя из соотношения сторон"
 
 #: modules/gui/macosx/VLCConvertAndSaveWindowController.m:169
-#: modules/gui/macosx/VLCOutput.m:88
+#: modules/gui/macosx/VLCOutput.m:88 modules/gui/qt/ui/profiles.h:739
 msgid "Scale"
 msgstr "Масштаб"
 
 #: modules/gui/macosx/VLCConvertAndSaveWindowController.m:172
+#: modules/gui/qt/ui/profiles.h:751
 msgid "Keep original audio track"
 msgstr "Сохранять исходную аудиодорожку"
 
 #: modules/gui/macosx/VLCConvertAndSaveWindowController.m:179
+#: modules/gui/qt/ui/profiles.h:762
 msgid "Overlay subtitles on the video"
 msgstr "Накладывать субтитры на видео"
 
@@ -17065,352 +17282,106 @@ msgstr "Ошибки и предупреждения"
 msgid "Clean up"
 msgstr "Очистить"
 
-#: modules/gui/macosx/VLCFSPanelController.m:111
+#: modules/gui/macosx/VLCFSPanelController.m:123
 msgid "Play/Pause the current media"
 msgstr "Воспроизвести/приостановить текущий медиаобъект"
 
-#: modules/gui/macosx/VLCFSPanelController.m:117
+#: modules/gui/macosx/VLCFSPanelController.m:129
 msgid "Go to the previous item"
 msgstr "Перейти к предыдущему"
 
-#: modules/gui/macosx/VLCFSPanelController.m:125
-#: modules/gui/macosx/VLCFSPanelController.m:126
+#: modules/gui/macosx/VLCFSPanelController.m:137
+#: modules/gui/macosx/VLCFSPanelController.m:138
 msgid "Leave fullscreen"
 msgstr "Выйти из полноэкранного режима"
 
-#: modules/gui/macosx/VLCFSPanelController.m:128
+#: modules/gui/macosx/VLCFSPanelController.m:140
 #: modules/gui/macosx/VLCMainWindowControlsBar.m:80
-#: modules/gui/qt/dialogs/toolbar.cpp:477
+#: modules/gui/qt/dialogs/toolbar.cpp:477 modules/gui/qt/ui/sprefs_audio.h:408
 msgid "Volume"
 msgstr "Громкость"
 
-#: modules/gui/macosx/VLCFSPanelController.m:129
+#: modules/gui/macosx/VLCFSPanelController.m:141
 msgid "Adjust the volume"
 msgstr "Изменить громкость"
 
-#: modules/gui/macosx/VLCFSPanelController.m:132
+#: modules/gui/macosx/VLCFSPanelController.m:144
 msgid "Adjust the current playback position"
 msgstr "Изменить текущую позицию воспроизведения"
 
-#: modules/gui/macosx/VLCFSPanelController.m:317
+#: modules/gui/macosx/VLCFSPanelController.m:325
 #: modules/gui/macosx/VLCMainWindowControlsBar.m:78
 #: modules/gui/macosx/VLCMainWindowControlsBar.m:503
 #, c-format
 msgid "Volume: %i %%"
 msgstr "Громкость: %i %%"
 
-#: modules/gui/macosx/macosx.m:51
-msgid "Video device"
-msgstr "Видеоустройство"
+#: modules/gui/macosx/VLCHelpWindowController.m:47
+#, fuzzy
+msgid "VLC media player Help"
+msgstr "Справка медиапроигрывателя VLC..."
 
-#: modules/gui/macosx/macosx.m:52
-msgid ""
-"Number of the screen to use by default to display videos in 'fullscreen'. "
-"The screen number correspondance can be found in the video device selection "
-"menu."
+#: modules/gui/macosx/VLCHelpWindowController.m:50
+#: modules/gui/macosx/VLCMainMenu.m:467 modules/gui/macosx/VLCMainMenu.m:1101
+msgid "Index"
+msgstr "Индекс"
+
+#: modules/gui/macosx/VLCInputManager.m:451
+#: modules/gui/macosx/VLCInputManager.m:478
+#, fuzzy
+msgid "VLC media playback"
+msgstr "Медиапроигрыватель VLC"
+
+#: modules/gui/macosx/VLCLogWindowController.m:94
+#: modules/gui/qt/dialogs/messages.cpp:80
+#: modules/gui/qt/ui/messages_panel.h:136
+#: modules/gui/qt/ui/messages_panel.h:140
+msgid "Messages"
+msgstr "Сообщения"
+
+#: modules/gui/macosx/VLCLogWindowController.m:104
+#, fuzzy
+msgid "Save log"
+msgstr "Сохранение файла"
+
+#: modules/gui/macosx/VLCLogWindowController.m:105
+#, fuzzy
+msgid "Save the debug log to a file"
+msgstr "Все показанные журналы сохраняются в файл"
+
+#: modules/gui/macosx/VLCLogWindowController.m:107
+#, fuzzy
+msgid "Refresh log"
+msgstr "Обновить список"
+
+#: modules/gui/macosx/VLCLogWindowController.m:108
+#, fuzzy
+msgid "Refresh the log output"
+msgstr "Запись с вывода потока"
+
+#: modules/gui/macosx/VLCLogWindowController.m:110
+#, fuzzy
+msgid "Clear log"
+msgstr "Очистить"
+
+#: modules/gui/macosx/VLCLogWindowController.m:111
+#, fuzzy
+msgid "Clear the log output"
+msgstr "Проигрывать результат"
+
+#: modules/gui/macosx/VLCLogWindowController.m:113
+#, fuzzy
+msgid "Toggle details"
+msgstr "Вкл/выкл. субтитры"
+
+#: modules/gui/macosx/VLCLogWindowController.m:114
+msgid "Show/hide details about a log message"
 msgstr ""
-"№ экрана по умолчанию для отображения видео в полноэкранном режиме. "
-"Соответствие номеров экрана можно найти в меню выбора видеоустройства."
 
-#: modules/gui/macosx/macosx.m:56
-msgid "Opaqueness"
-msgstr "Прозрачность"
-
-#: modules/gui/macosx/macosx.m:57
-msgid ""
-"Set the transparency of the video output. 1 is non-transparent (default) 0 "
-"is fully transparent."
-msgstr ""
-"Прозрачность вывода видео. 1 - непрозрачный (по умолчанию), 0 - абсолютно "
-"прозрачный."
-
-#: modules/gui/macosx/macosx.m:60
-msgid "Black screens in fullscreen"
-msgstr "Чёрный фон в полноэкранном режиме"
-
-#: modules/gui/macosx/macosx.m:61
-msgid "In fullscreen mode, keep screen where there is no video displayed black"
-msgstr ""
-"В полноэкранном режиме заполнять чёрным область экрана, где никакого видео "
-"не отображается"
-
-#: modules/gui/macosx/macosx.m:64
-msgid "Show Fullscreen controller"
-msgstr "Панель в полноэкранном режиме"
-
-#: modules/gui/macosx/macosx.m:65
-msgid "Shows a lucent controller when moving the mouse in fullscreen mode."
-msgstr ""
-"Показывать полупрозрачную панель управления при движении мыши в "
-"полноэкранном режиме."
-
-#: modules/gui/macosx/macosx.m:68
-msgid "Auto-playback of new items"
-msgstr "Автовоспроизведение новых позиций"
-
-#: modules/gui/macosx/macosx.m:69
-msgid "Start playback of new items immediately once they were added."
-msgstr "Начинать воспроизведение новых позиций сразу же после их добавления."
-
-#: modules/gui/macosx/macosx.m:72
-msgid "Keep Recent Items"
-msgstr "Вести список последних позиций"
-
-#: modules/gui/macosx/macosx.m:73
-msgid ""
-"By default, VLC keeps a list of the last 10 items. This feature can be "
-"disabled here."
-msgstr ""
-"По умолчанию VLC ведёт список последних 10 позиций. Эту функцию можно "
-"отключить здесь."
-
-#: modules/gui/macosx/macosx.m:76
-#: modules/gui/macosx/VLCSimplePrefsController.m:324
-msgid "Control playback with the Apple Remote"
-msgstr "Управление воспроизведением с пульта Apple Remote"
-
-#: modules/gui/macosx/macosx.m:77
-msgid "By default, VLC can be remotely controlled with the Apple Remote."
-msgstr "По умолчанию VLC можно управлять с помощью пульта Apple Remote."
-
-#: modules/gui/macosx/macosx.m:79
-#: modules/gui/macosx/VLCSimplePrefsController.m:326
-msgid "Control system volume with the Apple Remote"
-msgstr "Управление общей громкостью с пульта Apple Remote"
-
-#: modules/gui/macosx/macosx.m:80
-msgid ""
-"By default, VLC will control its own volume with the Apple Remote. However, "
-"you can choose to control the global system volume instead."
-msgstr ""
-"По умолчанию VLC позволяет управлять с Apple Remote только своей громкостью. "
-"Однако вы можете также включить режим изменения общей громкости системы."
-
-#: modules/gui/macosx/macosx.m:82
-#: modules/gui/macosx/VLCSimplePrefsController.m:327
-msgid "Display VLC status menu icon"
-msgstr "Отображение значка VLC в строке состояния"
-
-#: modules/gui/macosx/macosx.m:83
-msgid ""
-"By default, VLC will show the statusbar icon menu. However, you can choose "
-"to disable it (restart required)."
-msgstr ""
-"По умолчанию VLC показывает значок с меню в строке состояния. Однако вы "
-"можете отключить его (требуется перезапуск)."
-
-#: modules/gui/macosx/macosx.m:85
-msgid "Control playlist items with the Apple Remote"
-msgstr "Перемещение в плейлисте с пульта Apple Remote"
-
-#: modules/gui/macosx/macosx.m:86
-msgid ""
-"By default, VLC will allow you to switch to the next or previous item with "
-"the Apple Remote. You can disable this behavior with this option."
-msgstr ""
-"По умолчанию VLC позволяет переходить к следующей/предыдущей позиции "
-"плейлиста с пульта Apple Remote. Этот флажок отключает это поведение."
-
-#: modules/gui/macosx/macosx.m:88
-#: modules/gui/macosx/VLCSimplePrefsController.m:325
-msgid "Control playback with media keys"
-msgstr "Управление мультимедийными клавишами"
-
-#: modules/gui/macosx/macosx.m:89
-msgid ""
-"By default, VLC can be controlled using the media keys on modern Apple "
-"keyboards."
-msgstr ""
-"По умолчанию VLC можно управлять с помощью мультимедийных клавиш на "
-"клавиатурах Apple."
-
-#: modules/gui/macosx/macosx.m:92
-msgid "Run VLC with dark interface style"
-msgstr "Запускать VLC с тёмным интерфейсом"
-
-#: modules/gui/macosx/macosx.m:93
-msgid ""
-"If this option is enabled, VLC will use the dark interface style. Otherwise, "
-"the grey interface style is used."
-msgstr ""
-"Если этот режим включён, VLC будет использовать тёмный интерфейс (в "
-"противном случае — серый)."
-
-#: modules/gui/macosx/macosx.m:95
-#: modules/gui/macosx/VLCSimplePrefsController.m:369
-msgid "Use the native fullscreen mode"
-msgstr "Использовать стандартный полноэкранный режим"
-
-#: modules/gui/macosx/macosx.m:96
-msgid ""
-"By default, VLC uses the fullscreen mode known from previous Mac OS X "
-"releases. It can also use the native fullscreen mode on Mac OS X 10.7 and "
-"later."
-msgstr ""
-"По умолчанию VLC использует переключение полноэкранного режима, работавшее в "
-"ранних выпусках Mac OS X. Также VLC может включать полноэкранный режим, "
-"используя новый метод в Mac OS X версии 10.7 и новее."
-
-#: modules/gui/macosx/macosx.m:98 modules/gui/qt/qt.cpp:95
-msgid "Resize interface to the native video size"
-msgstr "Подгонять размер интерфейса под исходный размер видео"
-
-#: modules/gui/macosx/macosx.m:99 modules/gui/qt/qt.cpp:96
-msgid ""
-"You have two choices:\n"
-" - The interface will resize to the native video size\n"
-" - The video will fit to the interface size\n"
-" By default, interface resize to the native video size."
-msgstr ""
-"Возможны два варианта:\n"
-"- Интерфейс будет подгоняться под размер видео.\n"
-"- Видео будет масштабировано под интерфейс.\n"
-"По умолчанию интерфейс подстраивается под исходный размер видео."
-
-#: modules/gui/macosx/macosx.m:104
-#: modules/gui/macosx/VLCSimplePrefsController.m:362 modules/gui/qt/qt.cpp:178
-msgid "Pause the video playback when minimized"
-msgstr "Приостановить видео при сворачивании окна"
-
-#: modules/gui/macosx/macosx.m:105 modules/gui/qt/qt.cpp:180
-msgid ""
-"With this option enabled, the playback will be automatically paused when "
-"minimizing the window."
-msgstr ""
-"Если этот параметр включён, проигрывание автоматически приостановится при "
-"сворачивании окна VLC."
-
-#: modules/gui/macosx/macosx.m:108 modules/gui/qt/qt.cpp:182
-msgid "Allow automatic icon changes"
-msgstr "Разрешить изменение значка"
-
-#: modules/gui/macosx/macosx.m:109 modules/gui/qt/qt.cpp:184
-msgid ""
-"This option allows the interface to change its icon on various occasions."
-msgstr ""
-"Этот параметр разрешает VLC менять значок интерфейса в различных ситуациях."
-
-#: modules/gui/macosx/macosx.m:111 modules/gui/macosx/VLCMainMenu.m:1460
-msgid "Lock Aspect Ratio"
-msgstr "Зафиксировать соотношение сторон"
-
-#: modules/gui/macosx/macosx.m:113
-msgid "Dim keyboard backlight during fullscreen playback"
-msgstr "Гасить подсветку клавиатуры при полноэкранном воспроизведении"
-
-#: modules/gui/macosx/macosx.m:114
-msgid ""
-"Turn off the MacBook keyboard backlight while a video is playing in "
-"fullscreen. Automatic brightness adjustment should be disabled in System "
-"Preferences."
-msgstr ""
-"Выключать подсветку клавиатуры MacBook при полноэкранном воспроизведении "
-"видео. Для этого в Настройках системы должна быть отключена автоматическая "
-"подстройка яркости."
-
-#: modules/gui/macosx/macosx.m:116 modules/gui/macosx/VLCMainMenu.m:375
-msgid "Show Previous & Next Buttons"
-msgstr "Показать кнопки Назад и Вперёд"
-
-#: modules/gui/macosx/macosx.m:117
-msgid "Shows the previous and next buttons in the main window."
-msgstr ""
-"Показывает в основном окне кнопки для перехода к следующей и предыдущей "
-"позиции плейлиста"
-
-#: modules/gui/macosx/macosx.m:119 modules/gui/macosx/VLCMainMenu.m:377
-msgid "Show Shuffle & Repeat Buttons"
-msgstr "Показать кнопки Повторение и Перемешивание"
-
-#: modules/gui/macosx/macosx.m:120
-msgid "Shows the shuffle and repeat buttons in the main window."
-msgstr "Показывает в основном окне кнопки повторения и перемешивания"
-
-#: modules/gui/macosx/macosx.m:122 modules/gui/macosx/VLCMainMenu.m:379
-msgid "Show Audio Effects Button"
-msgstr "Показать кнопку Аудиоэффекты"
-
-#: modules/gui/macosx/macosx.m:123
-msgid "Shows the audio effects button in the main window."
-msgstr "Показывает в основном окне кнопку управления аудиоэффектами."
-
-#: modules/gui/macosx/macosx.m:125
-#: modules/gui/macosx/VLCSimplePrefsController.m:331
-msgid "Control external music players"
-msgstr "Управлять внешними плеерами"
-
-#: modules/gui/macosx/macosx.m:126
-msgid "VLC will pause and resume supported music players on playback."
-msgstr ""
-"VLC будет приостанавливать и продолжать воспроизведение музыки на "
-"поддерживаемых внешних плеерах."
-
-#: modules/gui/macosx/macosx.m:128
-msgid "Use large text for list views"
-msgstr "Выводить в списках большой текст"
-
-#: modules/gui/macosx/macosx.m:133
-msgid "Do nothing"
-msgstr "Ничего не делать"
-
-#: modules/gui/macosx/macosx.m:133
-msgid "Pause iTunes / Spotify"
-msgstr "Приостановить iTunes/Spotify"
-
-#: modules/gui/macosx/macosx.m:133
-msgid "Pause and resume iTunes / Spotify"
-msgstr "Приостанавливать и запускать iTunes/Spotify"
-
-#: modules/gui/macosx/macosx.m:136
-msgid "Continue playback where you left off"
-msgstr "Продолжить воспроизведение с последней позиции"
-
-#: modules/gui/macosx/macosx.m:137
-msgid ""
-"VLC will store playback positions of the last 30 items you played. If you re-"
-"open one of those, playback will continue."
-msgstr ""
-"VLC будет сохранять позиции воспроизведения 30 последних проигранных файлов. "
-"Если вы вернётесь к одному из них, воспроизведение продолжится с запомненной "
-"позиции."
-
-#: modules/gui/macosx/macosx.m:142 modules/gui/qt/qt.cpp:206
-msgid "Ask"
-msgstr "Спрашивать"
-
-#: modules/gui/macosx/macosx.m:142 modules/gui/qt/qt.cpp:200
-#: modules/gui/qt/qt.cpp:206 modules/keystore/keychain.m:50
-msgid "Always"
-msgstr "Всегда"
-
-#: modules/gui/macosx/macosx.m:142 modules/gui/qt/qt.cpp:200
-#: modules/gui/qt/qt.cpp:206 modules/gui/qt/qt.cpp:213
-msgid "Never"
-msgstr "Никогда"
-
-#: modules/gui/macosx/macosx.m:145 modules/gui/qt/qt.cpp:186
-msgid "Maximum Volume displayed"
-msgstr "Предел регулятора громкости"
-
-#: modules/gui/macosx/macosx.m:149
-msgid "Mac OS X interface"
-msgstr "Интерфейс Mac OS X"
-
-#: modules/gui/macosx/macosx.m:156
-msgid "Appearance"
-msgstr "Внешний вид"
-
-#: modules/gui/macosx/macosx.m:167
-msgid "Behavior"
-msgstr "Поведение"
-
-#: modules/gui/macosx/macosx.m:180
-msgid "Apple Remote and media keys"
-msgstr "Медиаклавиши и пульт Apple Remote"
-
-#: modules/gui/macosx/macosx.m:196
-msgid "Video output"
-msgstr "Вывод видео"
+#: modules/gui/macosx/VLCLogWindowController.m:198
+#, fuzzy, c-format
+msgid "VLC Debug Log (%s).txt"
+msgstr "Отладочные сообщения VLC (%s).rtf"
 
 #: modules/gui/macosx/VLCMain+OldPrefs.m:118
 msgid "Remove old preferences?"
@@ -17546,6 +17517,18 @@ msgstr "Найти"
 msgid "View"
 msgstr "Вид"
 
+#: modules/gui/macosx/VLCMainMenu.m:375 modules/gui/macosx/macosx.m:116
+msgid "Show Previous & Next Buttons"
+msgstr "Показать кнопки Назад и Вперёд"
+
+#: modules/gui/macosx/VLCMainMenu.m:377 modules/gui/macosx/macosx.m:119
+msgid "Show Shuffle & Repeat Buttons"
+msgstr "Показать кнопки Повторение и Перемешивание"
+
+#: modules/gui/macosx/VLCMainMenu.m:379 modules/gui/macosx/macosx.m:122
+msgid "Show Audio Effects Button"
+msgstr "Показать кнопку Аудиоэффекты"
+
 #: modules/gui/macosx/VLCMainMenu.m:381
 msgid "Show Sidebar"
 msgstr "Показать боковую панель"
@@ -17632,6 +17615,7 @@ msgstr "Поверх всех окон"
 
 #: modules/gui/macosx/VLCMainMenu.m:441 modules/gui/macosx/VLCMainMenu.m:442
 #: modules/gui/macosx/VLCSimplePrefsController.m:370
+#: modules/gui/qt/ui/sprefs_video.h:316
 msgid "Fullscreen Video Device"
 msgstr "Устройство полноэкранного видео"
 
@@ -17671,10 +17655,6 @@ msgstr "Цвет фона"
 #: modules/gui/macosx/VLCMainMenu.m:466
 msgid "Transparent"
 msgstr "Прозрачный"
-
-#: modules/gui/macosx/VLCMainMenu.m:467 modules/gui/macosx/VLCMainMenu.m:1101
-msgid "Index"
-msgstr "Индекс"
 
 #: modules/gui/macosx/VLCMainMenu.m:473
 msgid "Window"
@@ -17770,61 +17750,65 @@ msgstr "Плейлист HTML"
 msgid "Save Playlist"
 msgstr "Сохранить плейлист"
 
-#: modules/gui/macosx/VLCMainWindow.m:190
+#: modules/gui/macosx/VLCMainMenu.m:1460 modules/gui/macosx/macosx.m:111
+msgid "Lock Aspect Ratio"
+msgstr "Зафиксировать соотношение сторон"
+
+#: modules/gui/macosx/VLCMainWindow.m:193
 msgid "Search in Playlist"
 msgstr "Поиск"
 
-#: modules/gui/macosx/VLCMainWindow.m:192
+#: modules/gui/macosx/VLCMainWindow.m:195
 msgid "Search the playlist. Results will be selected in the table."
 msgstr "Искать строку в плейлисте. Результаты поиска будут выделены в таблице."
 
-#: modules/gui/macosx/VLCMainWindow.m:213
+#: modules/gui/macosx/VLCMainWindow.m:216
 msgid "Open a dialog to select the media to play"
 msgstr "Открыть диалог выбора медиаобъекта для воспроизведения"
 
-#: modules/gui/macosx/VLCMainWindow.m:217
-#: modules/gui/macosx/VLCMainWindow.m:223
+#: modules/gui/macosx/VLCMainWindow.m:220
+#: modules/gui/macosx/VLCMainWindow.m:226
 #: modules/gui/qt/components/playlist/selector.cpp:580
 msgid "Subscribe"
 msgstr "Подписка на подкаст"
 
-#: modules/gui/macosx/VLCMainWindow.m:218
-#: modules/gui/macosx/VLCMainWindow.m:229
+#: modules/gui/macosx/VLCMainWindow.m:221
+#: modules/gui/macosx/VLCMainWindow.m:232
 #: modules/gui/qt/components/playlist/selector.cpp:597
 msgid "Unsubscribe"
 msgstr "Отписаться"
 
-#: modules/gui/macosx/VLCMainWindow.m:221
+#: modules/gui/macosx/VLCMainWindow.m:224
 #: modules/gui/qt/components/playlist/selector.cpp:279
 msgid "Subscribe to a podcast"
 msgstr "Подписаться на подкаст:"
 
-#: modules/gui/macosx/VLCMainWindow.m:222
+#: modules/gui/macosx/VLCMainWindow.m:225
 #: modules/gui/qt/components/playlist/selector.cpp:581
 msgid "Enter URL of the podcast to subscribe to:"
 msgstr "Введите URL подкаста для подписки:"
 
-#: modules/gui/macosx/VLCMainWindow.m:227
+#: modules/gui/macosx/VLCMainWindow.m:230
 msgid "Unsubscribe from a podcast"
 msgstr "Отмена подписки на подкаст"
 
-#: modules/gui/macosx/VLCMainWindow.m:228
+#: modules/gui/macosx/VLCMainWindow.m:231
 msgid "Select the podcast you would like to unsubscribe from:"
 msgstr "Введите подкаст, от которого вы хотите отписаться:"
 
-#: modules/gui/macosx/VLCMainWindow.m:254
+#: modules/gui/macosx/VLCMainWindow.m:257
 msgid "Check for album art and metadata?"
 msgstr "Загружать обложки альбомов и метаданные?"
 
-#: modules/gui/macosx/VLCMainWindow.m:254
+#: modules/gui/macosx/VLCMainWindow.m:257
 msgid "Enable Metadata Retrieval"
 msgstr "Разрешить запросы метаданных"
 
-#: modules/gui/macosx/VLCMainWindow.m:254
+#: modules/gui/macosx/VLCMainWindow.m:257
 msgid "No, Thanks"
 msgstr "Нет, не надо"
 
-#: modules/gui/macosx/VLCMainWindow.m:254
+#: modules/gui/macosx/VLCMainWindow.m:257
 msgid ""
 "VLC can check online for album art and metadata to enrich your playback "
 "experience, e.g. by providing track information when playing Audio CDs. To "
@@ -17835,26 +17819,6 @@ msgstr ""
 "дополнения ваших впечатлений от произведения, например показывать сведения о "
 "текущей дорожке проигрываемого компакт-диска. Для этого VLC передаёт "
 "доверенным службам анонимные данные о воспроизводимом вами содержимом."
-
-#: modules/gui/macosx/VLCMainWindow.m:320
-msgid "LIBRARY"
-msgstr "Библиотека"
-
-#: modules/gui/macosx/VLCMainWindow.m:325
-msgid "MY COMPUTER"
-msgstr "Мой компьютер"
-
-#: modules/gui/macosx/VLCMainWindow.m:326
-msgid "DEVICES"
-msgstr "Устройства"
-
-#: modules/gui/macosx/VLCMainWindow.m:327
-msgid "LOCAL NETWORK"
-msgstr "Локальная сеть"
-
-#: modules/gui/macosx/VLCMainWindow.m:328
-msgid "INTERNET"
-msgstr "Интернет"
 
 #: modules/gui/macosx/VLCMainWindowControlsBar.m:68
 msgid "Show/Hide Playlist"
@@ -17897,7 +17861,7 @@ msgstr "Адрес медиаресурса (MRL)"
 #: modules/gui/macosx/VLCOpenWindowController.m:583
 #: modules/gui/macosx/VLCOpenWindowController.m:669
 #: modules/gui/macosx/VLCOpenWindowController.m:901
-#: modules/gui/macosx/VLCOpenWindowController.m:1269
+#: modules/gui/macosx/VLCOpenWindowController.m:1274
 #: modules/gui/qt/components/controller.hpp:107
 msgid "Open"
 msgstr "Открыть"
@@ -17920,6 +17884,7 @@ msgstr "Диск"
 
 #: modules/gui/macosx/VLCOpenWindowController.m:142
 #: modules/gui/macosx/VLCSimplePrefsController.m:302
+#: modules/gui/qt/ui/sprefs_input.h:368
 msgid "Network"
 msgstr "Сеть"
 
@@ -17948,6 +17913,7 @@ msgstr "Параллельно проигрывать другой медиао�
 #: modules/gui/macosx/VLCOpenWindowController.m:152
 #: modules/gui/macosx/VLCOpenWindowController.m:348
 #: modules/gui/macosx/VLCSimplePrefsController.m:345
+#: modules/gui/qt/ui/sprefs_interface.h:545
 msgid "Choose..."
 msgstr "Выбрать..."
 
@@ -18088,6 +18054,7 @@ msgstr "Кодировка субтитров"
 
 #: modules/gui/macosx/VLCOpenWindowController.m:360
 #: modules/gui/macosx/VLCSimplePrefsController.m:347
+#: modules/gui/qt/ui/sprefs_subtitles.h:297
 msgid "Font size"
 msgstr "Размер шрифта"
 
@@ -18120,7 +18087,8 @@ msgstr "к/с"
 
 #: modules/gui/macosx/VLCOpenWindowController.m:582
 #: modules/gui/macosx/VLCOpenWindowController.m:668
-#: modules/gui/macosx/VLCOpenWindowController.m:1268
+#: modules/gui/macosx/VLCOpenWindowController.m:1273
+#: modules/gui/qt/ui/open_file.h:141
 msgid "Open File"
 msgstr "Открыть файл"
 
@@ -18257,6 +18225,7 @@ msgid "VLC was unable to save the meta data."
 msgstr "VLC не может сохранить эти метаданные."
 
 #: modules/gui/macosx/VLCResumeDialogController.m:48 modules/gui/qt/qt.cpp:194
+#: modules/gui/qt/ui/sprefs_interface.h:551
 msgid "Continue playback?"
 msgstr "Продолжить воспроизведение?"
 
@@ -18278,6 +18247,26 @@ msgstr "Начать сначала"
 #: modules/gui/macosx/VLCResumeDialogController.m:69
 msgid "Playback of \"%@\" will continue at %@"
 msgstr "«%@» будет воспроизводиться с %@"
+
+#: modules/gui/macosx/VLCSidebarDataSource.m:67
+msgid "LIBRARY"
+msgstr "Библиотека"
+
+#: modules/gui/macosx/VLCSidebarDataSource.m:72
+msgid "MY COMPUTER"
+msgstr "Мой компьютер"
+
+#: modules/gui/macosx/VLCSidebarDataSource.m:73
+msgid "DEVICES"
+msgstr "Устройства"
+
+#: modules/gui/macosx/VLCSidebarDataSource.m:74
+msgid "LOCAL NETWORK"
+msgstr "Локальная сеть"
+
+#: modules/gui/macosx/VLCSidebarDataSource.m:75
+msgid "INTERNET"
+msgstr "Интернет"
 
 #: modules/gui/macosx/VLCSimplePrefsController.m:233
 #: modules/gui/qt/components/simple_preferences.cpp:239
@@ -18329,6 +18318,7 @@ msgid "Keep audio level between sessions"
 msgstr "Сохранять громкость при перезапуске"
 
 #: modules/gui/macosx/VLCSimplePrefsController.m:281
+#: modules/gui/qt/ui/sprefs_audio.h:410
 msgid "Always reset audio start level to:"
 msgstr "При запуске устанавливать громкость:"
 
@@ -18355,6 +18345,7 @@ msgid "Shortcut"
 msgstr "Комбинация клавиш"
 
 #: modules/gui/macosx/VLCSimplePrefsController.m:294
+#: modules/gui/qt/ui/sprefs_input.h:364
 msgid "Record directory or filename"
 msgstr "Каталог или файл для записей"
 
@@ -18371,6 +18362,7 @@ msgid "Default Caching Level"
 msgstr "Уровень кеширования по умолчанию"
 
 #: modules/gui/macosx/VLCSimplePrefsController.m:299
+#: modules/gui/qt/ui/open.h:263
 msgid "Caching"
 msgstr "Кеширование"
 
@@ -18422,6 +18414,26 @@ msgstr "Яркий"
 msgid "Continue playback"
 msgstr "Продолжать воспроизведение"
 
+#: modules/gui/macosx/VLCSimplePrefsController.m:324
+#: modules/gui/macosx/macosx.m:76
+msgid "Control playback with the Apple Remote"
+msgstr "Управление воспроизведением с пульта Apple Remote"
+
+#: modules/gui/macosx/VLCSimplePrefsController.m:325
+#: modules/gui/macosx/macosx.m:88
+msgid "Control playback with media keys"
+msgstr "Управление мультимедийными клавишами"
+
+#: modules/gui/macosx/VLCSimplePrefsController.m:326
+#: modules/gui/macosx/macosx.m:79
+msgid "Control system volume with the Apple Remote"
+msgstr "Управление общей громкостью с пульта Apple Remote"
+
+#: modules/gui/macosx/VLCSimplePrefsController.m:327
+#: modules/gui/macosx/macosx.m:82
+msgid "Display VLC status menu icon"
+msgstr "Отображение значка VLC в строке состояния"
+
 #: modules/gui/macosx/VLCSimplePrefsController.m:329
 msgid "Playback behaviour"
 msgstr "Поведение воспроизведения"
@@ -18430,7 +18442,13 @@ msgstr "Поведение воспроизведения"
 msgid "Enable notifications on playlist item change"
 msgstr "Включить уведомления при изменении позиции в плейлисте"
 
+#: modules/gui/macosx/VLCSimplePrefsController.m:331
+#: modules/gui/macosx/macosx.m:125
+msgid "Control external music players"
+msgstr "Управлять внешними плеерами"
+
 #: modules/gui/macosx/VLCSimplePrefsController.m:333
+#: modules/gui/qt/ui/sprefs_interface.h:553
 msgid "Privacy / Network Interaction"
 msgstr "Конфиденциальность/взаимодействие с сетью"
 
@@ -18455,11 +18473,13 @@ msgid "Display Settings"
 msgstr "Настройки отображения"
 
 #: modules/gui/macosx/VLCSimplePrefsController.m:346
+#: modules/gui/qt/ui/sprefs_subtitles.h:298
 msgid "Font color"
 msgstr "Цвет шрифта"
 
 #: modules/gui/macosx/VLCSimplePrefsController.m:348 modules/spu/marq.c:157
 #: modules/spu/rss.c:204 modules/text_renderer/freetype/freetype.c:80
+#: modules/gui/qt/ui/sprefs_subtitles.h:296
 msgid "Font"
 msgstr "Шрифт"
 
@@ -18468,6 +18488,7 @@ msgid "Subtitle languages"
 msgstr "Язык субтитров"
 
 #: modules/gui/macosx/VLCSimplePrefsController.m:350
+#: modules/gui/qt/ui/sprefs_subtitles.h:293
 msgid "Preferred subtitle language"
 msgstr "Предпочитаемый язык субтитров"
 
@@ -18482,22 +18503,29 @@ msgstr "Полужирный"
 
 #: modules/gui/macosx/VLCSimplePrefsController.m:355
 #: modules/text_renderer/freetype/freetype.c:110
+#: modules/gui/qt/ui/sprefs_subtitles.h:300
 msgid "Outline color"
 msgstr "Цвет контура"
 
 #: modules/gui/macosx/VLCSimplePrefsController.m:356
 #: modules/text_renderer/freetype/freetype.c:111
+#: modules/gui/qt/ui/sprefs_subtitles.h:299
 msgid "Outline thickness"
 msgstr "Толщина контура"
 
 #: modules/gui/macosx/VLCSimplePrefsController.m:360
-#: modules/stream_out/display.c:53
+#: modules/stream_out/display.c:53 modules/gui/qt/ui/sprefs_video.h:312
 msgid "Display"
 msgstr "Отображение"
 
 #: modules/gui/macosx/VLCSimplePrefsController.m:361
 msgid "Show video within the main window"
 msgstr "Показывать видео в основном окне"
+
+#: modules/gui/macosx/VLCSimplePrefsController.m:362
+#: modules/gui/macosx/macosx.m:104 modules/gui/qt/qt.cpp:178
+msgid "Pause the video playback when minimized"
+msgstr "Приостановить видео при сворачивании окна"
 
 #: modules/gui/macosx/VLCSimplePrefsController.m:366
 msgid "Fullscreen settings"
@@ -18511,7 +18539,13 @@ msgstr "Запускать в полноэкранном режиме"
 msgid "Black screens in Fullscreen mode"
 msgstr "Зачернить экран в полноэкранном режиме"
 
+#: modules/gui/macosx/VLCSimplePrefsController.m:369
+#: modules/gui/macosx/macosx.m:95
+msgid "Use the native fullscreen mode"
+msgstr "Использовать стандартный полноэкранный режим"
+
 #: modules/gui/macosx/VLCSimplePrefsController.m:372
+#: modules/gui/qt/ui/sprefs_video.h:327
 msgid "Video snapshots"
 msgstr "Снимки видео"
 
@@ -18521,14 +18555,17 @@ msgid "Folder"
 msgstr "Папка"
 
 #: modules/gui/macosx/VLCSimplePrefsController.m:375
+#: modules/gui/qt/ui/sprefs_video.h:333
 msgid "Format"
 msgstr "Формат"
 
 #: modules/gui/macosx/VLCSimplePrefsController.m:376
+#: modules/gui/qt/ui/sprefs_video.h:330
 msgid "Prefix"
 msgstr "Префикс"
 
 #: modules/gui/macosx/VLCSimplePrefsController.m:377
+#: modules/gui/qt/ui/sprefs_video.h:332
 msgid "Sequential numbering"
 msgstr "Последовательная нумерация"
 
@@ -18754,6 +18791,7 @@ msgid "Basic"
 msgstr "Базовые"
 
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:194
+#: modules/gui/qt/ui/video_effects.h:1264
 msgid "Geometry"
 msgstr "Геометрия"
 
@@ -18762,7 +18800,9 @@ msgstr "Геометрия"
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:270
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:273
 #: modules/spu/marq.c:115 modules/spu/rss.c:152
-#: modules/video_filter/colorthres.c:55
+#: modules/video_filter/colorthres.c:55 modules/gui/qt/ui/video_effects.h:1238
+#: modules/gui/qt/ui/video_effects.h:1244
+#: modules/gui/qt/ui/video_effects.h:1247
 msgid "Color"
 msgstr "Цвет"
 
@@ -18771,45 +18811,53 @@ msgid "Image Adjust"
 msgstr "Настройка изображения"
 
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:207
+#: modules/gui/qt/ui/video_effects.h:1215
 msgid "Brightness Threshold"
 msgstr "Порог яркости"
 
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:211
-#: modules/video_filter/sharpen.c:69
+#: modules/video_filter/sharpen.c:69 modules/gui/qt/ui/video_effects.h:1219
 msgid "Sharpen"
 msgstr "Чёткость"
 
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:212
+#: modules/gui/qt/ui/video_effects.h:1220
+#: modules/gui/qt/ui/video_effects.h:1293
 msgid "Sigma"
 msgstr "Сигма"
 
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:213
+#: modules/gui/qt/ui/video_effects.h:1221
 msgid "Banding removal"
 msgstr "Устранение полос"
 
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:214
-#: modules/video_filter/gradfun.c:50
+#: modules/video_filter/gradfun.c:50 modules/gui/qt/ui/video_effects.h:1222
 msgid "Radius"
 msgstr "Радиус"
 
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:215
+#: modules/gui/qt/ui/video_effects.h:1223
 msgid "Film Grain"
 msgstr "Зернистость плёнки"
 
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:216
-#: modules/video_filter/grain.c:53
+#: modules/video_filter/grain.c:53 modules/gui/qt/ui/video_effects.h:1224
 msgid "Variance"
 msgstr "Амплитуда"
 
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:221
+#: modules/gui/qt/ui/video_effects.h:1232
 msgid "Synchronize top and bottom"
 msgstr "Синхронизировать верх и низ"
 
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:222
+#: modules/gui/qt/ui/video_effects.h:1233
 msgid "Synchronize left and right"
 msgstr "Синхронизировать левый и правый края"
 
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:224
+#: modules/gui/qt/ui/video_effects.h:1258
 msgid "Transform"
 msgstr "Поворот"
 
@@ -18843,51 +18891,60 @@ msgid "Magnification/Zoom"
 msgstr "Увеличение/масштаб"
 
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:242
+#: modules/gui/qt/ui/video_effects.h:1261
 msgid "Puzzle game"
 msgstr "Головоломка"
 
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:243
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:248
 #: share/lua/http/dialogs/mosaic_window.html:96
+#: modules/gui/qt/ui/video_effects.h:1256
+#: modules/gui/qt/ui/video_effects.h:1262
 msgid "Rows"
 msgstr "Строк"
 
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:244
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:249
 #: share/lua/http/dialogs/mosaic_window.html:114
+#: modules/gui/qt/ui/video_effects.h:1257
+#: modules/gui/qt/ui/video_effects.h:1263
 msgid "Columns"
 msgstr "Столбцов"
 
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:245
-#: modules/video_splitter/clone.c:57
+#: modules/video_splitter/clone.c:57 modules/gui/qt/ui/video_effects.h:1303
 msgid "Clone"
 msgstr "Клонирование"
 
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:246
-#: modules/video_splitter/clone.c:39
+#: modules/video_splitter/clone.c:39 modules/gui/qt/ui/video_effects.h:1304
 msgid "Number of clones"
 msgstr "Количество клонов"
 
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:247
+#: modules/gui/qt/ui/video_effects.h:1255
 msgid "Wall"
 msgstr "Стена"
 
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:251
-#: modules/video_filter/colorthres.c:71
+#: modules/video_filter/colorthres.c:71 modules/gui/qt/ui/video_effects.h:1246
 msgid "Color threshold"
 msgstr "Цветовой порог"
 
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:255
+#: modules/gui/qt/ui/video_effects.h:1250
 msgid "Similarity"
 msgstr "Схожесть"
 
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:257
+#: modules/gui/qt/ui/video_effects.h:1252
 msgid "Intensity"
 msgstr "Интенсивность"
 
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:258
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:261
 #: modules/video_filter/gradient.c:76 modules/video_filter/gradient.c:82
+#: modules/gui/qt/ui/video_effects.h:1242
 msgid "Gradient"
 msgstr "Градиент"
 
@@ -18902,10 +18959,12 @@ msgid "Hough"
 msgstr "Хафа"
 
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:271
+#: modules/gui/qt/ui/video_effects.h:1245
 msgid "Cartoon"
 msgstr "Мультфильм"
 
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:272
+#: modules/gui/qt/ui/video_effects.h:1237
 msgid "Color extraction"
 msgstr "Извлечение цвета"
 
@@ -18914,7 +18973,7 @@ msgid "Invert colors"
 msgstr "Инвертировать цвета"
 
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:276
-#: modules/video_filter/posterize.c:69
+#: modules/video_filter/posterize.c:69 modules/gui/qt/ui/video_effects.h:1241
 msgid "Posterize"
 msgstr "Изогелия"
 
@@ -18924,11 +18983,12 @@ msgid "Posterize level"
 msgstr "Уровень изогелии"
 
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:278
-#: modules/video_filter/motionblur.c:60
+#: modules/video_filter/motionblur.c:60 modules/gui/qt/ui/video_effects.h:1294
 msgid "Motion blur"
 msgstr "Размывание движения"
 
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:279
+#: modules/gui/qt/ui/video_effects.h:1295
 msgid "Factor"
 msgstr "Коэффициент"
 
@@ -18938,11 +18998,13 @@ msgid "Motion Detect"
 msgstr "Обнаружение движения"
 
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:281
+#: modules/gui/qt/ui/video_effects.h:1290
 msgid "Water effect"
 msgstr "Эффект воды"
 
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:283
 #: modules/meta_engine/ID3Genres.h:100 modules/video_filter/psychedelic.c:55
+#: modules/gui/qt/ui/video_effects.h:1288
 msgid "Psychedelic"
 msgstr "Психоделия"
 
@@ -18952,19 +19014,23 @@ msgid "Anaglyph"
 msgstr "Анаглиф"
 
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:285
+#: modules/gui/qt/ui/video_effects.h:1275
 msgid "Add text"
 msgstr "Добавить текст"
 
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:286
 #: modules/logger/file.c:193 modules/spu/marq.c:88
+#: modules/gui/qt/ui/video_effects.h:1277
 msgid "Text"
 msgstr "Текст"
 
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:307
+#: modules/gui/qt/ui/video_effects.h:1265
 msgid "Add logo"
 msgstr "Добавить логотип"
 
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:308
+#: modules/gui/qt/ui/video_effects.h:1266
 msgid "Logo"
 msgstr "Логотип"
 
@@ -18976,6 +19042,268 @@ msgstr "Прозрачность"
 #: modules/gui/macosx/VLCVideoEffectsWindowController.m:398
 msgid "Organize profiles..."
 msgstr "Организовать профили..."
+
+#: modules/gui/macosx/macosx.m:51
+msgid "Video device"
+msgstr "Видеоустройство"
+
+#: modules/gui/macosx/macosx.m:52
+msgid ""
+"Number of the screen to use by default to display videos in 'fullscreen'. "
+"The screen number correspondance can be found in the video device selection "
+"menu."
+msgstr ""
+"№ экрана по умолчанию для отображения видео в полноэкранном режиме. "
+"Соответствие номеров экрана можно найти в меню выбора видеоустройства."
+
+#: modules/gui/macosx/macosx.m:56
+msgid "Opaqueness"
+msgstr "Прозрачность"
+
+#: modules/gui/macosx/macosx.m:57
+msgid ""
+"Set the transparency of the video output. 1 is non-transparent (default) 0 "
+"is fully transparent."
+msgstr ""
+"Прозрачность вывода видео. 1 - непрозрачный (по умолчанию), 0 - абсолютно "
+"прозрачный."
+
+#: modules/gui/macosx/macosx.m:60
+msgid "Black screens in fullscreen"
+msgstr "Чёрный фон в полноэкранном режиме"
+
+#: modules/gui/macosx/macosx.m:61
+msgid "In fullscreen mode, keep screen where there is no video displayed black"
+msgstr ""
+"В полноэкранном режиме заполнять чёрным область экрана, где никакого видео "
+"не отображается"
+
+#: modules/gui/macosx/macosx.m:64
+msgid "Show Fullscreen controller"
+msgstr "Панель в полноэкранном режиме"
+
+#: modules/gui/macosx/macosx.m:65
+msgid "Shows a lucent controller when moving the mouse in fullscreen mode."
+msgstr ""
+"Показывать полупрозрачную панель управления при движении мыши в "
+"полноэкранном режиме."
+
+#: modules/gui/macosx/macosx.m:68
+msgid "Auto-playback of new items"
+msgstr "Автовоспроизведение новых позиций"
+
+#: modules/gui/macosx/macosx.m:69
+msgid "Start playback of new items immediately once they were added."
+msgstr "Начинать воспроизведение новых позиций сразу же после их добавления."
+
+#: modules/gui/macosx/macosx.m:72
+msgid "Keep Recent Items"
+msgstr "Вести список последних позиций"
+
+#: modules/gui/macosx/macosx.m:73
+msgid ""
+"By default, VLC keeps a list of the last 10 items. This feature can be "
+"disabled here."
+msgstr ""
+"По умолчанию VLC ведёт список последних 10 позиций. Эту функцию можно "
+"отключить здесь."
+
+#: modules/gui/macosx/macosx.m:77
+msgid "By default, VLC can be remotely controlled with the Apple Remote."
+msgstr "По умолчанию VLC можно управлять с помощью пульта Apple Remote."
+
+#: modules/gui/macosx/macosx.m:80
+msgid ""
+"By default, VLC will control its own volume with the Apple Remote. However, "
+"you can choose to control the global system volume instead."
+msgstr ""
+"По умолчанию VLC позволяет управлять с Apple Remote только своей громкостью. "
+"Однако вы можете также включить режим изменения общей громкости системы."
+
+#: modules/gui/macosx/macosx.m:83
+msgid ""
+"By default, VLC will show the statusbar icon menu. However, you can choose "
+"to disable it (restart required)."
+msgstr ""
+"По умолчанию VLC показывает значок с меню в строке состояния. Однако вы "
+"можете отключить его (требуется перезапуск)."
+
+#: modules/gui/macosx/macosx.m:85
+msgid "Control playlist items with the Apple Remote"
+msgstr "Перемещение в плейлисте с пульта Apple Remote"
+
+#: modules/gui/macosx/macosx.m:86
+msgid ""
+"By default, VLC will allow you to switch to the next or previous item with "
+"the Apple Remote. You can disable this behavior with this option."
+msgstr ""
+"По умолчанию VLC позволяет переходить к следующей/предыдущей позиции "
+"плейлиста с пульта Apple Remote. Этот флажок отключает это поведение."
+
+#: modules/gui/macosx/macosx.m:89
+msgid ""
+"By default, VLC can be controlled using the media keys on modern Apple "
+"keyboards."
+msgstr ""
+"По умолчанию VLC можно управлять с помощью мультимедийных клавиш на "
+"клавиатурах Apple."
+
+#: modules/gui/macosx/macosx.m:92
+msgid "Run VLC with dark interface style"
+msgstr "Запускать VLC с тёмным интерфейсом"
+
+#: modules/gui/macosx/macosx.m:93
+msgid ""
+"If this option is enabled, VLC will use the dark interface style. Otherwise, "
+"the grey interface style is used."
+msgstr ""
+"Если этот режим включён, VLC будет использовать тёмный интерфейс (в "
+"противном случае — серый)."
+
+#: modules/gui/macosx/macosx.m:96
+msgid ""
+"By default, VLC uses the fullscreen mode known from previous Mac OS X "
+"releases. It can also use the native fullscreen mode on Mac OS X 10.7 and "
+"later."
+msgstr ""
+"По умолчанию VLC использует переключение полноэкранного режима, работавшее в "
+"ранних выпусках Mac OS X. Также VLC может включать полноэкранный режим, "
+"используя новый метод в Mac OS X версии 10.7 и новее."
+
+#: modules/gui/macosx/macosx.m:98 modules/gui/qt/qt.cpp:95
+msgid "Resize interface to the native video size"
+msgstr "Подгонять размер интерфейса под исходный размер видео"
+
+#: modules/gui/macosx/macosx.m:99 modules/gui/qt/qt.cpp:96
+msgid ""
+"You have two choices:\n"
+" - The interface will resize to the native video size\n"
+" - The video will fit to the interface size\n"
+" By default, interface resize to the native video size."
+msgstr ""
+"Возможны два варианта:\n"
+"- Интерфейс будет подгоняться под размер видео.\n"
+"- Видео будет масштабировано под интерфейс.\n"
+"По умолчанию интерфейс подстраивается под исходный размер видео."
+
+#: modules/gui/macosx/macosx.m:105 modules/gui/qt/qt.cpp:180
+msgid ""
+"With this option enabled, the playback will be automatically paused when "
+"minimizing the window."
+msgstr ""
+"Если этот параметр включён, проигрывание автоматически приостановится при "
+"сворачивании окна VLC."
+
+#: modules/gui/macosx/macosx.m:108 modules/gui/qt/qt.cpp:182
+msgid "Allow automatic icon changes"
+msgstr "Разрешить изменение значка"
+
+#: modules/gui/macosx/macosx.m:109 modules/gui/qt/qt.cpp:184
+msgid ""
+"This option allows the interface to change its icon on various occasions."
+msgstr ""
+"Этот параметр разрешает VLC менять значок интерфейса в различных ситуациях."
+
+#: modules/gui/macosx/macosx.m:113
+msgid "Dim keyboard backlight during fullscreen playback"
+msgstr "Гасить подсветку клавиатуры при полноэкранном воспроизведении"
+
+#: modules/gui/macosx/macosx.m:114
+msgid ""
+"Turn off the MacBook keyboard backlight while a video is playing in "
+"fullscreen. Automatic brightness adjustment should be disabled in System "
+"Preferences."
+msgstr ""
+"Выключать подсветку клавиатуры MacBook при полноэкранном воспроизведении "
+"видео. Для этого в Настройках системы должна быть отключена автоматическая "
+"подстройка яркости."
+
+#: modules/gui/macosx/macosx.m:117
+msgid "Shows the previous and next buttons in the main window."
+msgstr ""
+"Показывает в основном окне кнопки для перехода к следующей и предыдущей "
+"позиции плейлиста"
+
+#: modules/gui/macosx/macosx.m:120
+msgid "Shows the shuffle and repeat buttons in the main window."
+msgstr "Показывает в основном окне кнопки повторения и перемешивания"
+
+#: modules/gui/macosx/macosx.m:123
+msgid "Shows the audio effects button in the main window."
+msgstr "Показывает в основном окне кнопку управления аудиоэффектами."
+
+#: modules/gui/macosx/macosx.m:126
+msgid "VLC will pause and resume supported music players on playback."
+msgstr ""
+"VLC будет приостанавливать и продолжать воспроизведение музыки на "
+"поддерживаемых внешних плеерах."
+
+#: modules/gui/macosx/macosx.m:128
+msgid "Use large text for list views"
+msgstr "Выводить в списках большой текст"
+
+#: modules/gui/macosx/macosx.m:133
+msgid "Do nothing"
+msgstr "Ничего не делать"
+
+#: modules/gui/macosx/macosx.m:133
+msgid "Pause iTunes / Spotify"
+msgstr "Приостановить iTunes/Spotify"
+
+#: modules/gui/macosx/macosx.m:133
+msgid "Pause and resume iTunes / Spotify"
+msgstr "Приостанавливать и запускать iTunes/Spotify"
+
+#: modules/gui/macosx/macosx.m:136
+msgid "Continue playback where you left off"
+msgstr "Продолжить воспроизведение с последней позиции"
+
+#: modules/gui/macosx/macosx.m:137
+msgid ""
+"VLC will store playback positions of the last 30 items you played. If you re-"
+"open one of those, playback will continue."
+msgstr ""
+"VLC будет сохранять позиции воспроизведения 30 последних проигранных файлов. "
+"Если вы вернётесь к одному из них, воспроизведение продолжится с запомненной "
+"позиции."
+
+#: modules/gui/macosx/macosx.m:142 modules/gui/qt/qt.cpp:206
+msgid "Ask"
+msgstr "Спрашивать"
+
+#: modules/gui/macosx/macosx.m:142 modules/gui/qt/qt.cpp:200
+#: modules/gui/qt/qt.cpp:206 modules/keystore/keychain.m:50
+msgid "Always"
+msgstr "Всегда"
+
+#: modules/gui/macosx/macosx.m:142 modules/gui/qt/qt.cpp:200
+#: modules/gui/qt/qt.cpp:206 modules/gui/qt/qt.cpp:213
+msgid "Never"
+msgstr "Никогда"
+
+#: modules/gui/macosx/macosx.m:145 modules/gui/qt/qt.cpp:186
+msgid "Maximum Volume displayed"
+msgstr "Предел регулятора громкости"
+
+#: modules/gui/macosx/macosx.m:149
+msgid "Mac OS X interface"
+msgstr "Интерфейс Mac OS X"
+
+#: modules/gui/macosx/macosx.m:156
+msgid "Appearance"
+msgstr "Внешний вид"
+
+#: modules/gui/macosx/macosx.m:167
+msgid "Behavior"
+msgstr "Поведение"
+
+#: modules/gui/macosx/macosx.m:180
+msgid "Apple Remote and media keys"
+msgstr "Медиаклавиши и пульт Apple Remote"
+
+#: modules/gui/macosx/macosx.m:196
+msgid "Video output"
+msgstr "Вывод видео"
 
 #: modules/gui/macosx/misc.m:301
 msgid "B"
@@ -19739,7 +20067,7 @@ msgstr "Последние 60 сек."
 msgid "Overall"
 msgstr "С начала"
 
-#: modules/gui/qt/components/interface_widgets.cpp:639
+#: modules/gui/qt/components/interface_widgets.cpp:646
 msgid ""
 "Current playback speed: %1\n"
 "Click to adjust"
@@ -19747,45 +20075,45 @@ msgstr ""
 "Текущая скорость: %1.\n"
 "Щёлкните, чтобы изменить её."
 
-#: modules/gui/qt/components/interface_widgets.cpp:712
+#: modules/gui/qt/components/interface_widgets.cpp:719
 msgid "Revert to normal play speed"
 msgstr "Возврат к нормальной скорости воспроизведения"
 
-#: modules/gui/qt/components/interface_widgets.cpp:819
+#: modules/gui/qt/components/interface_widgets.cpp:826
 msgid "Download cover art"
 msgstr "Скачать обложку"
 
-#: modules/gui/qt/components/interface_widgets.cpp:823
+#: modules/gui/qt/components/interface_widgets.cpp:830
 msgid "Add cover art from file"
 msgstr "Добавить обложку из файла"
 
-#: modules/gui/qt/components/interface_widgets.cpp:889
+#: modules/gui/qt/components/interface_widgets.cpp:896
 msgid "Choose Cover Art"
 msgstr "Выбор обложки"
 
-#: modules/gui/qt/components/interface_widgets.cpp:890
+#: modules/gui/qt/components/interface_widgets.cpp:897
 msgid "Image Files (*.gif *.jpg *.jpeg *.png)"
 msgstr "Изображения (*.gif *.jpg *.jpeg *.png)"
 
-#: modules/gui/qt/components/interface_widgets.cpp:917
+#: modules/gui/qt/components/interface_widgets.cpp:924
 #: modules/gui/qt/dialogs/toolbar.cpp:573
 msgid "Elapsed time"
 msgstr "Прошедшее время"
 
-#: modules/gui/qt/components/interface_widgets.cpp:921
+#: modules/gui/qt/components/interface_widgets.cpp:928
 #: modules/gui/qt/dialogs/toolbar.cpp:577
 msgid "Total/Remaining time"
 msgstr "Общее/оставшееся время"
 
-#: modules/gui/qt/components/interface_widgets.cpp:923
+#: modules/gui/qt/components/interface_widgets.cpp:930
 msgid "Click to toggle between total and remaining time"
 msgstr "Отображение общего/оставшегося времени"
 
-#: modules/gui/qt/components/interface_widgets.cpp:929
+#: modules/gui/qt/components/interface_widgets.cpp:936
 msgid "Click to toggle between elapsed and remaining time"
 msgstr "Отображение прошедшего/оставшегося времени"
 
-#: modules/gui/qt/components/interface_widgets.cpp:931
+#: modules/gui/qt/components/interface_widgets.cpp:938
 msgid "Double click to jump to a chosen time position"
 msgstr "Двойной щелчок: переход к заданному времени"
 
@@ -19807,6 +20135,7 @@ msgid "File names:"
 msgstr "Имена файлов:"
 
 #: modules/gui/qt/components/open_panels.cpp:162
+#: modules/gui/qt/ui/sprefs_interface.h:558
 msgid "Filter:"
 msgstr "Фильтр:"
 
@@ -19977,11 +20306,11 @@ msgstr "Увеличить"
 msgid "Decrease"
 msgstr "Уменьшить"
 
-#: modules/gui/qt/components/playlist/standardpanel.cpp:406
+#: modules/gui/qt/components/playlist/standardpanel.cpp:408
 msgid "Playlist View Mode"
 msgstr "Вид плейлиста"
 
-#: modules/gui/qt/components/playlist/standardpanel.cpp:585
+#: modules/gui/qt/components/playlist/standardpanel.cpp:587
 msgid ""
 "Playlist is currently empty.\n"
 "Drop a file here or select a media source from the left."
@@ -20214,6 +20543,7 @@ msgid "File/Folder"
 msgstr "Файл/папка"
 
 #: modules/gui/qt/components/sout/sout_widgets.cpp:47
+#: modules/gui/qt/ui/sout.h:199
 msgid "Source"
 msgstr "Источник"
 
@@ -20334,7 +20664,7 @@ msgstr "Выбрано несколько файлов."
 msgid "Destination"
 msgstr "Адрес"
 
-#: modules/gui/qt/dialogs/convert.cpp:71
+#: modules/gui/qt/dialogs/convert.cpp:71 modules/gui/qt/ui/sprefs_audio.h:413
 msgid "Destination file:"
 msgstr "Конечный файл:"
 
@@ -20380,7 +20710,8 @@ msgstr "Контейнеры"
 msgid "Program Guide"
 msgstr "Гид по программам (EPG)"
 
-#: modules/gui/qt/dialogs/epg.cpp:87
+#: modules/gui/qt/dialogs/epg.cpp:87 modules/gui/qt/ui/about.h:286
+#: modules/gui/qt/ui/about.h:287
 msgid "Update"
 msgstr "Обновить"
 
@@ -20513,7 +20844,7 @@ msgstr "&Да"
 msgid "&No"
 msgstr "&Нет"
 
-#: modules/gui/qt/dialogs/help.cpp:222
+#: modules/gui/qt/dialogs/help.cpp:222 modules/gui/qt/ui/update.h:144
 msgid "VLC media player updates"
 msgstr "Обновления медиапроигрывателя VLC"
 
@@ -20556,10 +20887,6 @@ msgstr "&Сохранить метаданные"
 #: modules/gui/qt/dialogs/mediainfo.cpp:83
 msgid "Location:"
 msgstr "Расположение:"
-
-#: modules/gui/qt/dialogs/messages.cpp:80
-msgid "Messages"
-msgstr "Сообщения"
 
 #: modules/gui/qt/dialogs/messages.cpp:91
 msgid "Saves all the displayed logs to a file"
@@ -20767,7 +21094,7 @@ msgstr "Версия"
 msgid "Website"
 msgstr "Сайт"
 
-#: modules/gui/qt/dialogs/plugins.cpp:1534
+#: modules/gui/qt/dialogs/plugins.cpp:1534 modules/gui/qt/ui/sprefs_input.h:363
 msgid "Files"
 msgstr "Файлы"
 
@@ -20827,7 +21154,7 @@ msgstr "Файл настроек не удалось сохранить"
 msgid "Are you sure you want to reset your VLC media player preferences?"
 msgstr "Вы действительно хотите сбросить настройки медиаплеера VLC?"
 
-#: modules/gui/qt/dialogs/sout.cpp:45
+#: modules/gui/qt/dialogs/sout.cpp:45 modules/gui/qt/ui/sout.h:198
 msgid "Stream Output"
 msgstr "Вывод потока"
 
@@ -21013,7 +21340,7 @@ msgstr "Повтор:"
 msgid "Repeat delay:"
 msgstr "Интервал между повторами:"
 
-#: modules/gui/qt/dialogs/vlm.cpp:111
+#: modules/gui/qt/dialogs/vlm.cpp:111 modules/gui/qt/ui/sprefs_interface.h:555
 msgid " days"
 msgstr " д."
 
@@ -21676,15 +22003,15 @@ msgstr "В свёрнутом состоянии"
 msgid "Qt interface"
 msgstr "Интерфейс Qt"
 
-#: modules/gui/qt/util/customwidgets.cpp:81
+#: modules/gui/qt/util/customwidgets.cpp:82
 msgid "errors"
 msgstr "ошибки"
 
-#: modules/gui/qt/util/customwidgets.cpp:82
+#: modules/gui/qt/util/customwidgets.cpp:83
 msgid "warnings"
 msgstr "предупреждения"
 
-#: modules/gui/qt/util/customwidgets.cpp:83
+#: modules/gui/qt/util/customwidgets.cpp:84
 msgid "debug"
 msgstr "отладка"
 
@@ -23866,6 +24193,7 @@ msgid "Podcasts"
 msgstr "Подкасты"
 
 #: modules/services_discovery/podcast.c:56
+#: modules/gui/qt/ui/podcast_configuration.h:99
 msgid "Podcast URLs list"
 msgstr "Список Podcast URL"
 
@@ -23975,7 +24303,7 @@ msgstr "Запись звука (ALSA)"
 msgid "CD"
 msgstr "CD"
 
-#: modules/services_discovery/udev.c:601
+#: modules/services_discovery/udev.c:601 modules/gui/qt/ui/open_disk.h:295
 msgid "DVD"
 msgstr "DVD"
 
@@ -24124,6 +24452,7 @@ msgstr "Динамическое наложение видео"
 
 #: modules/spu/dynamicoverlay/dynamicoverlay.c:68
 #: share/lua/http/dialogs/create_stream.html:245
+#: modules/gui/qt/ui/video_effects.h:1285
 msgid "Overlay"
 msgstr "Наложение"
 
@@ -26175,7 +26504,7 @@ msgstr "Задайте оттенок изображения, от -180 до 180
 msgid "Image properties filter"
 msgstr "Свойства изображения"
 
-#: modules/video_filter/adjust.c:78
+#: modules/video_filter/adjust.c:78 modules/gui/qt/ui/video_effects.h:1212
 msgid "Image adjust"
 msgstr "Настройка изображения"
 
@@ -27265,7 +27594,7 @@ msgstr "Использовать сенсоры движения"
 msgid "Rotate video filter"
 msgstr "Видеофильтр Вращение"
 
-#: modules/video_filter/rotate.c:72
+#: modules/video_filter/rotate.c:72 modules/gui/qt/ui/video_effects.h:1259
 msgid "Rotate"
 msgstr "Вращение"
 
@@ -27639,7 +27968,7 @@ msgstr "GLX"
 msgid "GLX extension for OpenGL"
 msgstr "Расширение GLX для OpenGL"
 
-#: modules/video_output/kva.c:50
+#: modules/video_output/kva.c:50 modules/gui/qt/ui/sprefs_video.h:321
 msgid "Enable a workaround for T23"
 msgstr "Обходной приём для T23"
 
@@ -27651,7 +27980,7 @@ msgstr ""
 "Включите этот параметр, если видны диагональные полосы, когда размер окна "
 "меньше или равен размеру видео."
 
-#: modules/video_output/kva.c:55
+#: modules/video_output/kva.c:55 modules/gui/qt/ui/sprefs_video.h:322
 msgid "Video mode"
 msgstr "Видеорежим"
 
@@ -27727,12 +28056,12 @@ msgstr ""
 "Этот режим позволяет воспроизводить видео на поверхности рабочего стола."
 
 #: modules/video_output/win32/direct3d9.c:79
-#: modules/video_output/win32/direct3d11.c:65
+#: modules/video_output/win32/direct3d11.c:68
 msgid "Use hardware blending support"
 msgstr "Использовать аппаратную поддержку наложения"
 
 #: modules/video_output/win32/direct3d9.c:81
-#: modules/video_output/win32/direct3d11.c:67
+#: modules/video_output/win32/direct3d11.c:70
 msgid "Try to use hardware acceleration for subtitle/OSD blending."
 msgstr ""
 "Попытаться использовать аппаратное ускорение для наложения субтитров/OSD."
@@ -27765,15 +28094,16 @@ msgstr "Режим вывода, рекомендованный для Windows V
 msgid "Direct3D9 video output"
 msgstr "Вывод видео через Direct3D9"
 
-#: modules/video_output/win32/direct3d11.c:64
+#: modules/video_output/win32/direct3d11.c:67
 msgid "Recommended video output for Windows 8 and later versions"
 msgstr "Режим вывода, рекомендованный для Windows 8 и более новых версий"
 
-#: modules/video_output/win32/direct3d11.c:71
+#: modules/video_output/win32/direct3d11.c:74
 msgid "Direct3D11 video output"
 msgstr "Вывод видео через Direct3D11"
 
 #: modules/video_output/win32/directdraw.c:65
+#: modules/gui/qt/ui/sprefs_video.h:318
 msgid "Use hardware YUV->RGB conversions"
 msgstr "Использовать аппаратное преобразование YUV->RGB"
 
@@ -28639,6 +28969,7 @@ msgid "Play List"
 msgstr "Список воспроизведения"
 
 #: share/lua/http/dialogs/create_stream.html:156
+#: modules/gui/qt/ui/sprefs_audio.h:411
 msgid "Output"
 msgstr "Вывод"
 
@@ -28753,7 +29084,7 @@ msgstr "Синхронизация дорожек"
 msgid "VLM Batch Commands"
 msgstr "Команды VLM"
 
-#: share/lua/http/index.html:259
+#: share/lua/http/index.html:259 modules/gui/qt/ui/vlm.h:295
 msgid "Loop"
 msgstr "Зацикливание"
 
@@ -28788,11 +29119,13 @@ msgid ""
 "instance will be transmitted over the internet to the Google Image Charts "
 "web service to generate this QR code."
 msgstr ""
+"VLC может отображать QR-код со ссылкой на мобильную версию веб-интерфейса. "
+"Веб-адрес веб-интерфейса вашего медиаплеера VLC будет передан через Интернет "
+"в веб-службу Google Image Charts для создания этого QR-кода."
 
 #: share/lua/http/index.html:285
-#, fuzzy
 msgid "Do you want to go ahead with this?"
-msgstr "Скачать его?"
+msgstr "Хотите продолжить?"
 
 #: share/lua/http/index.html:290
 msgid ""
@@ -28847,633 +29180,856 @@ msgstr ""
 msgid "Are you sure you wish to create the stream?"
 msgstr "Вы действительно хотите создать поток?"
 
+#: modules/gui/qt/ui/about.h:285 modules/gui/qt/ui/open.h:257
+#: modules/gui/qt/ui/podcast_configuration.h:98
+msgid "Dialog"
+msgstr "Диалог"
+
+#: modules/gui/qt/ui/equalizer.h:129 modules/gui/qt/ui/open_disk.h:293
+#: modules/gui/qt/ui/open_net.h:93 modules/gui/qt/ui/sprefs_audio.h:406
+#: modules/gui/qt/ui/sprefs_input.h:353
+#: modules/gui/qt/ui/sprefs_interface.h:526
+#: modules/gui/qt/ui/sprefs_subtitles.h:286
+#: modules/gui/qt/ui/sprefs_video.h:310 modules/gui/qt/ui/streampanel.h:165
+msgid "Form"
+msgstr "Форма"
+
+#: modules/gui/qt/ui/equalizer.h:132
+msgid "Preset"
+msgstr "Предустановка"
+
+#: modules/gui/qt/ui/equalizer.h:134
+msgid "0.00 dB"
+msgstr "0.00 дБ"
+
+#: modules/gui/qt/ui/messages_panel.h:137
+msgid "&Verbosity:"
+msgstr "&Детализация:"
+
+#: modules/gui/qt/ui/messages_panel.h:138
+msgid "&Filter:"
+msgstr "&Фильтр:"
+
+#: modules/gui/qt/ui/messages_panel.h:139
+msgid "&Save as..."
+msgstr "&Сохранить как..."
+
+#: modules/gui/qt/ui/messages_panel.h:141
+msgid "Modules Tree"
+msgstr "Дерево модулей"
+
+#: modules/gui/qt/ui/open.h:260
+msgid "Show extended options"
+msgstr "Показать дополнительные параметры"
+
+#: modules/gui/qt/ui/open.h:262
+msgid "Show &more options"
+msgstr "Показать дополнительные параметры"
+
+#: modules/gui/qt/ui/open.h:265
+msgid "Change the caching for the media"
+msgstr "Изменить размер кеша медиаданных"
+
+#: modules/gui/qt/ui/open.h:267
+msgid " ms"
+msgstr " мс"
+
+#: modules/gui/qt/ui/open.h:268
+msgid "MRL"
+msgstr "MRL"
+
+#: modules/gui/qt/ui/open.h:269
+msgid "Start Time"
+msgstr "Время запуска"
+
+#: modules/gui/qt/ui/open.h:270
+msgid "Stop Time"
+msgstr "Время остановки"
+
+#: modules/gui/qt/ui/open.h:271
+msgid "Edit Options"
+msgstr "Строка параметров"
+
+#: modules/gui/qt/ui/open.h:272
+msgid "Extra media"
+msgstr "Другой файл"
+
+#: modules/gui/qt/ui/open.h:274
+msgid "Complete MRL for VLC internal"
+msgstr "Полный MRL"
+
+#: modules/gui/qt/ui/open.h:277
+msgid "Select the file"
+msgstr "Выберите файл"
+
+#: modules/gui/qt/ui/open.h:281
+msgid "Change the start time for the media"
+msgstr "Изменить момент времени, с которого начинать воспроизведение"
+
+#: modules/gui/qt/ui/open.h:283 modules/gui/qt/ui/open.h:287
+msgid "HH'H':mm'm':ss's'.zzz"
+msgstr "HH'H':mm'm':ss's'.zzz"
+
+#: modules/gui/qt/ui/open.h:285
+msgid "Change the stop time for the media"
+msgstr "Изменить момент остановки воспроизведения"
+
+#: modules/gui/qt/ui/open.h:288
+msgid "Play another media synchronously (extra audio file, ...)"
+msgstr "Параллельно проигрывать другой медиафайл (аудио, ...)"
+
+#: modules/gui/qt/ui/open_capture.h:94
+msgid "Capture mode"
+msgstr "Режим захвата"
+
+#: modules/gui/qt/ui/open_capture.h:96
+msgid "Select the capture device type"
+msgstr "Выбрать тип устройства захвата"
+
+#: modules/gui/qt/ui/open_capture.h:98
+msgid "Device Selection"
+msgstr "Выбор устройства"
+
+#: modules/gui/qt/ui/open_capture.h:99
+msgid "Options"
+msgstr "Параметры"
+
+#: modules/gui/qt/ui/open_capture.h:101
+msgid "Access advanced options to tweak the device"
+msgstr "Показать дополнительные параметры для настройки устройства"
+
+#: modules/gui/qt/ui/open_capture.h:103
+msgid "Advanced options..."
+msgstr "Другие..."
+
+#: modules/gui/qt/ui/open_disk.h:294
+msgid "Disc Selection"
+msgstr "Выбор диска"
+
+#: modules/gui/qt/ui/open_disk.h:298
+msgid "SVCD/VCD"
+msgstr "SVCD/VCD"
+
+#: modules/gui/qt/ui/open_disk.h:300
+msgid "Disable Disc Menus"
+msgstr "Отключает меню диска"
+
+#: modules/gui/qt/ui/open_disk.h:302
+msgid "No disc menus"
+msgstr "Без меню диска"
+
+#: modules/gui/qt/ui/open_disk.h:303
+msgid "Disc device"
+msgstr "Дисковое устройство"
+
+#: modules/gui/qt/ui/open_disk.h:305
+msgid "Starting Position"
+msgstr "Начальная позиция"
+
+#: modules/gui/qt/ui/open_disk.h:308
+msgid "Audio and Subtitles"
+msgstr "Аудио и субтитры"
+
+#: modules/gui/qt/ui/open_file.h:142
+msgid "Use a sub&title file"
+msgstr "Использовать файл суб&титров"
+
+#: modules/gui/qt/ui/open_file.h:144
+msgid "Select the subtitle file"
+msgstr "Выбрать файл субтитров"
+
+#: modules/gui/qt/ui/open_file.h:148
+msgid "Choose one or more media file to open"
+msgstr "Выберите один или несколько файлов для воспроизведения"
+
+#: modules/gui/qt/ui/open_file.h:150
+msgid "File Selection"
+msgstr "Выбор файлов"
+
+#: modules/gui/qt/ui/open_file.h:151
+msgid "You can select local files with the following list and buttons."
+msgstr "Добавьте в этот список локальные файлы для воспроизведения."
+
+#: modules/gui/qt/ui/open_file.h:152
+msgid "Add..."
+msgstr "Добавить..."
+
+#: modules/gui/qt/ui/open_net.h:94
+msgid "Network Protocol"
+msgstr "Сетевой протокол"
+
+#: modules/gui/qt/ui/open_net.h:95
+msgid "Please enter a network URL:"
+msgstr "Введите сетевой адрес:"
+
+#: modules/gui/qt/ui/profiles.h:699
+msgid "Profile edition"
+msgstr "Редактирование профиля"
+
+#: modules/gui/qt/ui/profiles.h:700
+msgid "FLAC"
+msgstr "FLAC"
+
+#: modules/gui/qt/ui/profiles.h:701
+msgid "MP&4/MOV"
+msgstr "MP&4/MOV"
+
+#: modules/gui/qt/ui/profiles.h:702
+msgid "Ogg/Ogm"
+msgstr "Ogg/Ogm"
+
+#: modules/gui/qt/ui/profiles.h:703
+msgid "M&KV"
+msgstr "M&KV"
+
+#: modules/gui/qt/ui/profiles.h:704
+msgid "M&JPEG"
+msgstr "M&JPEG"
+
+#: modules/gui/qt/ui/profiles.h:705
+msgid "MPEG-PS"
+msgstr "MPEG-PS"
+
+#: modules/gui/qt/ui/profiles.h:706
+msgid "F&LV"
+msgstr "F&LV"
+
+#: modules/gui/qt/ui/profiles.h:707
+msgid "&MPEG-TS"
+msgstr "&MPEG-TS"
+
+#: modules/gui/qt/ui/profiles.h:708
+msgid "RAW"
+msgstr "RAW"
+
+#: modules/gui/qt/ui/profiles.h:709
+msgid "WAV"
+msgstr "WAV"
+
+#: modules/gui/qt/ui/profiles.h:710
+msgid "Webm"
+msgstr "Webm"
+
+#: modules/gui/qt/ui/profiles.h:711
+msgid "MPEG &1"
+msgstr "MPEG &1"
+
+#: modules/gui/qt/ui/profiles.h:712
+msgid "AVI"
+msgstr "AVI"
+
+#: modules/gui/qt/ui/profiles.h:713
+msgid "ASF/WMV"
+msgstr "ASF/WMV"
+
+#: modules/gui/qt/ui/profiles.h:714
+msgid "MP&3"
+msgstr "MP&3"
+
+#: modules/gui/qt/ui/profiles.h:715
+msgid "Features"
+msgstr "Характеристики"
+
+#: modules/gui/qt/ui/profiles.h:717
+msgid "Streamable"
+msgstr "Транслируемый"
+
+#: modules/gui/qt/ui/profiles.h:718
+msgid "Chapters"
+msgstr "Главы"
+
+#: modules/gui/qt/ui/profiles.h:721
+msgid "Menus"
+msgstr "Меню"
+
+#: modules/gui/qt/ui/profiles.h:728
+msgid "Fra&me Rate"
+msgstr "Час&тота кадров"
+
+#: modules/gui/qt/ui/profiles.h:729
+msgid "Same as source"
+msgstr "Как в источнике"
+
+#: modules/gui/qt/ui/profiles.h:731
+msgid " fps"
+msgstr " к/с"
+
+#: modules/gui/qt/ui/profiles.h:732
+msgid "Custom options"
+msgstr "Настраиваемые параметры"
+
+#: modules/gui/qt/ui/profiles.h:733
+msgid "&Quality"
+msgstr "&Качество"
+
+#: modules/gui/qt/ui/profiles.h:734 modules/gui/qt/ui/profiles.h:735
+msgid "Not Used"
+msgstr "Не определено"
+
+#: modules/gui/qt/ui/profiles.h:736 modules/gui/qt/ui/profiles.h:755
+msgid " kb/s"
+msgstr " кб/сек"
+
+#: modules/gui/qt/ui/profiles.h:737 modules/gui/qt/ui/profiles.h:757
+msgid "Encoding parameters"
+msgstr "Параметры кодирования"
+
+#: modules/gui/qt/ui/profiles.h:740
+msgid "Frame size"
+msgstr "Размер кадра"
+
+#: modules/gui/qt/ui/profiles.h:743 modules/gui/qt/ui/profiles.h:746
+msgid "px"
+msgstr "пкс"
+
+#: modules/gui/qt/ui/profiles.h:756
+msgid "Sa&mple Rate"
+msgstr "Ч&астота дискретизации"
+
+#: modules/gui/qt/ui/profiles.h:764
+msgid "Profile &Name"
+msgstr "&Название профиля"
+
+#: modules/gui/qt/ui/sout.h:200
+msgid "Set up media sources to stream"
+msgstr "Выберите медиаисточники для вещания"
+
+#: modules/gui/qt/ui/sout.h:202
+msgid "Destination Setup"
+msgstr "Настройка вывода"
+
+#: modules/gui/qt/ui/sout.h:203
+msgid "Select destinations to stream to"
+msgstr "Выберите назначения потока"
+
+#: modules/gui/qt/ui/sout.h:204
+msgid ""
+"Add destinations following the streaming methods you need. Be sure to check "
+"with transcoding that the format is compatible with the method used."
+msgstr ""
+"Добавьте требуемые пути назначения и методы вещания. Убедитесь в том, что "
+"при перекодировании формат совместим с выбранным методом."
+
+#: modules/gui/qt/ui/sout.h:205
+msgid "New destination"
+msgstr "Новое назначение"
+
+#: modules/gui/qt/ui/sout.h:207
+msgid "Display locally"
+msgstr "Воспроизводить локально"
+
+#: modules/gui/qt/ui/sout.h:209
+msgid "Transcoding Options"
+msgstr "Параметры перекодирования"
+
+#: modules/gui/qt/ui/sout.h:210
+msgid "Select and choose transcoding options"
+msgstr "Выберите и настройте параметры перекодирования"
+
+#: modules/gui/qt/ui/sout.h:211
+msgid "Activate Transcoding"
+msgstr "Включить перекодирование"
+
+#: modules/gui/qt/ui/sout.h:212
+msgid "Option Setup"
+msgstr "Настройка параметров"
+
+#: modules/gui/qt/ui/sout.h:213
+msgid "Set up any additional options for streaming"
+msgstr "Установите дополнительные параметры вещания"
+
+#: modules/gui/qt/ui/sout.h:214
+msgid "Miscellaneous Options"
+msgstr "Прочие параметры"
+
+#: modules/gui/qt/ui/sout.h:215
+msgid "Stream all elementary streams"
+msgstr "Выводить все элементарные потоки"
+
+#: modules/gui/qt/ui/sout.h:216
+msgid "Generated stream output string"
+msgstr "Строка вывода для генерируемого потока"
+
+#: modules/gui/qt/ui/sprefs_audio.h:409
+msgid " %"
+msgstr " %"
+
+#: modules/gui/qt/ui/sprefs_audio.h:412
+msgid "Output module:"
+msgstr "Модуль вывода:"
+
+#: modules/gui/qt/ui/sprefs_audio.h:415
+msgid "Use S/PDIF when available"
+msgstr "Использовать S/PDIF при его наличии"
+
+#: modules/gui/qt/ui/sprefs_audio.h:417
+msgid "Effects"
+msgstr "Эффекты"
+
+#: modules/gui/qt/ui/sprefs_audio.h:418
+msgid "Visualization:"
+msgstr "Визуализация:"
+
+#: modules/gui/qt/ui/sprefs_audio.h:419
+msgid "Enable Time-Stretching audio"
+msgstr "Изменение скорости звука"
+
+#: modules/gui/qt/ui/sprefs_audio.h:420
+msgid "Replay gain mode:"
+msgstr "Режим выравнивания громкости:"
+
+#: modules/gui/qt/ui/sprefs_audio.h:421
+msgid "Normalize volume to:"
+msgstr "Нормализовать громкость до:"
+
+#: modules/gui/qt/ui/sprefs_audio.h:422
+msgid "Tracks"
+msgstr "Дорожки"
+
+#: modules/gui/qt/ui/sprefs_audio.h:423
+msgid "Preferred audio language:"
+msgstr "Предпочитаемый язык аудио:"
+
+#: modules/gui/qt/ui/sprefs_audio.h:424
+msgid "Password:"
+msgstr "Пароль:"
+
+#: modules/gui/qt/ui/sprefs_audio.h:425
+msgid "Username:"
+msgstr "Имя пользователя:"
+
+#: modules/gui/qt/ui/sprefs_audio.h:426
+msgid "Submit played tracks stats to Last.fm"
+msgstr "Сообщать на Last.fm о том, что вы слушаете"
+
+#: modules/gui/qt/ui/sprefs_input.h:354
+msgid "Codecs"
+msgstr "Кодеки"
+
+#: modules/gui/qt/ui/sprefs_input.h:355
+msgid "x264 profile and level selection"
+msgstr "Выбор профиля и уровня x264"
+
+#: modules/gui/qt/ui/sprefs_input.h:356
+msgid "Hardware-accelerated decoding"
+msgstr "Декодирование с аппаратным ускорением"
+
+#: modules/gui/qt/ui/sprefs_input.h:357
+msgid "Video quality post-processing level"
+msgstr "Качество обработки видео"
+
+#: modules/gui/qt/ui/sprefs_input.h:358
+msgid "Skip H.264 in-loop deblocking filter"
+msgstr "Выкл. устранение блочности H.264"
+
+#: modules/gui/qt/ui/sprefs_input.h:359
+msgid "x264 preset and tuning selection"
+msgstr "Выбор настроек и предустановок x264"
+
+#: modules/gui/qt/ui/sprefs_input.h:361
+msgid "Optical drive"
+msgstr "Оптический диск"
+
+#: modules/gui/qt/ui/sprefs_input.h:362
+msgid "Default optical device"
+msgstr "Устройство по умолчанию"
+
+#: modules/gui/qt/ui/sprefs_input.h:366
+msgid "Damaged or incomplete AVI file"
+msgstr "При открытии повреждённого AVI"
+
+#: modules/gui/qt/ui/sprefs_input.h:369
+msgid "HTTP proxy URL"
+msgstr "HTTP-прокси"
+
+#: modules/gui/qt/ui/sprefs_input.h:370
+msgid "HTTP (default)"
+msgstr "HTTP (по умолчанию)"
+
+#: modules/gui/qt/ui/sprefs_input.h:371
+msgid "RTP over RTSP (TCP)"
+msgstr "RTP поверх RTSP (TCP)"
+
+#: modules/gui/qt/ui/sprefs_input.h:372
+msgid "Live555 stream transport"
+msgstr "Транспорт потока Live555"
+
+#: modules/gui/qt/ui/sprefs_input.h:373
+msgid "Default caching policy"
+msgstr "Политика кеширования по умолчанию"
+
+#: modules/gui/qt/ui/sprefs_interface.h:528
+msgid "Menus language:"
+msgstr "Язык меню:"
+
+#: modules/gui/qt/ui/sprefs_interface.h:529
+msgid "Look and feel"
+msgstr "Оформление и поведение"
+
+#: modules/gui/qt/ui/sprefs_interface.h:530
+msgid "Use custom skin"
+msgstr "Другой стиль"
+
+#: modules/gui/qt/ui/sprefs_interface.h:532
+msgid "This is VLC's default interface, with a native look and feel."
+msgstr "Интерфейс VLC по умолчанию, с простым оформлением."
+
+#: modules/gui/qt/ui/sprefs_interface.h:534
+msgid "Use native style"
+msgstr "Стандартный стиль"
+
+#: modules/gui/qt/ui/sprefs_interface.h:535
+msgid "Resize interface to video size"
+msgstr "Подгонять размер интерфейса под размер видео"
+
+#: modules/gui/qt/ui/sprefs_interface.h:536
+msgid "Show controls in full screen mode"
+msgstr "Панель управления в полноэкранном режиме"
+
+#: modules/gui/qt/ui/sprefs_interface.h:537
+msgid "Pause playback when minimized"
+msgstr "Пауза при сворачивании"
+
+#: modules/gui/qt/ui/sprefs_interface.h:538
+msgid "Show media change popup:"
+msgstr "Уведомлять о смене медиаисточника:"
+
+#: modules/gui/qt/ui/sprefs_interface.h:539
+msgid "Start in minimal view mode"
+msgstr "Запускать в компактном режиме"
+
+#: modules/gui/qt/ui/sprefs_interface.h:540
+msgid "Force window style:"
+msgstr "Стиль окон:"
+
+#: modules/gui/qt/ui/sprefs_interface.h:541
+msgid "Integrate video in interface"
+msgstr "Встроить видео в интерфейс"
+
+#: modules/gui/qt/ui/sprefs_interface.h:542
+msgid "Show systray icon"
+msgstr "Значок в системном лотке"
+
+#: modules/gui/qt/ui/sprefs_interface.h:543
+msgid "Auto raising the interface:"
+msgstr "Автоматический показ интерфейса:"
+
+#: modules/gui/qt/ui/sprefs_interface.h:544
+msgid "Skin resource file:"
+msgstr "Файл оболочки:"
+
+#: modules/gui/qt/ui/sprefs_interface.h:546
+msgid "Playlist and Instances"
+msgstr "Плейлист и поведение копий"
+
+#: modules/gui/qt/ui/sprefs_interface.h:549
+msgid "Pause on the last frame of a video"
+msgstr "Пауза на последнем кадре видео"
+
+#: modules/gui/qt/ui/sprefs_interface.h:552
+msgid "Allow only one instance"
+msgstr "Разрешить только одну копию"
+
+#: modules/gui/qt/ui/sprefs_interface.h:554
+msgid "Activate updates notifier"
+msgstr "Включить уведомления об обновлениях"
+
+#: modules/gui/qt/ui/sprefs_interface.h:556
+msgid "Every "
+msgstr "с интервалом "
+
+#: modules/gui/qt/ui/sprefs_interface.h:557
+msgid "Save recently played items"
+msgstr "Сохранять последние открытые файлы"
+
+#: modules/gui/qt/ui/sprefs_interface.h:560
+msgid "Separate words by | (without space)"
+msgstr "Разделяйте слова символом | (без пробелов)"
+
+#: modules/gui/qt/ui/sprefs_interface.h:563
+msgid "Operating System Integration"
+msgstr "Интеграция с системой"
+
+#: modules/gui/qt/ui/sprefs_interface.h:564
+msgid "File extensions association"
+msgstr "Привязки файлов"
+
+#: modules/gui/qt/ui/sprefs_interface.h:565
+msgid "Set up associations..."
+msgstr "Настроить привязки..."
+
+#: modules/gui/qt/ui/sprefs_subtitles.h:288
+msgid "Enable On Screen Display (OSD)"
+msgstr "Включить экранную индикацию"
+
+#: modules/gui/qt/ui/sprefs_subtitles.h:289
+msgid "Show media title on video start"
+msgstr "Показывать название видео в начале"
+
+#: modules/gui/qt/ui/sprefs_subtitles.h:291
+msgid "Enable subtitles"
+msgstr "Включить субтитры"
+
+#: modules/gui/qt/ui/sprefs_subtitles.h:292
+msgid "Subtitle Language"
+msgstr "Язык субтитров"
+
+#: modules/gui/qt/ui/sprefs_subtitles.h:294
+msgid "Default encoding"
+msgstr "Кодировка по умолчанию"
+
+#: modules/gui/qt/ui/sprefs_subtitles.h:295
+msgid "Subtitle effects"
+msgstr "Эффекты субтитров"
+
+#: modules/gui/qt/ui/sprefs_subtitles.h:301
+msgid "Add a shadow"
+msgstr "Добавить тень"
+
+#: modules/gui/qt/ui/sprefs_subtitles.h:303
+#: modules/gui/qt/ui/video_effects.h:1227
+#: modules/gui/qt/ui/video_effects.h:1231
+#: modules/gui/qt/ui/video_effects.h:1234
+#: modules/gui/qt/ui/video_effects.h:1235
+#: modules/gui/qt/ui/video_effects.h:1269
+#: modules/gui/qt/ui/video_effects.h:1271
+#: modules/gui/qt/ui/video_effects.h:1281
+#: modules/gui/qt/ui/video_effects.h:1282
+msgid " px"
+msgstr " пкс"
+
+#: modules/gui/qt/ui/sprefs_subtitles.h:304
+msgid "Add a background"
+msgstr "Добавить фон"
+
+#: modules/gui/qt/ui/sprefs_video.h:313
+msgid "O&utput"
+msgstr "В&ывод"
+
+#: modules/gui/qt/ui/sprefs_video.h:317
+msgid "DirectX"
+msgstr "DirectX"
+
+#: modules/gui/qt/ui/sprefs_video.h:319
+msgid "Accelerated video output (Overlay)"
+msgstr "Ускоренный вывод видео (оверлей)"
+
+#: modules/gui/qt/ui/sprefs_video.h:320
+msgid "KVA"
+msgstr "KVA"
+
+#: modules/gui/qt/ui/sprefs_video.h:324
+msgid "Deinterlacing"
+msgstr "Устранение чересстрочности"
+
+#: modules/gui/qt/ui/sprefs_video.h:326
+msgid "Force Aspect Ratio"
+msgstr "Принудительное использование соотношения сторон"
+
+#: modules/gui/qt/ui/sprefs_video.h:331
+msgid "vlc-snap"
+msgstr "vlc-snap"
+
+#: modules/gui/qt/ui/streampanel.h:169
+msgid "Stuff"
+msgstr "Настройки"
+
+#: modules/gui/qt/ui/streampanel.h:171
+msgid "Edit settings"
+msgstr "Редактировать настройки"
+
+#: modules/gui/qt/ui/streampanel.h:172
+msgid "Control"
+msgstr "Управление"
+
+#: modules/gui/qt/ui/streampanel.h:173
+msgid "Run manually"
+msgstr "Запуск вручную"
+
+#: modules/gui/qt/ui/streampanel.h:174
+msgid "Setup schedule"
+msgstr "Создать расписание"
+
+#: modules/gui/qt/ui/streampanel.h:175
+msgid "Run on schedule"
+msgstr "Запуск по расписанию"
+
+#: modules/gui/qt/ui/streampanel.h:176
+msgid "Status"
+msgstr "Статус"
+
+#: modules/gui/qt/ui/streampanel.h:177
+msgid "P/P"
+msgstr "P/P"
+
+#: modules/gui/qt/ui/streampanel.h:180
+msgid "Prev"
+msgstr "Предыдущий"
+
+#: modules/gui/qt/ui/streampanel.h:181
+msgid "Add Input"
+msgstr "Добавить ввод"
+
+#: modules/gui/qt/ui/streampanel.h:182
+msgid "Edit Input"
+msgstr "Редактировать ввод"
+
+#: modules/gui/qt/ui/streampanel.h:183
+msgid "Clear List"
+msgstr "Очистить список"
+
+#: modules/gui/qt/ui/update.h:145
+msgid "Check for VLC updates"
+msgstr "Проверить обновления VLC"
+
+#: modules/gui/qt/ui/update.h:146
+msgid "Launching an update request..."
+msgstr "Запуск процесса обновления..."
+
+#: modules/gui/qt/ui/update.h:147
+msgid "Do you want to download it?"
+msgstr "Скачать его?"
+
+#: modules/gui/qt/ui/video_effects.h:1225
+msgid "Essential"
+msgstr "Основные"
+
+#: modules/gui/qt/ui/video_effects.h:1239
+#: modules/gui/qt/ui/video_effects.h:1248
+msgid ">HHHHHH;#"
+msgstr ">HHHHHH;#"
+
+#: modules/gui/qt/ui/video_effects.h:1240
+msgid "Negate colors"
+msgstr "Инверсия цветов"
+
+#: modules/gui/qt/ui/video_effects.h:1253
+msgid "Colors"
+msgstr "Цвета"
+
+#: modules/gui/qt/ui/video_effects.h:1254
+msgid "Interactive Zoom"
+msgstr "Интерактивное увеличение"
+
+#: modules/gui/qt/ui/video_effects.h:1260
+msgid "Angle"
+msgstr "Угол"
+
+#: modules/gui/qt/ui/video_effects.h:1267
+#: modules/gui/qt/ui/video_effects.h:1284
+msgid "..."
+msgstr "..."
+
+#: modules/gui/qt/ui/video_effects.h:1272
+msgid "full"
+msgstr "непрозрачность"
+
+#: modules/gui/qt/ui/video_effects.h:1274
+msgid "none"
+msgstr "нет"
+
+#: modules/gui/qt/ui/video_effects.h:1278
+msgid "Logo erase"
+msgstr "Стирание"
+
+#: modules/gui/qt/ui/video_effects.h:1283
+msgid "Mask"
+msgstr "Маска"
+
+#: modules/gui/qt/ui/video_effects.h:1286
+msgid "Anaglyph 3D"
+msgstr "Анаглиф 3D"
+
+#: modules/gui/qt/ui/video_effects.h:1287
+msgid "Mirror"
+msgstr "Зеркало"
+
+#: modules/gui/qt/ui/video_effects.h:1291
+msgid "Motion detect"
+msgstr "Детектор движения"
+
+#: modules/gui/qt/ui/video_effects.h:1292
+msgid "Spatial blur"
+msgstr "Пространственное размытие"
+
+#: modules/gui/qt/ui/video_effects.h:1296
+msgid "Anti-Flickering"
+msgstr "Устранение мерцания"
+
+#: modules/gui/qt/ui/video_effects.h:1297
+msgid "Soften"
+msgstr "Смягчение"
+
+#: modules/gui/qt/ui/video_effects.h:1298
+msgid "Denoiser"
+msgstr "Уменьшение шумов"
+
+#: modules/gui/qt/ui/video_effects.h:1299
+msgid "Spatial luma strength"
+msgstr "Пространственная устойчивость яркости"
+
+#: modules/gui/qt/ui/video_effects.h:1300
+msgid "Temporal luma strength"
+msgstr "Временная устойчивость яркости"
+
+#: modules/gui/qt/ui/video_effects.h:1301
+msgid "Spatial chroma strength"
+msgstr "Пространственная устойчивость цветности"
+
+#: modules/gui/qt/ui/video_effects.h:1302
+msgid "Temporal chroma strength"
+msgstr "Временная устойчивость цветности"
+
+#: modules/gui/qt/ui/vlm.h:283
+msgid "VLM configurator"
+msgstr "Конфигуратор VLM"
+
+#: modules/gui/qt/ui/vlm.h:284
+msgid "Media Manager Edition"
+msgstr "Настройка медиаменеджера"
+
+#: modules/gui/qt/ui/vlm.h:285
+msgid "Name:"
+msgstr "Название:"
+
+#: modules/gui/qt/ui/vlm.h:287
+msgid "Input:"
+msgstr "Вход:"
+
+#: modules/gui/qt/ui/vlm.h:288
+msgid "Select Input"
+msgstr "Выбрать вход"
+
+#: modules/gui/qt/ui/vlm.h:289
+msgid "Output:"
+msgstr "Выход:"
+
+#: modules/gui/qt/ui/vlm.h:290
+msgid "Select Output"
+msgstr "Выбрать выход"
+
+#: modules/gui/qt/ui/vlm.h:291
+msgid "Time Control"
+msgstr "Управление временем"
+
+#: modules/gui/qt/ui/vlm.h:292
+msgid "Mux Control"
+msgstr "Управление мультиплексированием"
+
+#: modules/gui/qt/ui/vlm.h:293
+msgid "Muxer:"
+msgstr "Мультиплексор:"
+
+#: modules/gui/qt/ui/vlm.h:294
+msgid "AAAA; "
+msgstr "AAAA; "
+
+#: modules/gui/qt/ui/vlm.h:299
+msgid "Media Manager List"
+msgstr "Список настроек медиаменеджера"
+
 #~ msgid "Export (include insecure ciphers)"
 #~ msgstr "Экспортные ограничения (включить небезопасные шифры)"
-
-#~ msgid "Dialog"
-#~ msgstr "Диалог"
-
-#~ msgid "Form"
-#~ msgstr "Форма"
-
-#~ msgid "Preset"
-#~ msgstr "Предустановка"
-
-#~ msgid "0.00 dB"
-#~ msgstr "0.00 дБ"
-
-#~ msgid "&Verbosity:"
-#~ msgstr "&Детализация:"
-
-#~ msgid "&Filter:"
-#~ msgstr "&Фильтр:"
-
-#~ msgid "&Save as..."
-#~ msgstr "&Сохранить как..."
-
-#~ msgid "Modules Tree"
-#~ msgstr "Дерево модулей"
-
-#~ msgid "Show extended options"
-#~ msgstr "Показать дополнительные параметры"
-
-#~ msgid "Show &more options"
-#~ msgstr "Показать дополнительные параметры"
-
-#~ msgid "Change the caching for the media"
-#~ msgstr "Изменить размер кеша медиаданных"
-
-#~ msgid " ms"
-#~ msgstr " мс"
-
-#~ msgid "MRL"
-#~ msgstr "MRL"
-
-#~ msgid "Start Time"
-#~ msgstr "Время запуска"
-
-#~ msgid "Stop Time"
-#~ msgstr "Время остановки"
-
-#~ msgid "Edit Options"
-#~ msgstr "Строка параметров"
-
-#~ msgid "Extra media"
-#~ msgstr "Другой файл"
-
-#~ msgid "Complete MRL for VLC internal"
-#~ msgstr "Полный MRL"
-
-#~ msgid "Select the file"
-#~ msgstr "Выберите файл"
-
-#~ msgid "Change the start time for the media"
-#~ msgstr "Изменить момент времени, с которого начинать воспроизведение"
-
-#~ msgid "HH'H':mm'm':ss's'.zzz"
-#~ msgstr "HH'H':mm'm':ss's'.zzz"
-
-#~ msgid "Change the stop time for the media"
-#~ msgstr "Изменить момент остановки воспроизведения"
-
-#~ msgid "Play another media synchronously (extra audio file, ...)"
-#~ msgstr "Параллельно проигрывать другой медиафайл (аудио, ...)"
-
-#~ msgid "Capture mode"
-#~ msgstr "Режим захвата"
-
-#~ msgid "Select the capture device type"
-#~ msgstr "Выбрать тип устройства захвата"
-
-#~ msgid "Device Selection"
-#~ msgstr "Выбор устройства"
-
-#~ msgid "Options"
-#~ msgstr "Параметры"
-
-#~ msgid "Access advanced options to tweak the device"
-#~ msgstr "Показать дополнительные параметры для настройки устройства"
-
-#~ msgid "Advanced options..."
-#~ msgstr "Другие..."
-
-#~ msgid "Disc Selection"
-#~ msgstr "Выбор диска"
-
-#~ msgid "SVCD/VCD"
-#~ msgstr "SVCD/VCD"
-
-#~ msgid "Disable Disc Menus"
-#~ msgstr "Отключает меню диска"
-
-#~ msgid "No disc menus"
-#~ msgstr "Без меню диска"
-
-#~ msgid "Disc device"
-#~ msgstr "Дисковое устройство"
-
-#~ msgid "Starting Position"
-#~ msgstr "Начальная позиция"
-
-#~ msgid "Audio and Subtitles"
-#~ msgstr "Аудио и субтитры"
-
-#~ msgid "Use a sub&title file"
-#~ msgstr "Использовать файл суб&титров"
-
-#~ msgid "Select the subtitle file"
-#~ msgstr "Выбрать файл субтитров"
-
-#~ msgid "Choose one or more media file to open"
-#~ msgstr "Выберите один или несколько файлов для воспроизведения"
-
-#~ msgid "File Selection"
-#~ msgstr "Выбор файлов"
-
-#~ msgid "You can select local files with the following list and buttons."
-#~ msgstr "Добавьте в этот список локальные файлы для воспроизведения."
-
-#~ msgid "Add..."
-#~ msgstr "Добавить..."
-
-#~ msgid "Network Protocol"
-#~ msgstr "Сетевой протокол"
-
-#~ msgid "Please enter a network URL:"
-#~ msgstr "Введите сетевой адрес:"
-
-#~ msgid "Profile edition"
-#~ msgstr "Редактирование профиля"
-
-#~ msgid "FLAC"
-#~ msgstr "FLAC"
-
-#~ msgid "MP&4/MOV"
-#~ msgstr "MP&4/MOV"
-
-#~ msgid "Ogg/Ogm"
-#~ msgstr "Ogg/Ogm"
-
-#~ msgid "M&KV"
-#~ msgstr "M&KV"
-
-#~ msgid "M&JPEG"
-#~ msgstr "M&JPEG"
-
-#~ msgid "MPEG-PS"
-#~ msgstr "MPEG-PS"
-
-#~ msgid "F&LV"
-#~ msgstr "F&LV"
-
-#~ msgid "&MPEG-TS"
-#~ msgstr "&MPEG-TS"
-
-#~ msgid "RAW"
-#~ msgstr "RAW"
-
-#~ msgid "WAV"
-#~ msgstr "WAV"
-
-#~ msgid "Webm"
-#~ msgstr "Webm"
-
-#~ msgid "MPEG &1"
-#~ msgstr "MPEG &1"
-
-#~ msgid "AVI"
-#~ msgstr "AVI"
-
-#~ msgid "ASF/WMV"
-#~ msgstr "ASF/WMV"
-
-#~ msgid "MP&3"
-#~ msgstr "MP&3"
-
-#~ msgid "Features"
-#~ msgstr "Характеристики"
-
-#~ msgid "Streamable"
-#~ msgstr "Транслируемый"
-
-#~ msgid "Chapters"
-#~ msgstr "Главы"
-
-#~ msgid "Menus"
-#~ msgstr "Меню"
-
-#~ msgid "Fra&me Rate"
-#~ msgstr "Час&тота кадров"
-
-#~ msgid "Same as source"
-#~ msgstr "Как в источнике"
-
-#~ msgid " fps"
-#~ msgstr " к/с"
-
-#~ msgid "Custom options"
-#~ msgstr "Настраиваемые параметры"
-
-#~ msgid "&Quality"
-#~ msgstr "&Качество"
-
-#~ msgid "Not Used"
-#~ msgstr "Не определено"
-
-#~ msgid " kb/s"
-#~ msgstr " кб/сек"
-
-#~ msgid "Encoding parameters"
-#~ msgstr "Параметры кодирования"
-
-#~ msgid "Frame size"
-#~ msgstr "Размер кадра"
-
-#~ msgid "px"
-#~ msgstr "пкс"
-
-#~ msgid "Sa&mple Rate"
-#~ msgstr "Ч&астота дискретизации"
-
-#~ msgid "Profile &Name"
-#~ msgstr "&Название профиля"
-
-#~ msgid "Set up media sources to stream"
-#~ msgstr "Выберите медиаисточники для вещания"
-
-#~ msgid "Destination Setup"
-#~ msgstr "Настройка вывода"
-
-#~ msgid "Select destinations to stream to"
-#~ msgstr "Выберите назначения потока"
-
-#~ msgid ""
-#~ "Add destinations following the streaming methods you need. Be sure to "
-#~ "check with transcoding that the format is compatible with the method used."
-#~ msgstr ""
-#~ "Добавьте требуемые пути назначения и методы вещания. Убедитесь в том, что "
-#~ "при перекодировании формат совместим с выбранным методом."
-
-#~ msgid "New destination"
-#~ msgstr "Новое назначение"
-
-#~ msgid "Display locally"
-#~ msgstr "Воспроизводить локально"
-
-#~ msgid "Transcoding Options"
-#~ msgstr "Параметры перекодирования"
-
-#~ msgid "Select and choose transcoding options"
-#~ msgstr "Выберите и настройте параметры перекодирования"
-
-#~ msgid "Activate Transcoding"
-#~ msgstr "Включить перекодирование"
-
-#~ msgid "Option Setup"
-#~ msgstr "Настройка параметров"
-
-#~ msgid "Set up any additional options for streaming"
-#~ msgstr "Установите дополнительные параметры вещания"
-
-#~ msgid "Miscellaneous Options"
-#~ msgstr "Прочие параметры"
-
-#~ msgid "Stream all elementary streams"
-#~ msgstr "Выводить все элементарные потоки"
-
-#~ msgid "Generated stream output string"
-#~ msgstr "Строка вывода для генерируемого потока"
-
-#~ msgid " %"
-#~ msgstr " %"
-
-#~ msgid "Output module:"
-#~ msgstr "Модуль вывода:"
-
-#~ msgid "Use S/PDIF when available"
-#~ msgstr "Использовать S/PDIF при его наличии"
-
-#~ msgid "Effects"
-#~ msgstr "Эффекты"
-
-#~ msgid "Visualization:"
-#~ msgstr "Визуализация:"
-
-#~ msgid "Enable Time-Stretching audio"
-#~ msgstr "Изменение скорости звука"
-
-#~ msgid "Replay gain mode:"
-#~ msgstr "Режим выравнивания громкости:"
-
-#~ msgid "Normalize volume to:"
-#~ msgstr "Нормализовать громкость до:"
-
-#~ msgid "Tracks"
-#~ msgstr "Дорожки"
-
-#~ msgid "Preferred audio language:"
-#~ msgstr "Предпочитаемый язык аудио:"
-
-#~ msgid "Password:"
-#~ msgstr "Пароль:"
-
-#~ msgid "Username:"
-#~ msgstr "Имя пользователя:"
-
-#~ msgid "Submit played tracks stats to Last.fm"
-#~ msgstr "Сообщать на Last.fm о том, что вы слушаете"
-
-#~ msgid "Codecs"
-#~ msgstr "Кодеки"
-
-#~ msgid "x264 profile and level selection"
-#~ msgstr "Выбор профиля и уровня x264"
-
-#~ msgid "Hardware-accelerated decoding"
-#~ msgstr "Декодирование с аппаратным ускорением"
-
-#~ msgid "Video quality post-processing level"
-#~ msgstr "Качество обработки видео"
-
-#~ msgid "Skip H.264 in-loop deblocking filter"
-#~ msgstr "Выкл. устранение блочности H.264"
-
-#~ msgid "x264 preset and tuning selection"
-#~ msgstr "Выбор настроек и предустановок x264"
-
-#~ msgid "Optical drive"
-#~ msgstr "Оптический диск"
-
-#~ msgid "Default optical device"
-#~ msgstr "Устройство по умолчанию"
-
-#~ msgid "Damaged or incomplete AVI file"
-#~ msgstr "При открытии повреждённого AVI"
-
-#~ msgid "HTTP proxy URL"
-#~ msgstr "HTTP-прокси"
-
-#~ msgid "HTTP (default)"
-#~ msgstr "HTTP (по умолчанию)"
-
-#~ msgid "RTP over RTSP (TCP)"
-#~ msgstr "RTP поверх RTSP (TCP)"
-
-#~ msgid "Live555 stream transport"
-#~ msgstr "Транспорт потока Live555"
-
-#~ msgid "Default caching policy"
-#~ msgstr "Политика кеширования по умолчанию"
-
-#~ msgid "Menus language:"
-#~ msgstr "Язык меню:"
-
-#~ msgid "Look and feel"
-#~ msgstr "Оформление и поведение"
-
-#~ msgid "Use custom skin"
-#~ msgstr "Другой стиль"
-
-#~ msgid "This is VLC's default interface, with a native look and feel."
-#~ msgstr "Интерфейс VLC по умолчанию, с простым оформлением."
-
-#~ msgid "Use native style"
-#~ msgstr "Стандартный стиль"
-
-#~ msgid "Resize interface to video size"
-#~ msgstr "Подгонять размер интерфейса под размер видео"
-
-#~ msgid "Show controls in full screen mode"
-#~ msgstr "Панель управления в полноэкранном режиме"
-
-#~ msgid "Pause playback when minimized"
-#~ msgstr "Пауза при сворачивании"
-
-#~ msgid "Show media change popup:"
-#~ msgstr "Уведомлять о смене медиаисточника:"
-
-#~ msgid "Start in minimal view mode"
-#~ msgstr "Запускать в компактном режиме"
-
-#~ msgid "Force window style:"
-#~ msgstr "Стиль окон:"
-
-#~ msgid "Integrate video in interface"
-#~ msgstr "Встроить видео в интерфейс"
-
-#~ msgid "Show systray icon"
-#~ msgstr "Значок в системном лотке"
-
-#~ msgid "Auto raising the interface:"
-#~ msgstr "Автоматический показ интерфейса:"
-
-#~ msgid "Skin resource file:"
-#~ msgstr "Файл оболочки:"
-
-#~ msgid "Playlist and Instances"
-#~ msgstr "Плейлист и поведение копий"
-
-#~ msgid "Pause on the last frame of a video"
-#~ msgstr "Пауза на последнем кадре видео"
-
-#~ msgid "Allow only one instance"
-#~ msgstr "Разрешить только одну копию"
-
-#~ msgid "Activate updates notifier"
-#~ msgstr "Включить уведомления об обновлениях"
-
-#~ msgid "Every "
-#~ msgstr "с интервалом "
-
-#~ msgid "Save recently played items"
-#~ msgstr "Сохранять последние открытые файлы"
-
-#~ msgid "Separate words by | (without space)"
-#~ msgstr "Разделяйте слова символом | (без пробелов)"
-
-#~ msgid "Operating System Integration"
-#~ msgstr "Интеграция с системой"
-
-#~ msgid "File extensions association"
-#~ msgstr "Привязки файлов"
-
-#~ msgid "Set up associations..."
-#~ msgstr "Настроить привязки..."
-
-#~ msgid "Enable On Screen Display (OSD)"
-#~ msgstr "Включить экранную индикацию"
-
-#~ msgid "Show media title on video start"
-#~ msgstr "Показывать название видео в начале"
-
-#~ msgid "Enable subtitles"
-#~ msgstr "Включить субтитры"
-
-#~ msgid "Subtitle Language"
-#~ msgstr "Язык субтитров"
-
-#~ msgid "Default encoding"
-#~ msgstr "Кодировка по умолчанию"
-
-#~ msgid "Subtitle effects"
-#~ msgstr "Эффекты субтитров"
-
-#~ msgid "Add a shadow"
-#~ msgstr "Добавить тень"
-
-#~ msgid " px"
-#~ msgstr " пкс"
-
-#~ msgid "Add a background"
-#~ msgstr "Добавить фон"
-
-#~ msgid "O&utput"
-#~ msgstr "В&ывод"
-
-#~ msgid "DirectX"
-#~ msgstr "DirectX"
-
-#~ msgid "Accelerated video output (Overlay)"
-#~ msgstr "Ускоренный вывод видео (оверлей)"
-
-#~ msgid "KVA"
-#~ msgstr "KVA"
-
-#~ msgid "Deinterlacing"
-#~ msgstr "Устранение чересстрочности"
-
-#~ msgid "Force Aspect Ratio"
-#~ msgstr "Принудительное использование соотношения сторон"
-
-#~ msgid "vlc-snap"
-#~ msgstr "vlc-snap"
-
-#~ msgid "Stuff"
-#~ msgstr "Настройки"
-
-#~ msgid "Edit settings"
-#~ msgstr "Редактировать настройки"
-
-#~ msgid "Control"
-#~ msgstr "Управление"
-
-#~ msgid "Run manually"
-#~ msgstr "Запуск вручную"
-
-#~ msgid "Setup schedule"
-#~ msgstr "Создать расписание"
-
-#~ msgid "Run on schedule"
-#~ msgstr "Запуск по расписанию"
-
-#~ msgid "Status"
-#~ msgstr "Статус"
-
-#~ msgid "P/P"
-#~ msgstr "P/P"
-
-#~ msgid "Prev"
-#~ msgstr "Предыдущий"
-
-#~ msgid "Add Input"
-#~ msgstr "Добавить ввод"
-
-#~ msgid "Edit Input"
-#~ msgstr "Редактировать ввод"
-
-#~ msgid "Clear List"
-#~ msgstr "Очистить список"
-
-#~ msgid "Check for VLC updates"
-#~ msgstr "Проверить обновления VLC"
-
-#~ msgid "Launching an update request..."
-#~ msgstr "Запуск процесса обновления..."
-
-#~ msgid "Do you want to download it?"
-#~ msgstr "Скачать его?"
-
-#~ msgid "Essential"
-#~ msgstr "Основные"
-
-#~ msgid ">HHHHHH;#"
-#~ msgstr ">HHHHHH;#"
-
-#~ msgid "Negate colors"
-#~ msgstr "Инверсия цветов"
-
-#~ msgid "Colors"
-#~ msgstr "Цвета"
-
-#~ msgid "Interactive Zoom"
-#~ msgstr "Интерактивное увеличение"
-
-#~ msgid "Angle"
-#~ msgstr "Угол"
-
-#~ msgid "..."
-#~ msgstr "..."
-
-#~ msgid "full"
-#~ msgstr "непрозрачность"
-
-#~ msgid "none"
-#~ msgstr "нет"
-
-#~ msgid "Logo erase"
-#~ msgstr "Стирание"
-
-#~ msgid "Mask"
-#~ msgstr "Маска"
-
-#~ msgid "Anaglyph 3D"
-#~ msgstr "Анаглиф 3D"
-
-#~ msgid "Mirror"
-#~ msgstr "Зеркало"
-
-#~ msgid "Motion detect"
-#~ msgstr "Детектор движения"
-
-#~ msgid "Spatial blur"
-#~ msgstr "Пространственное размытие"
-
-#~ msgid "Anti-Flickering"
-#~ msgstr "Устранение мерцания"
-
-#~ msgid "Soften"
-#~ msgstr "Смягчение"
-
-#~ msgid "Denoiser"
-#~ msgstr "Уменьшение шумов"
-
-#~ msgid "Spatial luma strength"
-#~ msgstr "Пространственная устойчивость яркости"
-
-#~ msgid "Temporal luma strength"
-#~ msgstr "Временная устойчивость яркости"
-
-#~ msgid "Spatial chroma strength"
-#~ msgstr "Пространственная устойчивость цветности"
-
-#~ msgid "Temporal chroma strength"
-#~ msgstr "Временная устойчивость цветности"
-
-#~ msgid "VLM configurator"
-#~ msgstr "Конфигуратор VLM"
-
-#~ msgid "Media Manager Edition"
-#~ msgstr "Настройка медиаменеджера"
-
-#~ msgid "Name:"
-#~ msgstr "Название:"
-
-#~ msgid "Input:"
-#~ msgstr "Вход:"
-
-#~ msgid "Select Input"
-#~ msgstr "Выбрать вход"
-
-#~ msgid "Output:"
-#~ msgstr "Выход:"
-
-#~ msgid "Select Output"
-#~ msgstr "Выбрать выход"
-
-#~ msgid "Time Control"
-#~ msgstr "Управление временем"
-
-#~ msgid "Mux Control"
-#~ msgstr "Управление мультиплексированием"
-
-#~ msgid "Muxer:"
-#~ msgstr "Мультиплексор:"
-
-#~ msgid "AAAA; "
-#~ msgstr "AAAA; "
-
-#~ msgid "Media Manager List"
-#~ msgstr "Список настроек медиаменеджера"
 
 #~ msgid "QTSound"
 #~ msgstr "QTSound"
@@ -32864,9 +33420,6 @@ msgstr "Вы действительно хотите создать поток?"
 #~ msgid "Uncompressed RAR"
 #~ msgstr "Несжатый RAR"
 
-#~ msgid "VLC Debug Log (%s).rtf"
-#~ msgstr "Отладочные сообщения VLC (%s).rtf"
-
 #, fuzzy
 #~ msgid "VLC Debug Log (%s).rtfd"
 #~ msgstr "Отладочные сообщения VLC (%s).rtf"
@@ -32945,10 +33498,6 @@ msgstr "Вы действительно хотите создать поток?"
 #, fuzzy
 #~ msgid "Consider width and height as maximum values."
 #~ msgstr "Щёлкните, чтобы установить максимальную громкость звука."
-
-#, fuzzy
-#~ msgid "RTP de-jitter buffer length (msec)"
-#~ msgstr "Продолжительность фильтра (мс)"
 
 #, fuzzy
 #~ msgid "1 item"
@@ -33439,10 +33988,6 @@ msgstr "Вы действительно хотите создать поток?"
 #~ msgstr "Скомпилировано %s@%s (%s)\n"
 
 #, fuzzy
-#~ msgid "VLC media player Help"
-#~ msgstr "Справка медиапроигрывателя VLC..."
-
-#, fuzzy
 #~ msgid "Invalid selection"
 #~ msgstr "Неправильная комбинация"
 
@@ -33479,10 +34024,6 @@ msgstr "Вы действительно хотите создать поток?"
 #, fuzzy
 #~ msgid "User name"
 #~ msgstr "Имя пользователя"
-
-#, fuzzy
-#~ msgid "VLC media playback"
-#~ msgstr "Медиапроигрыватель VLC"
 
 #, fuzzy
 #~ msgid "No device is selected"
@@ -33627,10 +34168,6 @@ msgstr "Вы действительно хотите создать поток?"
 #, fuzzy
 #~ msgid "Add Subtitles to transcoded video"
 #~ msgstr "Накладывать субтитры на видео"
-
-#, fuzzy
-#~ msgid "Additional transcode options"
-#~ msgstr "Настройки перекодирования"
 
 #, fuzzy
 #~ msgid "Select the file to save to"
@@ -34654,10 +35191,6 @@ msgstr "Вы действительно хотите создать поток?"
 #~ "(значение по умолчанию), 25, 29.97, 50, 59.94, ...)"
 
 #, fuzzy
-#~ msgid "Refresh list"
-#~ msgstr "Обновить список"
-
-#, fuzzy
 #~ msgid "VLC cannot open ANY capture device.Check the error log for details."
 #~ msgstr ""
 #~ "Не удаётся обнаружить какое-либо устройство захвата. В журнал ошибок "
@@ -34740,10 +35273,6 @@ msgstr "Вы действительно хотите создать поток?"
 #, fuzzy
 #~ msgid "Bitrate mode"
 #~ msgstr "Переопределение битрейта"
-
-#, fuzzy
-#~ msgid "Audio bitmask"
-#~ msgstr "Битрейт аудио"
 
 #, fuzzy
 #~ msgid "Audio volume (0-65535)."
