@@ -68,7 +68,6 @@ Build-Depends:
  libopenmpt-modplug-dev (>= 0.8.9) | libmodplug-dev (>= 1:0.8.9),
  libopus-dev (>= 1.0.3),
  libpng-dev,
- libpostproc-dev (>= 7:3.0),
  libprotobuf-dev (>= 2.5.0),
  libpulse-dev (>= 1.0),
  libqt5svg5-dev,
@@ -97,7 +96,6 @@ Build-Depends:
  libupnp-dev,
  libv4l-dev [linux-any],
  libva-dev [linux-any],
- libvcdinfo-dev (>= 0.7.22),
  libvdpau-dev,
  libvncserver-dev (>= 0.9.9),
  libvorbis-dev,
@@ -125,7 +123,7 @@ Build-Depends:
  wayland-protocols [linux-any],
  zlib1g-dev,
  zsh
-Standards-Version: 4.7.0
+Standards-Version: 4.7.2
 Homepage: https://www.videolan.org/vlc/
 Vcs-Git: https://salsa.debian.org/multimedia-team/vlc.git
 Vcs-Browser: https://salsa.debian.org/multimedia-team/vlc

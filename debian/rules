@@ -115,6 +115,7 @@ confflags += \
 # opencv: developer plugin not required by end users
 # oss: use PulseAudio instead of oss
 # projectm: broken
+# postproc: removed from ffmpeg 8.0
 # schroedinger: removed from Debian (#845037)
 # sdl-image: SDL 1.2 is deprecated (#1038590)
 # sndio: NMU maintained key package
@@ -150,6 +151,7 @@ confflags += \
 	--disable-omxil \
 	--disable-opencv \
 	--disable-oss \
+	--disable-postproc \
 	--disable-projectm \
 	--disable-schroedinger \
 	--disable-sdl-image \
