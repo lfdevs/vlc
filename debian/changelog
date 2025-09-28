@@ -1,3 +1,26 @@
+vlc (3.0.22~rc1-1) unstable; urgency=medium
+
+  * New upstream version 3.0.22~rc1
+  * debian/control:
+    - Fix version constraints on suggested plugins
+    - Drop alternative libmodplug-dev BD
+    - Remove dpkg-dev dependency satisfied in stable
+  * debian/:
+    - Remove zsh completion to make the package reproducible
+    - Switch to lua 5.4 (Closes: #1099742)
+      Check the NEWS entry of vlc-plugin-base on potential issues.
+    - Update lintian overrides for new format
+  * debian/watch: Migrate to version 5
+  * debian/rules:
+    - debhelper now skips override_dh_auto_test if nocheck is specified
+    - Remove handling of libtar as it got dropped upstream
+  * debian/patches: Remove upstream patches included in 3.0.22~rc1
+  * debian/copyright:
+    - Remove old FSF address
+    - Update copyright years
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Sun, 28 Sep 2025 15:26:54 +0200
+
 vlc (3.0.21-11) unstable; urgency=medium
 
   * debian/rules: Disable postproc plugin since libpostproc is removed from

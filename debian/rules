@@ -89,6 +89,7 @@ confflags += \
 	--enable-zvbi \
 	--with-kde-solid=/usr/share/solid/actions/ \
 	$(NULL)
+
 # Reasons for disabling features:
 # a52: no longer supported upstream
 # aom: dav1d support enabled
@@ -106,7 +107,6 @@ confflags += \
 # gst-decode: not needed when having libavcodec
 # libmpeg2: no longer supported upstream
 # libplacebo: is too new
-# libtar: security issue (#737534)
 # live555: non-free code from RFC 3550 (#981439)
 # macosx*: MacOX only
 # mfx: currently not supported on Linux
@@ -141,7 +141,6 @@ confflags += \
 	--disable-gst-decode \
 	--disable-libmpeg2 \
 	--disable-libplacebo \
-	--disable-libtar \
 	--disable-live555 \
 	--disable-macosx \
 	--disable-macosx-avfoundation \
@@ -275,22 +274,15 @@ export removeplugins
 
 override_dh_auto_configure:
 	dh_auto_configure -- $(confflags)
-
-execute_after_dh_auto_build:
-ifeq ($(DEB_BUILD_GNU_TYPE), $(DEB_HOST_GNU_TYPE))
-	# Build zsh completion
-	BUILDDIR=$(CURDIR) \
-	cd extras/analyser && ./zsh_completion.sh
-endif
+	# only needed for rc tarballs
+	echo "3.0.22-rc1-0-g9e23cc7e00" > src/revision.txt
 
 override_dh_auto_test:
-ifeq (,$(filter nocheck,$(DEB_BUILD_OPTIONS)))
 ifeq ($(DEB_BUILD_GNU_TYPE),$(DEB_HOST_GNU_TYPE))
 	./vlc -vvv --ignore-config --no-plugins-cache --list --no-color
 endif
-endif
 
-override_dh_install:
+execute_before_dh_install:
 	# Remove plugin cache
 	find debian/tmp/usr/lib -name plugins.dat -delete
 	# Clean up libtool la files
@@ -303,12 +295,8 @@ override_dh_install:
 	find debian/tmp -name LICENSE -delete
 	# Remove examples installed in -dev packages
 	rm -rf debian/tmp/usr/share/doc/vlc/libvlc
-	# Install
-	dh_install
-ifeq ($(DEB_BUILD_GNU_TYPE),$(DEB_HOST_GNU_TYPE))
-	# Install zsh completion
-	dh_install -pvlc-bin extras/analyser/_vlc usr/share/zsh/vendor-completions
-endif
+
+execute_after_dh_install:
 ifeq (Ubuntu,$(DEB_VENDOR))
 	dh_install -pvlc-bin debian/source_vlc.py usr/share/apport/package-hooks/
 endif
