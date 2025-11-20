@@ -1,3 +1,14 @@
+vlc (3.0.22~rc2-1) unstable; urgency=medium
+
+  [ John Paul Adrian Glaubitz ]
+  * Fix FTBFS on powerpc (Closes: #1115385)
+
+  [ Sebastian Ramacher ]
+  * New upstream version 3.0.22~rc2
+    - Fix installation of Assamese translation (Closes: #1085961)
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Thu, 20 Nov 2025 10:31:49 +0100
+
 vlc (3.0.22~rc1-1) unstable; urgency=medium
 
   * New upstream version 3.0.22~rc1

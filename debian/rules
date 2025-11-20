@@ -249,8 +249,9 @@ confflags += --disable-neon
 removeplugins += neon
 endif
 
-# PowerPC specific optimizations (excluding powerpcspe)
-ifeq (,$(filter-out powerpc,$(DEB_HOST_ARCH_CPU))$(filter powerpcspe,$(DEB_HOST_ARCH)))
+# PowerPC specific optimizations
+# AltiVec is currently disabled on powerpc and ppc64
+ifeq (,$(filter-out ppc64el,$(DEB_HOST_ARCH_CPU)))
 confflags += --enable-altivec
 else
 confflags += --disable-altivec
@@ -275,7 +276,7 @@ export removeplugins
 override_dh_auto_configure:
 	dh_auto_configure -- $(confflags)
 	# only needed for rc tarballs
-	echo "3.0.22-rc1-0-g9e23cc7e00" > src/revision.txt
+	echo "3.0.22-rc2-0-a9d5a66e" > src/revision.txt
 
 override_dh_auto_test:
 ifeq ($(DEB_BUILD_GNU_TYPE),$(DEB_HOST_GNU_TYPE))
