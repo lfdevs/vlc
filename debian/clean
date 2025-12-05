@@ -10,4 +10,3 @@ share/lua/meta/reader/filename.luac
 share/lua/modules/*.luac
 share/lua/playlist/*.luac
 share/lua/sd/*.luac
-src/revision.txt

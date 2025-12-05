@@ -1,3 +1,10 @@
+vlc (3.0.22-1) unstable; urgency=medium
+
+  * New upstream version 3.0.22
+  * debian/rules: No longer write revision info
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Fri, 05 Dec 2025 21:48:10 +0100
+
 vlc (3.0.22~rc2-1) unstable; urgency=medium
 
   [ John Paul Adrian Glaubitz ]

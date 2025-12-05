@@ -275,8 +275,6 @@ export removeplugins
 
 override_dh_auto_configure:
 	dh_auto_configure -- $(confflags)
-	# only needed for rc tarballs
-	echo "3.0.22-rc2-0-a9d5a66e" > src/revision.txt
 
 override_dh_auto_test:
 ifeq ($(DEB_BUILD_GNU_TYPE),$(DEB_HOST_GNU_TYPE))
@@ -291,7 +289,6 @@ execute_before_dh_install:
 	# Remove useless stuff
 	ln -sf /usr/share/fonts/truetype/freefont/FreeSans.ttf debian/tmp/usr/share/vlc/skins2/fonts/FreeSans.ttf
 	ln -sf /usr/share/fonts/truetype/freefont/FreeMonoBold.ttf debian/tmp/usr/share/vlc/skins2/fonts/FreeSansBold.ttf
-	rm -f debian/tmp/usr/share/man/man1/vlc-config.1
 	# Remove additional license files
 	find debian/tmp -name LICENSE -delete
 	# Remove examples installed in -dev packages
