@@ -55,7 +55,6 @@ Build-Depends:
  libkate-dev (>= 0.3.0),
  liblirc-dev,
  liblua5.4-dev,
- libmad0-dev,
  libmatroska-dev (>= 1.0.0),
  libmpcdec-dev,
  libmpg123-dev,

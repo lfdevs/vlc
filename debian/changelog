@@ -1,3 +1,11 @@
+vlc (3.0.22-2) unstable; urgency=medium
+
+  * debian/: Disable libmad plugin
+  * debian/patches: Apply upstream patches to fix build with ffmpeg 8.0
+    (Closes: #1115062)
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Wed, 10 Dec 2025 12:26:35 +0100
+
 vlc (3.0.22-1) unstable; urgency=medium
 
   * New upstream version 3.0.22
