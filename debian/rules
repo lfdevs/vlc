@@ -127,7 +127,7 @@ confflags += \
 confflags += \
 	--disable-a52 \
 	--disable-aom \
-	--diasble-caca \
+	--disable-caca \
 	--disable-crystalhd \
 	--disable-d3d11va \
 	--disable-dca \

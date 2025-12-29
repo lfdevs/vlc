@@ -1,3 +1,9 @@
+vlc (3.0.22-4) unstable; urgency=medium
+
+  * debuan/rules: Fix typo
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Mon, 29 Dec 2025 17:26:40 +0100
+
 vlc (3.0.22-3) unstable; urgency=medium
 
   [ Colomban Wendling ]
