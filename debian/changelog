@@ -1,3 +1,20 @@
+vlc (3.0.22-3) unstable; urgency=medium
+
+  [ Colomban Wendling ]
+  * Fix a few typos and wording in packages descriptions
+
+  [ Pino Toscano ]
+  * Build sid plugin only on Linux
+  * Force linking to pthread on Hurd
+
+  [ Sebastian Ramacher ]
+  * debian/: Disable libcaca
+  * debian/control:
+    - Remove inactive Uploaders
+    - Bump Standards-Version
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Mon, 29 Dec 2025 16:49:26 +0100
+
 vlc (3.0.22-2) unstable; urgency=medium
 
   * debian/: Disable libmad plugin

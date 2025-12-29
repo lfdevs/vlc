@@ -33,7 +33,6 @@ confflags += \
 	--enable-aribsub \
 	--enable-avahi \
 	--enable-bluray \
-	--enable-caca \
 	--enable-chromaprint \
 	--enable-chromecast \
 	--enable-dav1d \
@@ -92,6 +91,7 @@ confflags += \
 # Reasons for disabling features:
 # a52: no longer supported upstream
 # aom: dav1d support enabled
+# caca: unmaintained upstream
 # crystalhd: unusble without firmware (#934242)
 # d3d11va: Windows only
 # dca: no longer supported upstream
@@ -127,6 +127,7 @@ confflags += \
 confflags += \
 	--disable-a52 \
 	--disable-aom \
+	--diasble-caca \
 	--disable-crystalhd \
 	--disable-d3d11va \
 	--disable-dca \
@@ -171,6 +172,7 @@ confflags += \
 	--enable-dv1394 \
 	--enable-linsys \
 	--enable-nfs \
+	--enable-sid \
 	--enable-udev \
 	--enable-v4l2 \
 	--enable-wayland \
@@ -183,6 +185,7 @@ confflags += \
 	--disable-dv1394 \
 	--disable-linsys \
 	--disable-nfs \
+	--disable-sid \
 	--disable-udev \
 	--disable-v4l2 \
 	--disable-wayland \
@@ -266,9 +269,17 @@ DEB_CXXFLAGS_MAINT_APPEND += -mtune=8548
 endif
 endif
 
+# force linking against pthread, as the configure bits detect it is not needed;
+# it will not be needed anymore once the pthreads bits are fully in libc also
+# on Hurd (which will be in glibc 2.43+)
+ifeq ($(DEB_HOST_ARCH_OS),hurd)
+DEB_LDFLAGS_MAINT_APPEND += -lpthread
+endif
+
 export DEB_BUILD_MAINT_OPTIONS
 export DEB_CFLAGS_MAINT_APPEND
 export DEB_CXXFLAGS_MAINT_APPEND
+export DEB_LDFLAGS_MAINT_APPEND
 export removeplugins
 
 %:

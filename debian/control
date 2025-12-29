@@ -3,12 +3,8 @@ Section: video
 Priority: optional
 Maintainer: Debian Multimedia Maintainers <debian-multimedia@lists.debian.org>
 Uploaders:
- Loic Minier <lool@dooz.org>,
- Christophe Mutricy <xtophe@videolan.org>,
- Mohammed Adnène Trojette <adn+deb@diwi.org>,
  Reinhard Tartler <siretart@tauware.de>,
  Benjamin Drung <bdrung@debian.org>,
- Edward Wang <edward.c.wang@compdigitec.com>,
  Mateusz Łukasik <mati75@linuxmint.pl>,
  Sebastian Ramacher <sramacher@debian.org>
 Build-Depends:
@@ -27,7 +23,6 @@ Build-Depends:
  libavcodec-dev (>= 7:3.0),
  libavformat-dev (>= 7:3.0),
  libbluray-dev (>= 1:1.0.0),
- libcaca-dev (>= 0.99.beta4),
  libcairo2-dev (>= 1.13.1),
  libcddb2-dev,
  libchromaprint-dev (>= 0.6.0),
@@ -71,13 +66,13 @@ Build-Depends:
  libqt5svg5-dev,
  libqt5x11extras5-dev,
  libraw1394-dev (>= 2.0.1) [linux-any],
- libresid-builder-dev,
+ libresid-builder-dev [linux-any],
  librsvg2-dev,
  libsamplerate0-dev,
  libsecret-1-dev,
  libshine-dev (>= 3.0.0),
  libshout-dev,
- libsidplay2-dev,
+ libsidplay2-dev [linux-any],
  libsmbclient-dev [!hurd-any],
  libsoxr-dev (>= 0.1.2),
  libspatialaudio-dev,
@@ -120,7 +115,7 @@ Build-Depends:
  qtbase5-private-dev (>= 5.6),
  wayland-protocols [linux-any],
  zlib1g-dev
-Standards-Version: 4.7.2
+Standards-Version: 4.7.3
 Homepage: https://www.videolan.org/vlc/
 Vcs-Git: https://salsa.debian.org/multimedia-team/vlc.git
 Vcs-Browser: https://salsa.debian.org/multimedia-team/vlc
@@ -152,7 +147,7 @@ Description: multimedia player and streamer
  DivX, MOV, WMV, QuickTime, WebM, FLAC, MP3, Ogg/Vorbis files, DVDs, VCDs,
  podcasts, and multimedia streams from various network sources.
  .
- VLC can also be used as a streaming server that duplicates the stream it
+ VLC can also be used as a streaming server that duplicates the streams it
  reads and multicasts them through the network to other clients, or serves
  them through HTTP.
  .
@@ -256,7 +251,7 @@ Description: binaries from VLC
  DivX, MOV, WMV, QuickTime, WebM, FLAC, MP3, Ogg/Vorbis files, DVDs, VCDs,
  podcasts, and multimedia streams from various network sources.
  .
- This package contains the VLC's binaries.
+ This package contains the VLC binaries.
 
 Package: vlc-data
 Architecture: all
@@ -267,7 +262,7 @@ Description: common data for VLC
  DivX, MOV, WMV, QuickTime, WebM, FLAC, MP3, Ogg/Vorbis files, DVDs, VCDs,
  podcasts, and multimedia streams from various network sources.
  .
- This package contains HTTP interface files, and Lua scripts for VLC media
+ This package contains HTTP interface files, and Lua scripts for the VLC media
  player.
 
 Package: vlc-l10n
@@ -280,7 +275,7 @@ Description: translations for VLC
  DivX, MOV, WMV, QuickTime, WebM, FLAC, MP3, Ogg/Vorbis files, DVDs, VCDs,
  podcasts, and multimedia streams from various network sources.
  .
- This package contains localisations for VLC media player.
+ This package contains the translations for the VLC media player.
 
 Package: vlc-plugin-base
 Architecture: any
@@ -297,8 +292,8 @@ Description: multimedia player and streamer (base plugins)
  DivX, MOV, WMV, QuickTime, WebM, FLAC, MP3, Ogg/Vorbis files, DVDs, VCDs,
  podcasts, and multimedia streams from various network sources.
  .
- This package contains most plugins which are shipped in more specialied plugin
- packages.
+ This package contains most plugins which are not shipped in more specialized
+ plugin packages.
 
 Package: vlc-plugin-access-extra
 Architecture: any
@@ -407,7 +402,7 @@ Description: FluidSynth plugin for VLC
  DivX, MOV, WMV, QuickTime, WebM, FLAC, MP3, Ogg/Vorbis files, DVDs, VCDs,
  podcasts, and multimedia streams from various network sources.
  .
- This plugin adds support for playing MIDI file via the FluidSynth software
+ This plugin adds support for playing MIDI files via the FluidSynth software
  synthesizer to the VLC media player.
 
 Package: vlc-plugin-jack
