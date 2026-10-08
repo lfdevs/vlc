@@ -1,0 +1,121 @@
+name: Build Check
+
+on:
+  pull_request:
+    branches:
+      - trixie
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-26.04-arm
+    env:
+      CCACHE_DIR: /github/home/.cache/ccache
+      CCACHE_BASEDIR: /github/home/vlc
+      CCACHE_COMPILERCHECK: content
+    container:
+      image: debian:trixie
+      options: --privileged --user root
+
+    steps:
+      - name: Install dependencies
+        run: |
+          sed -i 's/^Types: deb$/Types: deb deb-src/' /etc/apt/sources.list.d/debian.sources
+          apt update
+          apt build-dep -y vlc
+          apt install -y git ccache build-essential devscripts fakeroot quilt git-buildpackage pristine-tar
+
+      - name: Restore ccache
+        uses: actions/cache/restore@v5
+        with:
+          path: ${{ env.CCACHE_DIR }}
+          key: ccache-vlc-${{ runner.os }}-${{ runner.arch }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            ccache-vlc-${{ runner.os }}-${{ runner.arch }}-
+
+      - name: Configure ccache
+        run: |
+          ccache --set-config=max_size=2G
+          ccache --show-config
+          ccache --zero-stats
+
+      - name: Clone repository
+        env:
+          PR_HEAD_REF: ${{ github.event.pull_request.head.ref }}
+          PR_HEAD_REPO_URL: ${{ github.event.pull_request.head.repo.html_url }}.git
+        run: |
+          cd ~
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
+          git clone -b "$PR_HEAD_REF" --depth 1 "$PR_HEAD_REPO_URL" vlc
+          cd vlc
+          git switch -c ci-build
+
+      - name: Set release name suffix
+        shell: bash
+        run: |
+          cd ~/vlc
+          short_hash=$(git rev-parse --short HEAD)
+          echo "VLC_RELEASE_NAME_SUFFIX=${short_hash}_debian_trixie_arm64" >> "$GITHUB_ENV"
+
+      - name: Build VLC
+        shell: bash
+        run: |
+          echo "Building VLC..."
+          cd ~/vlc
+          origtargz
+          git add .
+          git diff --cached --quiet || git commit -m "Add source code"
+          export PATH="/usr/lib/ccache:$PATH"
+          # VLC refuses to run as root in the package's dh_auto_test check.
+          export DEB_BUILD_OPTIONS="parallel=$(nproc) nocheck"
+          gbp buildpackage -uc -us \
+            --git-builder='debuild -i -I' \
+            --git-ignore-branch --git-no-pristine-tar
+          ccache --show-stats
+          du -sh "$CCACHE_DIR"
+          echo "VLC build completed successfully!"
+
+      - name: Save ccache
+        uses: actions/cache/save@v5
+        if: always()
+        with:
+          path: ${{ env.CCACHE_DIR }}
+          key: ccache-vlc-${{ runner.os }}-${{ runner.arch }}-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Collect packages for debug
+        shell: bash
+        run: |
+          cd ~
+          echo "Calculating sha256 checksums..."
+          find . -maxdepth 1 \( -name "*.deb" \) -type f -printf "%P\0" | xargs -0 sha256sum | sort -k2 > sha256sums_debug.txt
+          cat sha256sums_debug.txt && echo
+
+      - name: Upload build artifacts for debug
+        uses: actions/upload-artifact@v7
+        with:
+          name: vlc_${{ env.VLC_RELEASE_NAME_SUFFIX }}_debug
+          path: |
+            ~/*.deb
+            ~/sha256sums_debug.txt
+          retention-days: 90
+
+      - name: Collect packages
+        shell: bash
+        run: |
+          cd ~
+          rm -f *dev* *dbgsym*
+          echo "Calculating sha256 checksums..."
+          find . -maxdepth 1 \( -name "*.deb" \) -type f -printf "%P\0" | xargs -0 sha256sum | sort -k2 > sha256sums.txt
+          cat sha256sums.txt && echo
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v7
+        with:
+          name: vlc_${{ env.VLC_RELEASE_NAME_SUFFIX }}
+          path: |
+            ~/*.deb
+            ~/sha256sums.txt
+          retention-days: 90
