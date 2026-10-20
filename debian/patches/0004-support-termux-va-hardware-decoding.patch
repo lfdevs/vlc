@@ -1,0 +1,205 @@
+From: lfdevs <lfdevs@lfdevs.com>
+Date: Thu, 8 Oct 2026 22:19:22 +0800
+Subject: vaapi: support termux-va hardware decoding in PRoot containers
+
+Use PRIME-2 separate-layer export when probing the OpenGL picture pool,
+matching the frame display path. This allows drivers such as termux-va
+to initialize hardware decoding without supporting vaDeriveImage.
+Retain the legacy probe for older libva versions.
+
+Synchronize decoded surfaces before export, validate plane descriptors,
+and rebind cached EGLImages when displaying the same picture again.
+
+Add --vaapi-device for explicit device selection and try /dev/kgsl-3d0
+after standard DRM nodes when LIBVA_DRIVER_NAME=termuxva.
+---
+ modules/codec/avcodec/vaapi.c                 |  2 +
+ modules/hw/vaapi/vlc_vaapi.c                  | 21 +++++++-
+ modules/video_output/opengl/converter_vaapi.c | 69 ++++++++++++++++++++++-----
+ 3 files changed, 79 insertions(+), 13 deletions(-)
+
+diff --git a/modules/codec/avcodec/vaapi.c b/modules/codec/avcodec/vaapi.c
+index 4f55a86..35ad468 100644
+--- a/modules/codec/avcodec/vaapi.c
++++ b/modules/codec/avcodec/vaapi.c
+@@ -415,6 +415,8 @@ vlc_module_begin ()
+     set_capability( "hw decoder", 0 )
+     set_callbacks( CreateDRM, DeleteDRM )
+     add_shortcut( "vaapi", "vaapi_drm" )
++    add_string("vaapi-device", NULL, N_("VA-API device"),
++               N_("Device path for VA-API decoding via DRM."), true)
+ #else
+     set_description( N_("VA-API video decoder") )
+     set_capability( "hw decoder", 100 )
+diff --git a/modules/hw/vaapi/vlc_vaapi.c b/modules/hw/vaapi/vlc_vaapi.c
+index cb6e1a1..b31a726 100644
+--- a/modules/hw/vaapi/vlc_vaapi.c
++++ b/modules/hw/vaapi/vlc_vaapi.c
+@@ -125,8 +125,17 @@ vlc_vaapi_InitializeInstanceDRM(vlc_object_t *o,
+         "/dev/dri/card0",
+         "/dev/dri/renderD129",
+         "/dev/dri/card1",
++        "/dev/kgsl-3d0",
+     };
+ 
++    char *configured_device = NULL;
++    if (device == NULL)
++    {
++        configured_device = var_InheritString(o, "vaapi-device");
++        if (configured_device != NULL && configured_device[0] != '\0')
++            device = configured_device;
++    }
++
+     const char *user_drm_device_paths[] = { device };
+     const char **drm_device_paths;
+     size_t drm_device_paths_count;
+@@ -140,8 +149,13 @@ vlc_vaapi_InitializeInstanceDRM(vlc_object_t *o,
+     {
+         drm_device_paths = default_drm_device_paths;
+         drm_device_paths_count = ARRAY_SIZE(default_drm_device_paths);
++        /* KGSL is not a DRM node; only the termuxva driver accepts it. */
++        const char *driver = getenv("LIBVA_DRIVER_NAME");
++        if (driver == NULL || strcmp(driver, "termuxva") != 0)
++            --drm_device_paths_count;
+     }
+ 
++    struct vlc_vaapi_instance *result = NULL;
+     for (size_t i = 0; i < drm_device_paths_count; i++)
+     {
+         int drm_fd = vlc_open(drm_device_paths[i], O_RDWR);
+@@ -158,13 +172,16 @@ vlc_vaapi_InitializeInstanceDRM(vlc_object_t *o,
+             if (va_inst)
+             {
+                 *pdpy = dpy;
+-                return va_inst;
++                result = va_inst;
++                msg_Dbg(o, "Using VA-API device %s", drm_device_paths[i]);
++                break;
+             }
+         }
+         else
+             vlc_close(drm_fd);
+     }
+-    return NULL;
++    free(configured_device);
++    return result;
+ }
+ 
+ 
+diff --git a/modules/video_output/opengl/converter_vaapi.c b/modules/video_output/opengl/converter_vaapi.c
+index 5307320..0e527a7 100644
+--- a/modules/video_output/opengl/converter_vaapi.c
++++ b/modules/video_output/opengl/converter_vaapi.c
+@@ -195,22 +195,27 @@ tc_vaegl_update(const opengl_tex_converter_t *tc, GLuint *textures,
+ 
+     if (pic == priv->last.pic)
+     {
+-#if VA_CHECK_VERSION(1, 1, 0)
+-        for (unsigned i = 0; i < priv->last.va_surface_descriptor.num_layers; ++i)
+-#else
+-        for (unsigned i = 0; i < priv->last.va_image.num_planes; ++i)
+-#endif
++        for (unsigned i = 0; i < priv->last.num_planes; ++i)
+         {
+             tc->vt->BindTexture(tc->tex_target, textures[i]);
+-            priv->glEGLImageTargetTexture2DOES(tc->tex_target, egl_images[i]);
++            priv->glEGLImageTargetTexture2DOES(tc->tex_target,
++                                             priv->last.egl_images[i]);
+         }
+         return VLC_SUCCESS;
+     }
+-
++    /* Export does not synchronize pending decoder writes. */
++    VAStatus status = vaSyncSurface(priv->vadpy, vlc_vaapi_PicGetSurface(pic));
++    if (status != VA_STATUS_SUCCESS)
++    {
++        msg_Err(o, "vaSyncSurface: %s", vaErrorStr(status));
++        return VLC_EGENERIC;
++    }
+ 
+ #if VA_CHECK_VERSION(1, 1, 0)
+     if (vlc_vaapi_ExportSurfaceHandle(o, priv->vadpy, vlc_vaapi_PicGetSurface(pic),
+-                                        VA_SURFACE_ATTRIB_MEM_TYPE_DRM_PRIME_2, 0,
++                                        VA_SURFACE_ATTRIB_MEM_TYPE_DRM_PRIME_2,
++                                        VA_EXPORT_SURFACE_READ_ONLY |
++                                        VA_EXPORT_SURFACE_SEPARATE_LAYERS,
+                                         &va_surface_descriptor))
+         goto error;
+     release_image = true;
+@@ -233,6 +238,9 @@ tc_vaegl_update(const opengl_tex_converter_t *tc, GLuint *textures,
+ 
+ #if VA_CHECK_VERSION(1, 1, 0)
+     num_planes = va_surface_descriptor.num_layers;
++    if (num_planes != tc->tex_count || num_planes > 3 ||
++        va_surface_descriptor.fourcc != priv->fourcc)
++        goto error;
+     for (unsigned i = 0; i < num_planes; ++i)
+     {
+         unsigned obj_idx = va_surface_descriptor.layers[i].object_index[0];
+@@ -240,7 +248,8 @@ tc_vaegl_update(const opengl_tex_converter_t *tc, GLuint *textures,
+         /* Since we don't ask for composite object through
+          * vaExportSurfaceHandle, we shouldn't get any multiplane
+          * layer. */
+-        if (va_surface_descriptor.layers[i].num_planes > 1)
++        if (va_surface_descriptor.layers[i].num_planes != 1 ||
++            obj_idx >= va_surface_descriptor.num_objects)
+           goto error;
+ 
+         egl_images[i] =
+@@ -328,9 +337,46 @@ tc_vaegl_get_pool(const opengl_tex_converter_t *tc, unsigned requested_count)
+     if (!pool)
+         return NULL;
+ 
+-    /* Check if a surface from the pool can be derived and displayed via dmabuf
+-     * */
++    /* Probe the same export path used to display decoded pictures. Drivers
++     * exporting separate plane resources need not support vaDeriveImage. */
+     bool success = false;
++#if VA_CHECK_VERSION(1, 1, 0)
++    VADRMPRIMESurfaceDescriptor desc;
++    if (vlc_vaapi_ExportSurfaceHandle(o, priv->vadpy, priv->va_surface_ids[0],
++                                      VA_SURFACE_ATTRIB_MEM_TYPE_DRM_PRIME_2,
++                                      VA_EXPORT_SURFACE_READ_ONLY |
++                                      VA_EXPORT_SURFACE_SEPARATE_LAYERS,
++                                      &desc))
++        goto error;
++
++    if (desc.fourcc != priv->fourcc || desc.num_layers != tc->tex_count ||
++        desc.num_layers > 3)
++        goto release_objects;
++
++    for (unsigned i = 0; i < desc.num_layers; ++i)
++    {
++        unsigned obj_idx = desc.layers[i].object_index[0];
++        if (desc.layers[i].num_planes != 1 || obj_idx >= desc.num_objects)
++            goto release_objects;
++
++        EGLint w = (desc.width * tc->texs[i].w.num) / tc->texs[i].w.den;
++        EGLint h = (desc.height * tc->texs[i].h.num) / tc->texs[i].h.den;
++        EGLImageKHR egl_image =
++            vaegl_image_create(tc, w, h, priv->drm_fourccs[i],
++                               desc.objects[obj_idx].fd, desc.layers[i].offset[0],
++                               desc.layers[i].pitch[0],
++                               desc.objects[obj_idx].drm_format_modifier);
++        if (egl_image == NULL)
++            goto release_objects;
++        vaegl_image_destroy(tc, egl_image);
++    }
++
++    success = true;
++release_objects:
++    for (unsigned i = 0; i < desc.num_objects; ++i)
++        close(desc.objects[i].fd);
++error:
++#else
+     VAImage va_image = { .image_id = VA_INVALID_ID };
+     if (vlc_vaapi_DeriveImage(o, priv->vadpy, priv->va_surface_ids[0],
+                               &va_image))
+@@ -369,6 +415,7 @@ error:
+             vlc_vaapi_ReleaseBufferHandle(o, priv->vadpy, va_image.buf);
+         vlc_vaapi_DestroyImage(o, priv->vadpy, va_image.image_id);
+     }
++#endif
+     if (!success)
+     {
+         picture_pool_Release(pool);
