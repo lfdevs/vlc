@@ -1,3 +1,9 @@
+vlc (3.0.24-90) trixie-security; urgency=medium
+
+  * vaapi: support termux-va hardware decoding in PRoot containers
+
+ -- lfdevs <lfdevs@lfdevs.com>  Tue, 20 Oct 2026 16:56:46 +0800
+
 vlc (3.0.24-0+deb13u1) trixie-security; urgency=medium
 
   * New upstream version 3.0.24
