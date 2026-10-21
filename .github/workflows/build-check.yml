@@ -4,6 +4,13 @@ on:
   pull_request:
     branches:
       - trixie
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: Ref to check out
+        required: true
+        default: trixie
+        type: string
 
 permissions:
   contents: read
@@ -42,14 +49,21 @@ jobs:
           ccache --zero-stats
 
       - name: Clone repository
+        shell: bash
         env:
-          PR_HEAD_REF: ${{ github.event.pull_request.head.ref }}
-          PR_HEAD_REPO_URL: ${{ github.event.pull_request.head.repo.html_url }}.git
+          BUILD_REF: ${{ inputs.ref }}
+          BUILD_REPO: ${{ github.server_url }}/${{ github.repository }}.git
+          PR_REF: ${{ github.event.pull_request.head.ref }}
+          PR_REPO: ${{ github.event.pull_request.head.repo.html_url }}.git
         run: |
           cd ~
           git config --global user.email "actions@github.com"
           git config --global user.name "GitHub Actions"
-          git clone -b "$PR_HEAD_REF" --depth 1 "$PR_HEAD_REPO_URL" vlc
+          if [[ "$GITHUB_EVENT_NAME" == "workflow_dispatch" ]]; then
+            git clone -b "$BUILD_REF" --depth 1 "$BUILD_REPO" vlc
+          else
+            git clone -b "$PR_REF" --depth 1 "$PR_REPO" vlc
+          fi
           cd vlc
           git switch -c ci-build
 
@@ -57,8 +71,17 @@ jobs:
         shell: bash
         run: |
           cd ~/vlc
-          short_hash=$(git rev-parse --short HEAD)
-          echo "VLC_RELEASE_NAME_SUFFIX=${short_hash}_debian_trixie_arm64" >> "$GITHUB_ENV"
+          if [[ "$GITHUB_EVENT_NAME" == "workflow_dispatch" ]]; then
+            version=$(dpkg-parsechangelog --show-field Version)
+            if [[ -z "$version" ]]; then
+              echo "Failed to read the latest version from debian/changelog" >&2
+              exit 1
+            fi
+            echo "VLC_RELEASE_NAME_SUFFIX=termux-va_debian_${version}" >> "$GITHUB_ENV"
+          else
+            short_hash=$(git rev-parse --short HEAD)
+            echo "VLC_RELEASE_NAME_SUFFIX=${short_hash}_debian_trixie_arm64" >> "$GITHUB_ENV"
+          fi
 
       - name: Build VLC
         shell: bash
