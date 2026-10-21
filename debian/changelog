@@ -1,3 +1,10 @@
+vlc (3.0.23-90) unstable; urgency=medium
+
+  [ lfdevs ]
+  * vaapi: support termux-va hardware decoding in PRoot containers
+
+ -- lfdevs <lfdevs@lfdevs.com>  Wed, 21 Oct 2026 18:09:37 +0800
+
 vlc (3.0.23-1) unstable; urgency=medium
 
   * New upstream version 3.0.23
